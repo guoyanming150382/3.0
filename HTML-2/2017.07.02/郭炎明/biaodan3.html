@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>登记表</title>
+</head>
+<body>
+	<form action="http://www.liyuit.com">
+	<fieldset>
+		<legend>用户注册表</legend>
+	<p>
+		<label for="username">
+			用户名：
+		</label>
+		<input type="text" id="username" name="username">
+	</p>
+	<p>
+		<label for="pwd">
+			密码：
+		</label>
+		<input type="password" id="pwd" name="pwd">
+	</p>	
+	<p>
+		<label for="gender">
+			性别：
+		</label>
+		<input value="nan" type="radio" name="gender" checked="checked">男
+		<input value="nv" type="radio" name="gender">女
+		<input value="bu" type="radio" name="gender">不告诉你
+	</p>
+	<p>
+		<label for="fav">
+			爱好：
+		</label>
+		<input type="checkbox">篮球
+		<input type="checkbox">足球
+		<input type="checkbox">排球
+	</p>
+	<p>
+		<label for="adress">
+			所在地：
+		</label>
+		<select name="" id="adress">
+		<option value="">郑州</option>
+		<option value="">北京</option>
+		<option value="" selected="selected">深圳</option>
+		<option value="">石家庄</option>
+		<option value="">天津</option>
+		</select>
+	</p>
+	<p>
+		<input type="button" value="点我">
+		<input type="reset" value="清空">
+		<input type="submit" value="注册">
+		<input type="image" src="reg.png">
+	</p>
+	<p>
+		<label for="summary">
+		简介：
+		</label>
+		<textarea name="summary" id="summary" cols="30" rows="10"></textarea>
+	</p>
+	<p>
+		<label for="emil">邮件</label>
+		<input type="emil" id="emil">
+	</p>
+	<p>
+		<label for="date">生日：</label>
+		<input type="date" id="date">
+	</p>
+	<p>
+		<label for="color">喜欢的颜色</label>
+		<input type="color" id="color">
+		<input type="hidden" value="xxxx" name="xxxx"><!--此为隐藏标签页面不显示，在地址栏会显示-->
+		<!--www.w3school.com 可以查看<label。系列的标签-->
+	</p>
+	</fieldset>
+	</form>
+</body>
+</html>

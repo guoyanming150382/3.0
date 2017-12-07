@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>表单</title>
+</head>
+<body>
+	<fieldset>
+	<legend>简介</legend>
+	<p><label for="username">姓名：</label>
+	<input type="text" id="username" name="username">
+	<!--id与name的属性可以一样-->
+	</p>
+	<p>
+		<label for="username">电话：</label>
+		<input type="text"  id="username" name="username">
+	</p>
+	<p>
+	<label for="gender">性别：</label>
+	<input type="radio" name="gender" checked="checked">男
+	<input type="radio" name="gender">女
+	<input type="radio" name="gender">保密
+	</p>
+	<!--单选标签gender-->
+	<p>
+	<label for="fav">爱好</label>
+	<input type="checkbox">篮球
+	<input type="checkbox">足球
+	<input type="checkbox" checked="checked">水球
+	<!--checked=“checked”在此地方表示默认选项-->
+	</p>
+	<p>
+	<label for="adress">籍贯</label>
+	<select name="" id="adress">
+	<option value="">许昌</option>
+	<option value="" selected="selected">东京</option>
+	<option value="">郑州</option>
+	</select><!--多选标签中的默认选项要加上checked=“checked”-->
+	</p>
+	<p>
+		<label for="email">邮箱</label>
+		<input type="email" id="email" name="email">
+	</p>
+	<p>
+		<label for="summary">简介</label><!--summary概要，简要，会出现一个多行文本框，用于书写简介-->
+		<textarea id="summary" rows="10" cols="20"></textarea><!--可以在textarea后加上name或者id，或者两个都书写。textarea指的是文本框-->
+	</p>
+	<p>
+		<input type="button" value="点我"><!--按钮标签不需要label给于属性，button指的是按钮，value是在按钮上增加文字。reset是清零的意思。submit是提交的意思-->
+		<input type="reset" value="清空">
+		<input type="submit" value="注册">
+	</p>
+	</fieldset>
+	<a href="博客.html">返回首页</a>
+</body>
+</html>
