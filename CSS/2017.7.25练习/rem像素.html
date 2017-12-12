@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width">
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		/*html{
+			font-size:  10px;
+		}*/
+		p{
+			font-size: 10px;
+		}
+		p{
+			width: 5rem;
+			height: 5rem;
+			border: 1px solid #000;
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	<p>你好吗</p>
+</body>
+<script>
+                (function(win,doc){
+                        var fresh = function(){
+                                var html = doc.documentElement;
+                                var w = html.clientWidth;
+                                html.style.fontSize = (w/10) + 'px';
+                        }
+                        if(doc.readySate === 'complete'){
+                                fresh();
+                        }else{
+                                doc.addEventListener("DOMContentLoad",fresh,false);
+                        }
+                        win.addEventListener("resize",fresh,false);
+                })(window,document)
+        </script>
+</html>

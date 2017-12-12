@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #000;
+		}
+		div:before{
+			content: "6546";
+			background-color: green;
+			display: block;
+		}
+		div:after{
+			content: "551556";
+			display: block;
+			background-color: red;
+			/*visibility显示: hidden/*隐藏*/;*/
+		}
+	</style>
+</head>
+<body>
+	<div>
+		你好<!-- 啊你好。啊你好。啊你好。啊你好。啊你好。啊 -->
+	</div>
+</body>
+</html>

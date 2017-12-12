@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+				*{
+			margin: 0;
+			padding: 0;
+		}
+		.p2{
+			background-color: red;
+			/*margin-bottom: 10px;*/
+		}
+		.p1{
+			background-color: green;
+			margin-top: 10px;
+		}
+		.p2 p{
+			width: 100px;
+			background-color: pink;
+			float: left;
+		}
+		.p1 p{
+			width: 100px;
+			background-color: yellow;
+			float: left;
+		}
+/*
+		.w1{
+			clear: both;
+			height: 50px;
+		}外墙方法*/
+		.w2{
+			clear: both;
+		}
+	</style>
+</head>
+<body>
+	<div class="p2">
+		<p class="p3">你好1</p>
+		<p class="p4">你好2</p>
+		<p class="p5">你好3</p>
+		 <div class="w2"></div> <!--内墙方法-->
+	</div>
+	<!-- <div class="w1"></div> -->
+	<div class="p1">
+		<p class="p6">21</p>
+		<p class="p7">22</p>
+		<p class="p8">23</p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>055-过渡案例.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			width: 1000px;
+			height: 400px;
+			border: 1px solid #000;
+			margin: 50px auto;
+			overflow: hidden;
+		}
+		ul li img{
+			/*width: 200px;*/
+			height: 400px;
+		}
+		ul li{
+			height: 100%;
+			width: 200px;
+			list-style: none;
+			float: left;
+			background: red;
+			transition: width 1s;
+		}
+		ul:hover li{
+			width: 100px;
+		}
+		ul li:hover{
+			width: 400px;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li><img src="1.jpg" alt=""></li>
+		<li><img src="2.jpg" alt=""></li>
+		<li><img src="3.jpg" alt=""></li>
+		<li><img src="4.png" alt=""></li>
+		<li><img src="5.jpg" alt=""></li>
+	</ul>
+</body>
+</html>

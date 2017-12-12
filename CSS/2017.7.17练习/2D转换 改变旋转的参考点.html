@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding:0;
+		}
+		ul{
+			width: 300px;
+			height: 300px;
+			border: 1px solid #000;
+			position: relative;
+			margin:0 auto;
+		}
+		ul li{
+			list-style: none;
+			width: 200px;
+			height: 200px;
+			margin: 10px auto;
+			position: absolute;
+			top: 50px;
+			left: 50px;
+			transform-origin:-20px 20px;/*
+			改变旋转中心，中间不加括号和逗号*/
+		}
+		li:nth-of-type(1){
+		background-color: red;
+		transform: rotate(30deg);
+		}
+		li:nth-of-type(2){
+		background-color: green;
+		transform: rotate(60deg);
+		}
+		li:nth-of-type(3){
+		background-color: pink;
+		transform: rotate(80deg);
+		}
+		li:nth-of-type(4){
+			background-color: purple;
+			transform: rotate(100deg);
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+</html>

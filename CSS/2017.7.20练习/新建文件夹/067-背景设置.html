@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>067-背景设置.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+/*			background-image: url(img/bg1.jpg);
+			background-repeat: no-repeat;
+			background-attachment: scroll;*/
+		}
+		.box1{
+			width: 300px;
+			height: 300px;
+			border: 1px solid #000;
+			margin: 20px auto;
+			/*background-color: red;*/
+			/*background-color: rgb(255,255,0);*/
+			/*background-color: rgba(255,255,0,0.4);*/
+			/*background-color: #F0F;*/
+			/*background-image: url(img/1.jpg);*/
+			/*background-image: url(http://img.ph.126.net/ocT0cPlMSiTs2BgbZ8bHFw==/631348372762626203.jpg);*/
+/*			background-image: url(img/bg1.jpg);
+			background-repeat: no-repeat;
+			background-attachment: fixed;*/
+			/*background-image: url(img/bg1.jpg);*/
+			/*background-repeat: no-repeat;*/
+			/*background-position: center top;*/
+			/*background-position: 10px 30px;*/
+			background:  url(img/bg1.jpg) red no-repeat   center top;
+
+		}
+		.box2{
+			width: 68px;
+			height: 54px;
+			background-image: url(img/icon2.jpg);
+			background-repeat: no-repeat;
+			background-position: -435px -133px;
+		}
+
+	</style>
+</head>
+<body>
+<!--
+1.设置背景颜色
+background-color: 值;
+取值：
+颜色的英文单词
+rgb
+rgba
+十六进制
+
+2.设置背景图片
+background-image:url(图片地址)
+注意：
+2.1图片默认是在水平和垂直方西上平铺的
+2.2图片的地址可以是本地资源，也可以是网络资源
+
+3.平铺的设置
+background-repeat: 取值;
+repeat-x 只在水平方向上平铺
+repeat-y 只在垂直方向上平铺
+no-repeat 水平和垂直方向上都不平铺
+
+4.背景图片固定
+background-attachment: 取值;
+取值：
+默认是scroll，随着滚动条的滚动而滚动
+fixed,固定在某个位置，不随滚动条的滚动而滚动
+注意点：一般用在body上面
+
+5.背景图片的位置定位
+background-position: 水平移动距离 垂直移动距离;
+取值：
+具体的数值+px
+方向单词：
+	水平:right center left
+	垂直:top center bottom
+
+6.背景图片的复合样式
+background:背景颜色 背景图片 平铺设置 背景图片固定 图片定位
+注意点：复合样式中的属性可以都写，也可以省略，也可以交换位置，但是图片定位的两个属性要写在一起不能拆开
+
+7.CSS精灵图的使用
+由于每显示一张图片，浏览器都会请求一次服务器，所以我们可以把多张图片合成一张
+，这种合成图片的技术就叫做精灵图
+
+8.如何使用CSS精灵图
+8.1 给元素设置一个宽高，宽和高就是需要显示区域的宽和高
+8.2 给元素添加背景图片
+8.3 在精灵图中找到需要显示元素的坐标，然后根据坐标设置图片背景的位置
+
+9.图片标签和背景图片的区别
+9.1 图片标签占用空间，背景图片不占用
+9.2 图片标签的语义强，背景图片只是起到装饰作用
+-->
+	<!-- <div class="box1"></div> -->
+	<div class="box2">123</div>
+	<img src="img/cluo.jpg" alt="">
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+
+		}
+		ul{
+			width: 1200px;
+			height: 180px;
+			/*border: 1px solid #000;*/
+			/*margin: 0px auto;*/
+			/*animation-name: zhuan;
+			animation-duration:6s;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;*/
+			animation:zhuan 6s linear 0s infinite normal;
+		}
+		@keyframes zhuan{
+			form{
+				margin-left:0px;
+			}
+			to{
+				margin-left:-1000px;
+			}
+				}
+		ul li{
+			list-style: none;
+			float: left;
+		}
+		img{
+			width: 200px;
+			height: 180px;
+		}
+		div{
+			height: 180px;
+			width: 200px;
+			border: 1px solid #000;
+			margin: 0 auto;
+			overflow: hidden;
+		}
+		ul:hover {
+			animation-play-state: paused;
+		}
+		ul:hover li{
+			opacity: 0.5;
+		}
+		ul li:hover{
+			opacity: 1;
+		}/*ul的hover要在li的hover之前*/
+	</style>
+</head>
+<body>
+<div>
+	<ul>
+		<li>
+			<img src="1.jpg">
+		</li>
+		<li>
+			<img src="2.jpg">
+		</li>
+		<li>
+			<img src="3.jpg">
+		</li>
+		<li>
+			<img src="4.jpg">
+		</li>
+		<li>
+			<img src="5.jpg">
+		</li>
+		<li>
+			<img src="1.jpg">
+		</li>
+	</ul>
+</div>
+</body>
+</html>

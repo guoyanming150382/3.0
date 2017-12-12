@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>070-背景绘制区域.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			width: 800px;
+			height: 800px;
+			/*border: 1px solid #000;*/
+			margin: 30px auto;
+		}
+		ul li{
+			list-style: none;
+			width: 200px;
+			height: 200px;
+			border: 10px dashed #000;
+			padding:20px;
+			float: left;
+			margin: 10px;
+			text-align: center;
+			line-height: 200px;
+			/*background-image: url(img/bg1.jpg);*/
+			/*background-repeat: no-repeat;*/
+			background-color: red;
+		}
+		ul li:nth-child(2){
+			/*背景图片从边框开始显示*/
+			/*background-origin: border-box;*/
+			background-clip: border-box;
+		}
+		ul li:nth-child(3){
+			/*从内边距开始显示，默认值*/
+			/*background-origin: padding-box;*/
+			background-clip: padding-box;
+		}
+		ul li:nth-child(4){
+			/*从内容区域开始显示*/
+			/*background-origin: content-box;*/
+			background-clip: content-box;
+		}
+						
+	</style>
+</head>
+<body>
+	<ul>
+		<li>默认的</li>
+		<li>border</li>
+		<li>padding</li>
+		<li>content</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style>
+		.e1{
+			width: 200px;
+			height: 150px;
+			background-color: red;
+			border: 1px solid #000;
+			display: inline;/*将块状元素转化成行内元素，此时宽和高无法通过数值改变*/
+			}
+		.e2{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #000;	
+			display: block;/*将行内元素转化成块状元素，此时宽和高可以通过数值改变*/
+		}
+	</style>
+</head>
+<body>
+	<div class="e1">1</div>
+	<span class="e2">2</span>
+</body>
+</html>

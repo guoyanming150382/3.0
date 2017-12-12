@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+	<style type="text/css">
+		*{margin: 0;
+			padding: 0;}
+		#div1{
+			width: 200px;
+			height: 210px;
+			background: gray;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+		<!-- <input type="checkbox" onmouseover="alert('123456')"> --><!--当鼠标经过的时候，显现出div1-->
+		<!-- <input type="checkbox" onmouseover="div1.style.display='block'" onmouseout="div1.style.display='none'"> --><!--当鼠标经过的时候，显现出div1，移走时候不显现出来-->
+	<input type="checkbox" 
+	onmouseover="document.getElementById('div1').style.display='block'" 
+	onmouseout="document.getElementById('div1').style.display='none'" >
+	<div id="div1">为了你的信息安全......</div>
+</body>
+</html>

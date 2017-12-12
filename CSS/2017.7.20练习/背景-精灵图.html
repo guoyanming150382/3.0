@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{margin: 0;
+			padding: 0;}
+			div{
+				width: 500px;
+				height: 500px;
+				border: 1px solid #000;
+				margin: 20px auto;
+				/*background-color: red/rgb(255,255,0)/rgba(255,255,0,0.6)#263345;*/
+				/*background-image: url(http://cdn.duitang.com/uploads/item/201502/28/20150228191342_8uJQV.gif);
+				background-repeat: no-repeat;//不平铺
+				background-attachment: scroll;
+				background-position: right center;*/
+				/*background: red url(http://cdn.duitang.com/uploads/item/201502/28/20150228191342_8uJQV.gif) no-repeat right center; 复写*/
+				background-image: url(a/1.jpg);
+				background-repeat: no-repeat;
+
+			}
+			.p1{
+				height: 51px;
+				width: 278px;
+				background-position: -399px -45px;/*只显示的位置要与整个图片是一个盒子，把图片放在ps里面用切片工具找到显示图片的大小（W H）以及位置（X Y）轴，background-position取值一般为负数*/
+			}
+			.p2{
+				height:100px;
+				width: 100px;
+				background-position: -297px -42px;
+			}
+	</style>
+</head>
+<body>
+	<div class="p1"></div>
+	<div class="p2"></div>
+</body>
+</html>

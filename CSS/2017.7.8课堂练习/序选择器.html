@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="utf-8">
+	<title></title>
+	<style>
+		/*p:first-child{
+			color: red;p同级别的中的第一个元素，一旦有元素阻挡，就无法在同级别中生效
+		}*/
+		/*p:first-of-type{
+			color: red;/*同类中的第一个区分类型，不受元素阻挡影响
+		}*/
+		/*p:last-child{
+			color: red;
+		}/*找到同类型的最后一个，不区分类型，受元素阻挡影响*/
+		/*p:nth-child(1){
+						color: red;
+		}*//*找到同级中第几个元素，受阻挡元素映像*/
+		/*p:nth-of-type(3){
+			color: red;
+		}*//*找到同级中第几个元素，不受阻挡元素映像*/
+		/*p:nth-child(odd){
+			color: red;
+		}不分类型中的奇数*/
+		/*p:nth-of-type(odd){
+			color: red;
+		}分类型中的奇数*/
+		/*p:nth-of-type(2n+1){
+			color: red;
+		}*/
+		p:only-of-type{
+			color: red;
+		}/*寻找父元素中唯一仅有一个p的元素，区分类型，不受阻挡元素映像*/
+		/*p:only-of-type{
+			color: purple;
+		}/*找到父元素中的仅有的一个p，不区分类型，受阻挡元素映像*/
+
+	</style>
+</head>
+<body>
+	<h1>你好</h1>
+	<p>nihai吗，你好1</p>
+	<p>nihai吗，你好3</p>
+	<p>nihai吗，你好4</p>
+	<p>nihai吗，你好5</p>
+	<div>
+		<h1>你好</h1>
+		<p>你好6</p>
+		<p>你好7</p>
+		<p>你好8</p>
+		<p>你好9</p>
+		<p>你好10</p>
+	</div>
+	<div>
+		<p>你好22</p>
+		<h1>5444564</h1>
+	</div>
+	<div>
+		<p>12166484516</p>
+	</div>
+</body>
+</html>

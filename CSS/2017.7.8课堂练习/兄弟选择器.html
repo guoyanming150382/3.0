@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="utf-8">
+	<title></title>
+	<style>
+		/*.p1+.p2+.p3{
+			color: red; 相邻兄弟
+		}*/                          /*注释时候要把上方花括号包亲去*/
+		.p3~.p2{
+			color:red;
+		}/*通用兄弟*/
+	</style>
+</head>
+<body>
+	<h1 class="p1">你好</h1>
+	<p class="p2">你好4</p>
+	<p class="p3">你好3</p>
+	<h1>你好</h1><!--通用选择器里即使有其他元素阻挡，也仍然会使通用兄弟起作用，兄弟选择其中有其他元素阻挡就会失效-->
+	<p class="p2">你好2</p>
+	<p class="p1">你好2</p>
+	<p class="p2">你好1</p>
+	<p class="p3">你好5</p>
+	<p class="p3">你好5</p>
+	<p class="p3">你好5</p> 
+	<p class="p2">你好9</p> 
+</body>
+</html>

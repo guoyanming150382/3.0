@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.p1{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			position: relative;
+			top: 20px;
+			left: 20px;
+			z-index: 2;
+		}
+		.p2{
+			width: 200px;
+			height: 200px;
+			background-color: blue;
+			position: relative;
+			bottom: 50px;
+			left: 50px;
+			z-index: 1;
+		}
+		.p3{
+			width: 300px;
+			height: 300px;
+			background-color: gray;
+		}
+	</style>
+</head>
+<body>
+	<div class="p1">1</div>
+	<div class="p2">2</div>
+	<div class="p3">
+		<div class="p4">
+			<div class="p5"></div>
+		</div>
+	</div>
+		<div class="p6">
+		<div class="p7">
+			<div class="p8"></div>
+		</div>
+	</div>
+</body>
+</html>

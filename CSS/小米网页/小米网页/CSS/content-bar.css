@@ -1,0 +1,308 @@
+.content-bar{
+	height: 420px;
+	width: 1244px;
+	/*background-color: green;*/
+	margin-left: 178px;
+	margin-right: 178px;
+	margin-top: 46px;
+	position: relative;
+}
+.q0{
+	height: 39px;
+	width: 1244px;
+	/*background-color: yellow;*/
+}
+.content-bar .q0 span{
+	font-size: 21px;
+	color: #333333;
+
+}
+/*1-5*/
+.content-bar .q01{
+	height: 380px;
+	width: 1244px;
+	/*background-color: yellow;*/
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+}
+.content-bar .q01 .q1,.q2,.q3,.q4,.q5{
+	width: 234px;
+	height: 380px;
+	/*background-color: red;*/
+	float: left;
+}
+.content-bar .q01 .q1,.q2,.q3,.q4{
+	margin-right: 18.5px;
+}
+.content-bar .q01 .q1{
+	background-image: url(../图片/mi/mi1.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	position: relative;
+	border-top: 1px solid orange;
+}
+.content-bar .q01 .q1 span{
+	text-align: center;
+	font-size: 13px;
+	position: absolute;
+	bottom: 0px;
+	box-sizing: border-box;
+	padding-left: 25px;
+	padding-bottom: 82px;
+}
+.content-bar .q01 .q1 span a{
+	text-decoration: none;
+}
+.content-bar .q01 .q1 span p:nth-child(1){
+	color: #212121;
+}
+.content-bar .q01 .q1 span p:nth-child(2){
+	color: #c4c4c4;
+}
+.content-bar .q01 .q1 span p:nth-child(3){
+	color: #fe7909;
+}
+.content-bar .q01 .q2{
+	background-image: url(../图片/mi/mi2.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	position: relative;
+	border-top: 1px solid green;
+}
+.content-bar .q01 .q2 span{
+	text-align: center;
+	font-size: 13px;
+	position: absolute;
+	bottom: 0px;
+	box-sizing: border-box;
+	padding-left: 25px;
+	padding-bottom: 82px;
+}
+.content-bar .q01 .q2 span p:nth-child(1){
+	color: #212121;
+}
+.content-bar .q01 .q2 span p:nth-child(2){
+	color: #c4c4c4;
+}
+.content-bar .q01 .q2 span p:nth-child(3){
+	color: #fe7909;
+}
+.content-bar .q01 .q3{
+	background-image: url(../图片/mi/mi3.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	position: relative;
+	border-top: 1px solid blue;
+}
+.content-bar .q01 .q3 span{
+	text-align: center;
+	font-size: 13px;
+	position: absolute;
+	bottom: 0px;
+	box-sizing: border-box;
+	padding-left: 25px;
+	padding-bottom: 82px;
+}
+.content-bar .q01 .q3 span p:nth-child(1){
+	color: #212121;
+}
+.content-bar .q01 .q3 span p:nth-child(2){
+	color: #c4c4c4;
+}
+.content-bar .q01 .q3 span p:nth-child(3){
+	color: #fe7909;
+}
+.content-bar .q01 .q4{
+	background-image: url(../图片/mi/mi4.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	position: relative;
+	border-top: 1px solid red;
+}
+.content-bar .q01 .q4 span{
+	text-align: center;
+	font-size: 13px;
+	position: absolute;
+	bottom: 0px;
+	box-sizing: border-box;
+	padding-left: 10px;
+	padding-bottom: 82px;
+}
+.content-bar .q01 .q4 span p:nth-child(1){
+	color: #212121;
+}
+.content-bar .q01 .q4 span p:nth-child(2){
+	color: #c4c4c4;
+}
+.content-bar .q01 .q4 span p:nth-child(3){
+	color: #fe7909;
+}
+.content-bar .q01 .q5{
+	background-image: url(../图片/mi/mi5.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	position: relative;
+	border-top: 1px solid #00c0a5;
+}
+.content-bar .q01 .q5 span{
+	text-align: center;
+	font-size: 13px;
+	position: absolute;
+	bottom: 0px;
+	box-sizing: border-box;
+	padding-left: 45px;
+	padding-bottom: 82px;
+}
+.content-bar .q01 .q5 span p:nth-child(1){
+	color: #212121;
+}
+.content-bar .q01 .q5 span p:nth-child(2){
+	color: #c4c4c4;
+}
+.content-bar .q01 .q5 span p:nth-child(3){
+	color: #fe7909;
+}
+
+
+
+
+/*.content-bar .q02{
+	height: 380px;
+	width: 1244px;
+	background-color: yellow;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+}
+.content-bar .q02 .q6,.q7,.q8,.q9,.q10{
+	width: 234px;
+	height: 380px;
+	background-color: red;
+	float: left;
+}
+.content-bar .q02 .q6,.q7,.q8,.q9{
+	margin-right: 18.5px;
+}
+.content-bar .q02 .q6{
+	background-image: url(../图片/mi/mi6.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	position: relative;
+	border-top: 1px solid orange;
+}
+.content-bar .q02 .q6 span{
+	text-align: center;
+	font-size: 13px;
+	position: absolute;
+	bottom: 0px;
+	box-sizing: border-box;
+	padding-left: 25px;
+}
+.content-bar .q02 .q6 span p:nth-child(1){
+	color: #212121;
+}
+.content-bar .q02 .q6 span p:nth-child(2){
+	color: #c4c4c4;
+}
+.content-bar .q02 .q6 span p:nth-child(3){
+	color: #fe7909;
+}
+.content-bar .q02 .q7{
+	background-image: url(../图片/mi/mi7.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	position: relative;
+	border-top: 1px solid green;
+}
+.content-bar .q02 .q7 span{
+	text-align: center;
+	font-size: 13px;
+	position: absolute;
+	bottom: 0px;
+	box-sizing: border-box;
+	padding-left: 25px;
+}
+.content-bar .q02 .q7 span p:nth-child(1){
+	color: #212121;
+}
+.content-bar .q02 .q7 span p:nth-child(2){
+	color: #c4c4c4;
+}
+.content-bar .q02 .q7 span p:nth-child(3){
+	color: #fe7909;
+}
+.content-bar .q02 .q8{
+	background-image: url(../图片/mi/mi8.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	position: relative;
+	border-top: 1px solid blue;
+}
+.content-bar .q02 .q8 span{
+	text-align: center;
+	font-size: 13px;
+	position: absolute;
+	bottom: 0px;
+	box-sizing: border-box;
+	padding-left: 25px;
+}
+.content-bar .q02 .q8 span p:nth-child(1){
+	color: #212121;
+}
+.content-bar .q02 .q8 span p:nth-child(2){
+	color: #c4c4c4;
+}
+.content-bar .q02 .q8 span p:nth-child(3){
+	color: #fe7909;
+}
+.content-bar .q02 .q9{
+	background-image: url(../图片/mi/mi9.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	position: relative;
+	border-top: 1px solid red;
+}
+.content-bar .q02 .q9 span{
+	text-align: center;
+	font-size: 13px;
+	position: absolute;
+	bottom: 0px;
+	box-sizing: border-box;
+	padding-left: 10px;
+}
+.content-bar .q02 .q9 span p:nth-child(1){
+	color: #212121;
+}
+.content-bar .q02 .q9 span p:nth-child(2){
+	color: #c4c4c4;
+}
+.content-bar .q02 .q9 span p:nth-child(3){
+	color: #fe7909;
+}
+.content-bar .q02 .q10{
+	background-image: url(../图片/mi/mi10.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	position: relative;
+	border-top: 1px solid #00c0a5;
+}
+.content-bar .q02 .q10 span{
+	text-align: center;
+	font-size: 13px;
+	position: absolute;
+	bottom: 0px;
+	box-sizing: border-box;
+	padding-left: 45px;
+}
+.content-bar .q02 .q10 span p:nth-child(1){
+	color: #212121;
+}
+.content-bar .q02 .q10 span p:nth-child(2){
+	color: #c4c4c4;
+}
+.content-bar .q02 .q10 span p:nth-child(3){
+	color: #fe7909;
+}*/
+
+

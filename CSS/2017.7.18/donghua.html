@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+		}
+		div{
+			width: 100px;
+			height: 110px;
+			background-color: red;
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			/*transition-property:width;
+			transition-duration: 3s;*/
+			/*animation-name: sport;
+			animation-duration: 2s;
+			animation-delay: 2s;
+			animation-timing-function: linear;
+			animation-iteration-count: 3;
+			animation-direction: alternate;*/
+			animation:sport 2s linear 0s infinite normal;/*
+			指定一个动画名字animation-name：
+			指定动画的执行时间animation-duration,
+			指定动画延迟时间animation-delay: 2s，
+			指定动画的速度，animation-timing-function:linear;
+			指定动画运行次数：animation-iteration-count:3或者infiniter
+			是否往返执行：animation-direction: alternate、normal（不执行往返）;*/
+
+		}
+		@keyframes sport{
+			/*form{
+				/*width: 200px;*/
+				/*margin-left: 0px;
+			}
+			to{
+			width: 400px;*/
+				/*margin-left: 400px;
+			}
+*/
+		0%{
+			left: 0px;
+			top: 0px;
+		}
+		25%{
+			left: 400px;
+			top: 0px;
+		}
+		50%{
+			left: 400px;
+			top: 400px;
+		}
+		75%{
+			left: 0px;
+			top: 400px;
+		}
+		100%{
+			left: 0px;
+			top: 0px;
+		}
+		}
+		div:hover{
+				animation-play-state: paused;/*暂停*/
+		}
+		/*div:hover{
+			width: 300px;
+		}*/
+		.p1{
+			width: 100px;
+			height: 100px;
+			background-color: blue;
+			margin: 50px auto;
+			animation-name: zhuan;
+			animation-duration: 1s;
+			animation-fill-mode: backwards;
+		}
+		@keyframes zhuan{
+			20%{
+				transform: rotate(90deg);
+			}
+			50%{
+				transform: rotate(180deg);
+			}
+			75%{
+				transform: rotate(270deg);
+			}
+			100%{
+				transform: rotate(360deg);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<div class="p1"></div>
+</body>
+</html>

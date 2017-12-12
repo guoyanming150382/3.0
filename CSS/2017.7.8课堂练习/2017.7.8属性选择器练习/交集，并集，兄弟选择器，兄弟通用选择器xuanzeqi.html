@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style>
+		/*.p2+.p3{
+			color: #A22929;
+			font:italic bolder 50px "宋体";
+			text-indent: 3em;
+			text-shadow: 50px 20px 6px #2A179A;
+			text-decoration: overline;
+			text-align: center;（兄弟选择器：只会对盘下的p3起作用）
+		}
+		/*.p2,.p3{
+			color: #A22929;
+			font:italic bolder 50px "宋体";
+			text-indent: 3em;
+			text-shadow: 50px 20px 6px #2A179A;
+			text-decoration: overline;
+			text-align: center;(交集：.p1.p2,并集：.p1,.p2)
+		}*/
+		   .p2~.p3{
+			color: #A22929;
+			font:italic bolder 50px "宋体";
+			text-indent: 3em;
+			text-shadow: 50px 20px 6px #2A179A;
+			text-decoration: overline;
+			text-align: center;（兄弟通用选择器：会对p2下的所有p3起作用，中间即使有格挡元素也不会影响）
+		}
+	</style>
+</head>
+<body>
+<p class="p1">春花秋月何时了？</p>
+<p class="p2">往事知多少。</p>
+<p class="p3">小楼昨夜又东风，</p>
+<p class="p3">小楼昨夜又东风，</p>
+<p class="p3">小楼昨夜又东风，</p>
+<p class="p3">小楼昨夜又东风，</p>
+<p class="p1">故国不堪回首月明中</p>。
+<p class="p2">故国不堪回首月明中</p>。
+<h1>堪回首月</h1>
+<p class="p3">故国不堪回首月明中</p>。
+<p class="p3">故国不堪回首月明中</p>。
+</body>
+</html>

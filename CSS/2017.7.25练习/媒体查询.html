@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		body{
+			background:blue;
+		}
+		/*@media screen and (width:500px){
+			body{
+				background:yellow;
+			}
+		}*//*当屏幕尺寸等于五百像素是显示黄色*/
+		/*@media screen and (min-width: 500px){
+			body{
+				background: yellow;
+			}
+		}*//*当屏幕尺寸至少是五百像素是显示黄色*/
+		@media screen and (max-width: 500px){
+			body{
+				background: yellow;
+				/*background-image: url(./2.gif);*//*当屏幕尺寸小于五百像素显示图片*/
+			}
+		}/*当屏幕尺寸小于五百像素是显示黄色*/
+		@media screen and (max-height: 500px){
+			body{
+				background: purple;
+			}
+		}
+	</style>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<title></title>
+	<meta charset="utf-8">
+	<style>
+		.header{ height: 64px;
+			/*background-color:white;添加背景颜色*/
+			line-height: 64px; /*设置上下间距，使他位于水平中间*/
+			text-align: right;
+		}
+		.content{ height: 300px;
+			background-color:  white;
+			text-align: center;
+		}
+		.footer{ height: 240px;
+			background-color:white;
+			text-align: center;
+		}
+		input[type="text"]{
+			height: 35px;
+			width: 540px
+		}
+		input[type="submit"]{
+			height: 35px;
+		}
+		.header a{
+			color: #262626;
+			display: inline-block;/*设置链接之间的距离*/
+			width: 50px;
+
+		}
+		.footer a{
+			color: #99999d;
+		}
+		div:nth-of-type(3){
+			color: #99999d;
+
+		}
+		div:nth-of-type(4){
+		}
+		.footer div{
+			height: 40px;
+		}
+		.footer a:visited{
+			color: #2F1BE4;
+
+		}
+	</style>
+</head>
+<body>
+	<div class="header">
+			<a href="http://news.baidu.com/">新闻</a>
+			<a href="https://www.hao123.com/">hao123</a>
+			<a href="http://map.baidu.com/">地图</a>
+			<a href="http://v.baidu.com/">视频</a>
+			<a href="https://tieba.baidu.com/index.html">贴吧</a>
+			<a href="http://xueshu.baidu.com/">学术</a>
+			<a href="">登录</a>
+			<a href="#">设置</a>
+	</div>
+	<div class="content">
+		<div><img src="baidu.gif"></div>
+		<form action="https://www.baidu.com/">
+			<p>
+				<input type="text">
+				<input type="submit" value="百度一下">
+			</p>
+		</form>
+	</div>
+	<div class="footer">
+		<p><img src="二维码.png"></p>
+		<p>手机百度</p>
+		<div>
+			<a href="#">把百度设为首页</a>
+			<a href="#">关于百度</a>
+			<a href="#">About Baidu</a>
+			<a href="#">百度推广</a>
+		</div>
+		<div class="p3">
+			&copy;2017Baidu
+			<a href="#">使用百度前必读</a>
+			<a href="#">意见反馈</a>
+			京IPC证030173号
+			<a href="#">京公安网备11000002000001号<img src="国徽.png"></a>
+		</div>
+	</div>
+</body>
+</html>

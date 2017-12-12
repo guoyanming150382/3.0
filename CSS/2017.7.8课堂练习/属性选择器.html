@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="">
+<meta charset="utf-8">
+	<title></title>
+	<style>
+		/*a[href]{
+			color: red;
+		}*/
+		/*a[href|="www"]{
+			color: red;只能选中以www开头的，并且www要与后面的值隔开，用-隔开或者是独立的
+		}*/
+		/*a[href^="w"]{
+			color: red;只能选中以w为开头的，不用任何符号隔开，
+
+		}*/
+		/*a[href$="m"]{
+			color: purple;
+		}只能选中以m结束的元素，不用隔开*/
+		/*a[href*="w"]{
+			color: red;
+		}只能选中含有该值的，只要含有就可以选中，不用隔开*/
+		a[href~="www-"]{
+			color: green;
+		} /*选中的是有空格的，要写上空格前的完整值*/
+	</style>
+</head>
+<body>
+<a href="www">woshi链接1</a>
+<a href="www- =baidu">woshi链接11</a>
+<a href="www.baidu.com">woshi链接10</a>
+<a href="baidu">woshi链接9</a>
+<a href="baidu.www">woshi链接8</a>
+<a href="co m">woshi链接7</a>
+<a href=".com">woshi链接6</a>
+<a href="ww w-.com">woshi链接5</a>
+<a href="com.baidu">woshi链接4</a>
+<a href="=www11">woshi链接3</a>
+<a href="546566.www">woshi链接2</a>
+<p>我是段落</p>
+<h1>woshi标题</h1>
+</body>
+</html>

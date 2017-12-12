@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+		<style>
+			*{
+			margin: 0;
+			padding: 0;
+		}
+		.p2{
+			background-color: red;
+			/*overflow: hidden;添加后可以解决浮动问题*/
+			/*margin-bottom: 20px;*/
+
+		}
+		.p2:after{
+				content: "";
+				display: block;
+				clear: both;
+				height: 0px;
+				visibility: hidden;/*通过伪选择器设置第二种内墙方法*/
+		}
+		.p1{
+			background-color: green;
+			margin-top: 20px;
+		}
+		.p2 p{
+			width: 100px;
+			background-color: pink;
+		}
+		.p1 p{
+			width: 100px;
+			background-color: yellow;
+		}
+		.p3,.p4,.p5{
+			float: left;
+		}
+		.p6,.p7,.p8{
+			float: left;
+		}
+		</style>
+</head>
+<body>
+		<div class="p2">
+		<p class="p3">你好1</p>
+		<p class="p4">你好2</p>
+		<p class="p5">你好3</p>
+	</div>
+	<div class="p1">
+		<p class="p6">21</p>
+		<p class="p7">22</p>
+		<p class="p8">23</p>
+	</div>
+</body>
+</html>

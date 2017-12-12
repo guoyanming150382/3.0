@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 
+		}
+		ul{
+			width: 500px;
+			height: 600px;
+			border: 1px solid #000;
+			margin: 0 auto;
+		}
+		li{
+			width: 80px;
+			height: 50px;
+			margin: 0 auto;
+			text-align: center;
+			line-height: 50px;
+			list-style: none;
+			background-color: red;
+			margin-top: 50px;	
+			}
+		ul li:nth-of-type(2){
+			transform: translate(-50px,20px);
+		}
+		ul li:nth-of-type(3){
+			transform: rotate(-90deg);
+		}
+		ul li:nth-of-type(4){
+			transform: scale(3,2);
+		}
+		ul li:nth-child(5){
+			transform:translate(10px,60px) rotate(180deg) scale(2,1.5);
+		} 
+	</style>
+</head>
+<body>
+	<ul>
+		<li>默认</li>
+		<li>平移</li>
+		<li>旋转</li>
+		<li>缩放</li>
+		<li>综合</li>
+	</ul>
+</body>
+</html>

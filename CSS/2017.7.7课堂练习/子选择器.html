@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title></title>
+	<style>
+		ul>li>h1{
+			color: red;
+		}/*找的是：某个列表下的一个儿子，如果上层有同样的儿子，那么上岑的儿子不受影响*/
+	</style>
+</head>
+<body>
+	<div class="p1">
+	<p>段落</p>
+	<h1>段落</h1>
+	<ul>
+		<li>
+			<p>段落</p>
+			<h1> 段落</h1>
+		</li>
+	</ul>
+	</div>
+</body>
+</html>

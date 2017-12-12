@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>071-多重背景.html</title>
+	<style>
+		div{
+			width: 300px;
+			height: 300px;
+			border: 1px solid #000;
+			margin: 20px auto;
+			/*
+			多重背景添加的时候后面的图片会被前面的覆盖掉
+
+			 */
+/*			background-image: url(img/bg1.jpg),url(img/bj2.jpg),url(img/bj3.jpg);
+			background-repeat: no-repeat,no-repeat,no-repeat;
+			background-position: left top,right top,right bottom;*/
+			background: url(img/bg1.jpg) no-repeat left top,url(img/bj2.jpg) no-repeat right top,url(img/bj4.jpg) no-repeat right bottom;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>
