@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.p1{
+			width: 100px;
+			height:100px;
+			background-color: red;
+			position: relative;
+			top:20px;
+			left: 20px;
+			z-index: 1;
+		}
+		.p2{
+			width: 100px;
+			height:100px;
+			background-color: yellow;
+			position: relative;
+			top:10px;
+			right: 20px;
+			z-index: 2;
+		}
+		.p3{
+			width: 100px;
+			height:100px;
+			background-color: green;
+			position: relative;
+			bottom: 20px;
+			z-index: 3;
+			}
+			/*1.后写的元素会盖住前面的元素,z-index只会对有定位的选择器生效；*/
+		.p4{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			position: absolute;
+			top:0px;
+			right: 0px;
+			z-index: 4;
+		}
+		.p5{
+			width: 100px;
+			height: 100px;
+			background-color: blue;
+			position: absolute;
+			top: 80px;
+			right: 0px;
+			z-index: 3;
+
+		}
+		.p6{
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+			position: absolute;
+			top: 60px;
+			right: 0px;
+
+		}
+		.p7{
+			width: 300px;
+			height: 300px;
+			background-color: gold;
+			position: absolute;
+			top:0px;
+			right: 0px;
+			z-index: 1;
+		}
+		/*z-index具有从父属性，父级的值会传给子级，谁的值大听谁的*/
+	</style>
+</head>
+<body>
+	<div class="p1"></div>
+	<div class="p2"></div>
+	<div class="p3"></div>
+	<div class="p7"></div>
+	<div class="p4">
+		<div class="p5">
+			<div class="p6"></div>
+		</div>
+	</div>
+</body>
+</html>

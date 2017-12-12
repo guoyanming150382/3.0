@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			height: 600px;
+			width: 600px;
+			/*border: 1px solid #000;*/
+			
+
+		}
+		ul li{
+			width: 400px;
+			height: 400px;
+			border: 1px solid #000;
+			list-style: none;
+			background-image: url(a/1.jpg);
+			margin: 20px;
+			float: left;
+			background-repeat: no-repeat;
+			text-align: center;
+			line-height: 150px;
+		}
+		li:nth-child(2){
+			background-size: 100px 100px;
+		}
+		li:nth-child(3){
+			background-size: 50% 50%;
+		}
+		li:nth-child(4){
+			background-size: 400px auto;
+		}
+		li:nth-child(5){
+			background-size: auto 400px;
+		}
+		li:nth-child(6){
+			background-size: cover;
+		}
+		li:nth-child(7){
+			background-size: contain;
+		}
+		
+	</style>
+</head>
+<body>
+	<div>
+		<ul>
+			<li>默认的</li>
+			<li>像素</li>
+			<li>百分比</li>
+			<li>宽等比拉伸</li>
+			<li>高等比拉伸</li>
+			<li>cover</li>
+			<li>contain</li>
+		</ul>
+	</div>
+</body>
+</html>

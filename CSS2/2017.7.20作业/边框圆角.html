@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 200px;
+			height: 200px;
+			border: 20px solid #000;
+			margin:20px;
+			float: left;
+			text-align: center;line-height: 200px;
+
+		}
+		.p1{
+			border-radius: 30px;/*四个角取得数值相同*/
+		}
+		.p2{
+			border-radius: 30px 100px;/*未去值的角与其对角值相通*/
+		}
+		.p3{
+			border-radius: 30px 100px 80px ;
+		}
+		.p4{
+			border-radius: 30px 100px 60px 150px ;
+		}
+	</style>
+</head>
+<body>
+	<div class="p1">一个角</div>
+	<div class="p2">两个角</div>
+	<div class="p3">三个角</div>
+	<div class="p4">四个角</div>
+</body>
+</html>

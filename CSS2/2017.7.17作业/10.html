@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 360px;
+			height: 50px;
+			background-color: gray;
+			margin: 0 auto;
+		}
+		ul{
+			width: 100px;
+			height: 50px;
+			background-color: blue;
+			text-align: center;
+			float: left;
+			line-height: 50px;
+			list-style: none;
+		}
+		ul:nth-child(1){
+			margin-left: 15px;
+			margin-right: 15px;
+		}
+		ul:nth-child(2){
+			margin-right: 15px;
+		}
+		ul:nth-child(3){
+			margin-right: 15px;
+		}
+		li{
+			width: 100px;
+			height: 25px;
+			background-color: pink;
+			line-height: 25px;
+		}
+		.p1 li{
+			opacity: 0;
+			transition: transform 3s,opacity 3s;
+		}
+		ul:hover li{
+			transform: rotateY(360deg);
+			opacity: 1;
+		}
+		.p1 li:nth-child(1){
+			transition-delay: 0s;
+			
+		}
+		.p1 li:nth-child(2){
+			transition-delay: 200ms;
+		}
+		.p1 li:nth-child(3){
+			transition-delay: 400ms;
+		}
+	/*	ul:hover li:nth-child(3){
+			transition-delay: 400ms
+		}
+		ul:hover li:nth-child(2){
+			transition-delay: 400ms
+		}
+		ul:hover li:nth-child(1){
+			transition-delay: 400ms*/
+		}
+		.p2 li{
+			opacity: 0;
+			transition: transform 3s,opacity 3s ;
+		}
+		.p2 li:nth-child(1){
+			transition-delay: 0s;
+			
+		}
+		.p2 li:nth-child(2){
+			transition-delay: 200ms;
+		}
+		.p2 li:nth-child(3){
+			transition-delay: 400ms;
+		}
+		.p3 li{
+			opacity: 0;
+			transition: transform 3s,opacity 3s ;
+		}
+		.p3 li:nth-child(1){
+			transition-delay: 0s;
+			
+		}
+		.p3 li:nth-child(2){
+			transition-delay: 200ms;
+		}
+		.p3 li:nth-child(3){
+			transition-delay: 400ms;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<ul class="p1">一级菜单
+			<li>二级</li>
+			<li>二级</li>
+			<li>二级</li>
+		</ul>
+		<ul class="p2">一级菜单
+			<li>二级</li>
+			<li>二级</li>
+			<li>二级</li>
+		</ul>
+		<ul class="p3">一级菜单
+			<li>二级</li>
+			<li>二级</li>
+			<li>二级</li>
+		</ul>
+		文字是一个汉语词汇，拼音为wén zì，基本意思是记录思想、交流思想或/与承载语言的图像或符号。出自《史记·秦始皇本纪》：“一法度衡石丈尺，车同轨，书同文字。” 
+	</div>
+</body>
+</html>

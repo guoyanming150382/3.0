@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			width: 600px;
+			height: 600px;
+			margin: 30px auto;
+		}
+		ul li{
+			width: 200px;
+			height: 200px;
+			border: 10px dotted pink;
+			list-style: none;
+			line-height: 200px;
+			text-align: center;
+			margin: 30px ;
+			padding: 10px;
+			float: left; 
+			background-repeat: no-repeat;
+			background-color: blue;
+		}
+		li:nth-child(1){
+			background-clip: border-box;
+		}
+		li:nth-child(2){
+			background-clip: padding-box;
+		}
+		li:nth-child(3){
+			background-clip: content-box;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>图片从边框开始显示</li>
+		<li>从内边局开始显示</li>
+		<li>从内容开始显示</li>
+		<li> 不加样式</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style>
+		*{
+				margin:0;
+				padding: 0;
+			}
+			div{
+				padding:10px;
+				box-sizing: border-box;
+			}
+		.p1{
+			width: 100px;
+			height: 100px;
+			border:1px solid #000;
+			background-color: red;
+			float: left;/*p1单独脱标，p2将会被覆盖*/
+		}
+		.p2{
+			width: 100px;
+			height: 100px;
+			border:1px solid #000;
+			background-color: green;
+			/*float: left;p2单独脱标，p3将会被覆盖*/
+		}
+		.p3{
+			width: 100px;
+			height: 100px;
+			border:1px solid #000;
+			background-color: pink;
+			float: left;
+		}
+		.p4{
+			width: 100px;
+			height: 100px;
+			border:1px solid #000;
+			background-color: blue;
+			/*float: right;*/
+		}
+	</style>
+</head>
+<body>
+	<div class="p1">1</div>
+	<div class="p2">2</div>
+	<div class="p3">3</div>
+	<div class="p4">4</div>
+</body>
+</html>

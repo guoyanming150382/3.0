@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width: 30px;
+			height: 50px;
+			background-color: blue;
+			animation-name: zo;
+			animation-duration: 3s;
+			animation-iteration-count: 6;/*执行次数*/
+			animation-direction: alternate;/*往返执行 一来一回算是2次*/
+		}
+		@keyframes zo{
+			from{
+				margin-top: 0px;
+			}
+			to{
+				margin-top: 600px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

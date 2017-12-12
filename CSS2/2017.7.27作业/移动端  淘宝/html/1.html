@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+        <link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/header.css"/>
+        <meat name="viewport" content="width=device-width"/>
+</head>
+<body>
+        <div class="header">
+            <img src="../photo/tao.jpg">
+            <div class="he1">
+                <div>
+                    <i class="icon-">&#xe986;</i>
+                    <span>寻找宝贝店铺</span>
+                </div>
+            </div>
+        </div>
+        <div class="banner">
+            <img src="../photo/t.jpg">
+        </div>
+        <div class="nav">
+            <ul>
+                <li><img src="../photo/1.png">天猫</li>
+                <li><img src="../photo/2.png">聚划算</li>
+                <li><img src="../photo/3.png">天猫国际</li>
+                <li><img src="../photo/4.png">外卖</li>
+                <li><img src="../photo/5.png">天猫超市</li>
+                <li><img src="../photo/6.png">充值中心</li>
+                <li><img src="../photo/7.png">飞猪旅行</li>
+                <li><img src="../photo/8.png">领金币</li>
+                <li><img src="../photo/9.png">拍卖</li>
+                <li><img src="../photo/10.png">分配</li>
+            </ul>
+        </div>
+        <div class="conter">
+            <div class="c1">
+                <h1>天猫必逛</h1>
+            </div>
+            <div class="c2">
+                <div class="c21"><img src="../photo/y.jpg"></div>
+                <div class="c22"><img src="../photo/t.jpg"></div>
+            </div>
+            <div class="c3">
+                <div class="c31"><img src="../photo/t.jpg"></div>
+                <div class="c32"><img src="../photo/t.jpg"></div>
+                <div class="c33"><img src="../photo/t.jpg"></div>
+                <div class="c34"><img src="../photo/t.jpg"></div>
+            </div> 
+        </div>
+	   <div class="footer">
+            <ul>
+                <li><i class="icon-">&#xe900;</i><span>首页</span></li>
+                <li><i class="icon-">&#xe93a;</i><span>物流</span></li>
+                <li><i class="icon-">&#xe971;</i><span>购物车</span></li>
+                <li><i class="icon-">&#xe9b0;</i><span>我的淘宝</span></li>
+                <li><i class="icon-">&#xeaa3;</i><span>更多</span></li>
+            </ul>   
+       </div>
+</body>
+ <script>
+        (function(win,doc){
+        var fresh = function(){
+          var html = doc.documentElement;
+         var w = html.clientWidth;
+         html.style.fontSize = (w/10) + 'px';
+          }
+         if(doc.readySate === 'complete'){
+                 fresh();
+         }else{
+                doc.addEventListener("DOMContentLoad",fresh,false);
+         }
+        win.addEventListener("resize",fresh,false);
+         })(window,document)
+ </script>
+
+</html>

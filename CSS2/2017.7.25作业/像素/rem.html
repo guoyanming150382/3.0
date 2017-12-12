@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		p{
+			font-size: 20px;
+		}
+		
+		p{
+			width: 5rem;
+			height: 5rem;
+			border: 1px solid #000;/*边框长200  宽200 只占屏幕的一半*/
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	<p>赵客缦胡缨，吴钩霜雪明。银鞍照白马，飒沓如流星。 十步杀一人，千里不留行</p>
+</body>
+<script>
+                (function(win,doc){
+                        var fresh = function(){
+                                var html = doc.documentElement;
+                                var w = html.clientWidth;
+                                html.style.fontSize = (w/10) + 'px';
+                        }
+                        if(doc.readySate === 'complete'){
+                                fresh();
+                        }else{
+                                doc.addEventListener("DOMContentLoad",fresh,false);
+                        }
+                        win.addEventListener("resize",fresh,false);
+                })(window,document)
+        </script>
+</html>

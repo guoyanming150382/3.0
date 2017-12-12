@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>	</title>
+	<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+		.p1{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				border: 1px solid #000;
+				margin-bottom:20px;
+		}
+		.p2{
+				width: 100px;
+				height: 100px;
+				background-color: pink;
+				border: 1px solid #000;
+				position: relative;
+				top: 10px;/*1.相对位置，由上向下移动
+				2.他是相对于原来的的位置移动的
+				3写出两个对边的值时候，系统会取先写的值
+				4.如果添加了margin、padding，相对移动的是margin、padding变化后的值
+				5.position可以写一个边上的值，也可以写两条边上的值*/
+				left: 30px;
+				right: 30px;
+		}
+		.p3{
+			width: 100px;
+			height: 100px;
+			background-color: green;
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<div class="p1"></div>
+	<div class="p2"></div>
+	<div class="p3"></div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+div{
+	height: 200px;
+	border: 1px solid #000;
+}
+.z1{
+	width: 600px;
+	border: 1px solid #000;
+}
+.col-x1-1{
+	width: 10%;
+}
+.col-x1-2{
+	width: 20%;
+}
+.col-x1-3{
+	width: 30%;
+}
+.col-x1-4{
+	width: 40%;
+}.col-x1-5{
+	width: 50%;
+}.col-x1-6{
+	width: 60%;
+}.col-x1-7{
+	width: 70%;
+}.col-x1-8{
+	width: 80%;
+}.col-x1-9{
+	width: 90%;
+}.col-x1-10{
+	width: 100%;
+}
+
+
+
+@media screen and (min-width:500px ){
+	.col-x1-1,
+	.col-x1-2,
+	.col-x1-3,
+	.col-x1-4,
+	.col-x1-5,
+	.col-x1-6,
+	.col-x1-7,
+	.col-x1-8,
+	.col-x1-9,
+	.col-x1-10{
+		float: left;
+	}
+}

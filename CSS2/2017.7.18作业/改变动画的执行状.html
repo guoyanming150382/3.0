@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width: 200px;
+			height: 2000px;
+			background-color: blue;
+			animation-name: zo;
+			animation-duration: 3s;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+		}
+		@keyframes zo{
+			from{
+				margin-left: 0px;
+			}
+			to{
+				margin-left: 600px;
+			}
+		}
+		div:hover{
+			animation-play-state: paused;/*用鼠标暂停*/
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

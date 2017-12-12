@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+	<title></title>
+	<style>
+		/*p[class="ww "]{
+					color:red;
+					font: bolder italic 30px "宋体";
+					text-shadow: 10px 10px 6px;
+					text-indent: 6em;
+					text-decoration: overline;
+					text-align: center;以中括号里面的名称为准找到该元素
+		}*/
+		/*p[class|="ww"]{
+					color:red;
+					font: bolder italic 30px "宋体";
+					text-shadow: 10px 10px 6px;
+					text-indent: 6em;
+					text-decoration: overline;
+					text-align: center;元素中的开始明的区别在于。WW是否为独立的或者ww后有-当做分隔符，与后面的字符分开，
+		}*/
+		/*p[class$="h"]{
+					color:red;
+					font: bolder italic 30px "宋体";
+					text-shadow: 10px 10px 6px;
+					text-indent: 6em;
+					text-decoration: overline;
+					text-align: center;以最末端的字符为标准，当是h有三个变化，当是wh，有两个变化
+		}*/
+		/*p[class^="ww"]{
+					color:red;
+					font: bolder italic 30px "宋体";
+					text-shadow: 10px 10px 6px;
+					text-indent: 6em;
+					text-decoration: overline;
+					text-align: center;以什么为开始的，当是w有三个变化，当是ww有两个变化
+		}*/
+	/*p[class~="tt"]{
+					color:red;
+					font: bolder italic 30px "宋体";
+					text-shadow: 10px 10px 6px;
+					text-indent: 6em;
+					text-decoration: overline;
+			text-align: center;只能选中用空格隔开的，值要写空格前的所有字符}*/
+			p[class*="h"]{
+					color:red;
+					font: bolder italic 30px "宋体";
+					text-shadow: 10px 10px 6px;
+					text-indent: 6em;
+					text-decoration: overline;}只要含有一个字符，就都会被选中
+
+	</style>
+</head>
+<body>
+<p class>回眸一笑百媚生，六宫粉黛无颜色。1</p>
+<p class="ww">回眸一笑百媚生，六宫粉黛无颜色。1</p>
+<p class="ww-rth">春寒赐浴华清池，温泉水滑洗凝脂。2</p>
+<p class="etg .iyu">侍儿扶起娇无力，始是新承恩泽时。3</p>
+<p class="whfjwh">云鬓花颜金步摇，芙蓉帐暖度春宵。4</p>
+<p class="tt jhkwh">春宵苦短日高起，从此君王不早朝。5</p>
+<p class="ajhhqa.jhhaajq">承欢侍宴无闲暇，春从春游夜专夜.</p>
+</body>
+</htm</p>l>

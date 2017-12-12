@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			width:500px;
+			height: 500px;
+			border:1px solid #000;
+			margin: 0 auto;	
+			position: relative;/*要给三个图片定位*/
+			margin-top: 50px;
+		}
+		 li{
+		 	list-style: none;
+			width: 300px;
+			height: 300px;
+			margin: 0 auto;
+			text-align: center;
+			line-height:300px;
+			position:absolute;/*要给三个图片定在同一位置，才能重叠旋转*/
+			top: 20px;
+			left: 20px;
+			transform-origin: 30% 20%/*center top*//*10px 20px*/;/*改变旋转中心，中间不加括号和逗号,可以用数值，英文单词:水平方向left，center，right，垂直方向top，bottom，center*/
+		}
+		li:nth-child(1){
+			background-color: red;
+			transform: rotate(30deg);
+		}
+		li:nth-child(2){
+			background-color: gold;
+			transform:rotate(45deg);
+		}
+		li:nth-child(3){
+			background-color: purple;
+			transform: rotate(60deg);
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding:0;
+		}
+		.p1{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			position: absolute;
+			top: 0px;
+			right: 0px;
+			bottom: 0px;
+			/*margin: 20px;*/
+			/*left: 50%;
+			margin-left:-50px;绝对子元素在父元素中的剧中，向左移动50%，向左外边距移动他的-宽度值的一半*/
+		}
+		.p2{
+			width: 200px;
+			height: 200px;
+			background-color: green;		
+			position: relative;
+			margin: 0 auto;
+			margin-top: 20px;
+			 /*当父级元素没有position后，子元素会往上寻找，祖先都没有的话，就会以body为标准，进行定位*/
+
+		}
+		.p3{
+			width: 300px;
+			height: 300px;
+			background-color: yellow;
+			position: fixed;
+			left: 50%;
+			margin-left: -150px;
+
+			/*position: relative;*//*绝对定位于相对定位配合使用，父级写position：relative；子级写position：absoulte；如果父级以及更高级别同时设定position：relative，谁写的靠前，听谁的，*/
+		}
+		.p4{
+			width: 50px;
+			height: 50px;
+			background-color: purple;
+			position: absolute;/*绝对定位不分行内与块状元素，行内可以设置宽高*/
+			bottom: 0px;
+			left: 0px
+		}
+	</style>
+</head>
+<body>
+	<div class="p3">
+		<div class="p2">
+			<div class="p1"></div>
+			<!-- <span class="p4">你好吗</span>
+ 			</div>-->
+	</div>
+</body>
+</html>

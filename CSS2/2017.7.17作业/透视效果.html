@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding:0;
+		}
+		ul{
+			width: 500px;
+			height: 500px;
+			border: 1px solid #000;
+			perspective: 150px;
+		}
+		ul li{
+			width: 150px;
+			height: 150px;
+			border: 1px solid #000;
+			margin: 0 auto;
+			list-style: none;
+			margin-top: 30px;
+
+		}
+		img{
+			height: 150px;
+			width: 150px;
+		}
+		li:nth-child(1){ 
+			transform:rotateX(30deg);
+		}
+		li:nth-child(2){
+			transform:rotateY(45deg);
+		}
+		li:nth-child(3){
+			transform: rotateZ(60deg);
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>
+			<img src="2.gif">
+		</li>
+		<li>
+			<img src="2.gif">
+		</li>
+		<li>
+			<img src="2.gif">
+		</li>
+	</ul>
+</body>
+</html>

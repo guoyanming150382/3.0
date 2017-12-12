@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width: 60px;
+			height: 60px;
+			background-color: red;
+			position: absolute;
+			left: 0px;
+			top: 0px;/*要给运动的图形定位，才能运动*/
+			animation-name: zo;
+			animation-duration: 3s;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+		}
+		@keyframes zo{
+			0%{
+			left: 0px;
+			top: 0px;
+			}
+			25%{
+			left: 300px;
+			top: 0px;
+			}
+			50%{
+			left: 300px;
+			top: 300px;
+			}
+			75%{
+			left: 0px;
+			top: 300px;
+			}
+			100%{
+			left: 0px;
+			top: 0px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.p1,.p2{
+			width: 100px;
+			height: 100px;
+			border:1px solid #000;
+			margin: 30px;
+			padding: 60px;
+			box-sizing: border-box;
+		}
+		span{
+			/*width: 100px;
+			height: 50px;行内元素不能设置宽高，不会独占一行，*/
+			border: 1px solid #000;
+			margin-left: 20px;
+			margin-right:20px; 
+			margin-top: 50px;
+			margin-bottom: 20px;/*水平上设置margin，top或者bottom无效果*/
+			padding-right: 30px;
+			padding-left: 30px;
+			padding-top: 30px;
+			padding-bottom: 30px;/*垂直方向上，padding不占用元素空间，*/
+		}
+		p{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #000;/*行内元素中p标签可以设置宽和高；也可以设置内外边距*/
+			padding: 30px;
+			box-sizing: border-box;
+			margin: 60px;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<div class="p1">1</div>
+		<div class="p2">2</div>
+		<span class="p3">3</span>
+		<span class="p4">4</span>
+		<p class="p5">5</p>
+	</div>
+</body>
+</html>

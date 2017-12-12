@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			width: 500px;
+			height: 600px;
+			border: 1px solid #000;
+		}
+		ul{
+			width: 200px;
+			height: 200px;
+			background-color: yellow;
+			transition-property: margin-left/*移动距离*/,width/*吧要改变的属性用逗号隔开*/,height,background-color;
+			transition-duration: 3s/*所用的时间*/,3s,2s;
+			transition-delay: 2s;/*延迟开始*/
+		}
+		ul:hover{/*吧鼠标放上，变化开始，要改变的具体数值*/
+			margin-left: 300px;
+			width: 50px;
+			height: 50px;
+			background-color: purple;
+			transition-timing-function: linear/*过渡所用的速度，linear匀速开始匀速结束，默认情况下是easy 开始慢 结束的快，easy-in慢速开始，easy-out慢速结束，easy-in-out慢速开始慢速结束*/;
+
+		}
+		div{
+			width: 30px;
+			height: 50px;
+			background-color: green;
+			margin-top: 50px;
+			transition: all 3s;/*margin-left 3s,width 3s,height 2s,background-color 2s;可以用all 3s，将全部的时间简写概括*/
+			transition-delay: 2s;
+		}
+		div:hover{
+			margin-left: 200px;
+			width: 30px;
+			height: 60px;
+			background-color: gold;
+			transition-timing-function: linear;
+
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li></li>
+	</ul>
+	<div></div>
+</body>
+</html>
