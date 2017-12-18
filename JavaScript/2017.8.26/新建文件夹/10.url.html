@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var str="our website url is http://www.liyuit.com/abc";
+		//1.\w+  2.: 3.\/\/ 4.[\w\.]+  5.\/ 6. \w*
+		// var reg=/\w+:\/\/[\w\.]+\/\w*/g;
+		// var reg=/(\w+):\/\/([\w\.]+)\/(\w*)/g;
+		 var reg=/(\w+):\/\/([\w\.]+)\/(\w*)/;//会出现四个数组
+		console.log(str.match(reg));
+	</script>
+</head>
+<body>
+	<!--
+	
+
+0
+:
+"http://www.liyuit.com/abc"
+1
+:
+"http"
+2
+:
+"www.liyuit.com"
+3
+:
+"abc"
+
+
+	-->
+</body>
+</html>

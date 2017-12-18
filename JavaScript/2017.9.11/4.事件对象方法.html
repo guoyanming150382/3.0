@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width: 200px;
+			height: 250px;
+			background-color: yellow;
+			padding: 20px;
+		}
+	</style>
+	<script src="jquery-3.2.1.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			/*
+			$(':button').on('click',function(){
+				alert('点击');
+				});
+				//事件委托
+				$('#div1').on('click',':button',function(){
+				alert('点击');
+				$(this).clone().appendTo('#div1');//克隆后添加到#div1，克隆的div1也有方法
+				});
+				$('#div1').on('click',':button',"abc",function(e){
+				alert('点击'+e.data);
+				$(this).clone().appendTo('#div1');//
+			
+			});*/
+				$('#div1').on('click',':button',"abc",function(e){
+				alert('点击'+e.data);
+				$(this).clone().appendTo('#div1');//
+				$('#div1').off('click');//移除点击
+
+			
+		});
+	</script>
+</head>
+<body>
+<div id="div1">
+	<input type="button" value="按钮1">
+	
+</div>
+	
+</body>
+</html>

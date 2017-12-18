@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function a(m){
+			var s=0;
+			for(var i=1;i<=m;i++){
+				s=s+i;
+			}
+			return s;
+		}
+		alert(a(6));
+
+
+
+		function b(n){
+			if(n<=1){
+				return 1;
+			}else{
+				return n+b(n-1);
+			}	
+		}
+		alert(b(6));
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

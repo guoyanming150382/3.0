@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#ul1{
+			background: blue;
+		}
+		#ul2{
+			background: red;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var ou=document.getElementById('ul1');
+			var ou1=document.getElementById('ul2');
+			var ob=document.getElementById('b1');
+			ob.onclick=function(){
+				var oli =ou.firstElementChild;//
+				ou.appendChild(oli);//让romove在自己中append，第一个数会放在数组中的最后一位
+			}
+		}
+	</script>
+</head>
+<body>
+	<ul id="ul1">
+	<li>12</li>
+	<li>35</li>
+	<li>66</li>
+	<li>99</li>
+	</ul>
+	<ul id="ul2">
+		<input type="button" value="移动" id="b1">
+	</ul>
+
+</body>
+</html>

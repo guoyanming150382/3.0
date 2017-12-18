@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oRmb=document.getElementById('RMB');
+			var oUSD=document.getElementById('USD');
+			var oRHKD=document.getElementById('RHKD');
+			var oJ=document.getElementById('J');
+
+			oRmb.oninput=function(){
+				oUSD.value=RMB.value/6;
+				oRHKD.value=RMB.value/1.14;
+				oJ.value=RMB.value/0.0000001;
+			}
+		}
+	</script>
+</head>
+<body>
+	<p>人民币：<input type="text" id="RMB"></p>
+	<p>美元：<input type="text" id="USD" disabled="false"></p>
+	<p>港币：<input type="text" id="RHKD" disabled="false"></p>
+	<p>京巴布韦币：<input type="text" id="J" disabled="false"></p>
+</body>
+</html>

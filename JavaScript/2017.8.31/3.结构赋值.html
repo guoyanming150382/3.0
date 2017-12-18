@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var a=1;
+		var b=2;
+		var c=3;
+
+		console.log(a,b,c);
+		//赋值数组
+		var [a,b,c]=[11,36,66];
+		console.log(a,b,c);
+		//赋值json
+		var {a,b,c}={a:12,b:22,c:66};
+		console.log(a,b,c);
+
+		var {b,c,a}={a:12,b:22,c:66};//json是通过键值赋值，顺序改变不影响结果
+		console.log(a,b,c);
+
+		//
+		var [a,b,[c,d],e]=[6,9,[8,5],16];
+		console.log(a,b,c,d,e);
+
+		var [a,{d,c,e},f,g]=[1,{c:5,e:9,d:8},9,66];
+		console.log(a,d,c,e,f,g);
+		//结构赋值时候，等号两边的结构要一致
+
+		var {a=16,b=96,c=33}={};
+		// console.log(a,b,c);
+		console.log(a,b);
+
+		var {a=16,b=96,c=33}={c:69};
+		console.log(a,b,c);//c等于69
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

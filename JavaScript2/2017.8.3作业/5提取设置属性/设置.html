@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#d1{
+			height: 200px;
+			background: red;
+		}
+	</style>
+	<script type="text/javascript">
+		function css(){
+			if(arguments.length==2){
+				return arguments[0].style[arguments[1]];
+			}else{
+				arguments[0].style[arguments[1]]=arguments[2];
+			}
+		}
+		window.onload=function(){
+			var od1=document.getElementById('d1');
+			css(od1,'width','200px');	
+		}
+	</script>
+</head>
+<body>
+	<div id="d1" style="width:50px"></div>
+</body>
+</html>

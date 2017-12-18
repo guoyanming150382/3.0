@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oForm=document.forms;
+			var aForm=oForm[0];
+			var uele=aForm.elements;
+			var u1=uele[0];
+			console.log(u1);
+			var t1=uele.age;
+
+			u1.onfocus=function(){
+				u1.style.background="purple";
+			}
+			u1.onblur=function(){
+				u1.style.background="white";
+			}
+		}
+	</script>
+</head>
+<body>
+	<form action="http://www.liyuit.com">
+		<input type="text" name="username" value="66">
+		<input type="text" name="age">
+	</form>
+</body>
+</html>

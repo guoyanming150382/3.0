@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var oDate=new Date();
+		oDate.setDate(oDate.getDate()+14);//用expirex给name设定过期时间  关闭重启后  只有name age是默认绘画期限，关闭后cookie就清除了
+		document.cookie="name=li;expires="+oDate;
+		document.cookie="age=19";
+
+		// console.log(typeof document.cookie);//cookie内存的是字符串
+		//把cookie按分号切割成数组后可任意取到name和age
+
+		function getCOOKIe(name){
+			var str=document.cookie;
+			var arr=str.split(";");//把cookie按分号切割成数组
+			var result="";
+			for(var i=0;i<arr.length;i++){
+				var arr1=arr[i].split("=");//把数组按等号切割
+				if(arr1[0].trim()==name.trim()){//trim()去掉字符串上的空格
+					result=arr1[1];
+				}
+			}
+			return result;
+		}
+		console.log(getCOOKIe('age'));
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#div1{
+			width: 60px;
+			height: 63px;
+			background-color: orange;
+			position: absolute;
+		}
+		#div2{
+			width: 60px;
+			height: 63px;
+			background-color: red;
+			position: absolute;
+			top: 230px;
+		}
+
+	</style>
+	<script src="jquery-3.2.1.js"></script>
+	<script type="text/javascript">
+		$(function(){//动画效果一步步执行
+			$(':button').click(function(){
+				/*
+				$('#div1').animate({
+					left:"360px",
+				},630,'swing');
+
+				$('#div1').animate({
+					width:"300px",
+				},630,'linear');
+
+				$('#div2').animate({//div1执行时候，div2与其同时运动
+					left:"300px"
+				},960,'linear');
+
+				$('#div1').animate({
+					height:"360px",
+				},1000,'linear');
+
+				$('#div1').animate({
+					opacity:0.3,
+				},100,'swing');
+
+				$('#div2').animate({//div1执行时候，div2与其同时运动
+					width:"690px"
+				},960,'linear');
+
+
+
+
+	//通过回调函数实现列队动画
+				$('#div1').animate({
+					left:"360px",
+				},630,function(){
+					$('#div1').animate({
+						width:"300px",
+					},630,function(){
+						$('#div1').animate({
+						height:"360px",
+					},1000,function(){
+							$('#div1').animate({
+								opacity:0.3,
+							},100,function(){
+								$('#div2').animate({
+									left:"300px"
+								},960,function(){
+									$('#div1').css('background','purple');//执行完之后，通过CSS改变背景颜色（颜色无法用动画执行）
+								});
+							});
+						});
+					});
+				});
+
+			});
+				*/
+
+					//连缀
+					/*
+					console.log($('#div1').animate({
+						left:"200px"
+					}));//返回jQuery对象div
+
+					$('#div1').animate({
+						left:"300px"
+					},1000).animate({
+						width:"360px"
+					},1000).animate({
+						height:"360px"
+					},500).css('background','pink');//css在一开始就会改变
+					*/
+
+					/*
+					$('#div1').animate({
+						left:"300px"
+					},1000).animate({
+						width:"360px"
+					},1000).animate({
+						height:"360px"
+					},500,function(){
+						$('#div1').css('background','yellow')//在动画执行完毕后才会执行
+					});
+				});*/
+
+				$('#div1')
+				.animate({
+					width:"400px"
+				});
+
+				$('#div1')
+				.animate({
+					left:"360px"
+				});
+				$('#div1').queue(function(next){
+					$('#div1').css('background','yellow');
+					next();//为函数传入next参数，并且写上next（）就可以执行之后的动画了
+				});
+
+				$('#div1')
+				.animate({
+					height:"400px"
+				});
+			});
+		});	
+	</script>
+</head>
+<body>
+	<input type="button" value="开始动画">
+	<div id="div1">swing</div>
+	<div id="div2">l</div>
+
+</body>
+</html>

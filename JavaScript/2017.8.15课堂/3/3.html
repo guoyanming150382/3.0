@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function Person(name,age){
+			this.name=name;
+			this.age=age;
+			this.leg=leg;
+		}
+		Person.prototype.personname=function(){
+			console.log(this.name);
+		}
+		Person.prototype.personname=function(){
+			console.log(this.age);
+		}
+
+
+		var obj1= new Person(66,33);
+		var leg=6;
+		console.log(obj1.leg);//undefind  无法找到
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

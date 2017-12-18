@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var obt=document.getElementsByTagName('input');
+
+			for(var i=0;i<obt.length;i++){
+				obt[i].index=i;
+				obt[i].onclick=function(){
+					alert(this.index);
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="按钮1">
+	<input type="button" value="按钮2">
+	<input type="button" value="按钮3">
+</body>
+</html>

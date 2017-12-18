@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function Person(name,age){
+			this.name=name;
+			this.age=age;
+		}
+		Person.prototype.showName=function(){
+			console.log(" i am "+this.name);
+		}
+		Person.prototype.showAge=function(){
+			console.log(" i am "+this.age+" years old");
+		}
+
+		Object.defineProperty(Person.prototype,"zhiye",{value:function(){
+			console.log(this.name+ " is students");
+		},enumerable:true});
+
+		
+		var obj= new Person("lilth",19);
+		obj.showAge();
+		obj.showName();
+		// obj.showclassname();无法调用子类属性
+		obj.zhiye();//可以调用到追加的属性
+
+
+
+		function studebt(name,age,classname){
+			Person.call(this,name,age);//属性的继承 从person上继承了name和age
+			this.classname=classname;//自己特有的属性
+		}
+
+		for(i in Person.prototype){
+			studebt.prototype[i]=Person.prototype[i];//把父级中的每一项属性都赋给子级
+		}//对子类的操作不会影响父类 但是子级无法遍历到父级的追加属性
+		
+		studebt.prototype.showclassname=function(){
+			console.log("i from " + this.classname);
+		}
+
+
+		console.log(studebt.prototype);
+		var s= new studebt("lilth",19,'9class');
+		s.showName();
+		s.showAge();
+		s.showclassname();
+		s.zhiye();//无法调用到父级的追加属性,但是可以把enumerable的默认改成true，就可以调出追加属性
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

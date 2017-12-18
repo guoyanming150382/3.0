@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var str="gaf56afAFQAWasr56atqwgader566q65GASD56666aqtq";
+		//  \转义     \d 意思发生了变化 说明是一个数字，只代表一个数字
+		// var reg=/\d/;//只会找到一个数字的
+		//var reg=/\d+/;//只要是大于等于一的都找到，但是只显示找到的第一个
+		var reg=/\d+/g;//g  global 全局  查找全部的字符串，不是查找到就结束
+		//加号是量词
+		console.log(str.match(reg));
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

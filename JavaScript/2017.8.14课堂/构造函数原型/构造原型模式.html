@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	//构造原型
+		function Person(name,age){
+			this.name=name;
+			this.age=age;
+		}
+
+		Person.prototype.personname=function(){
+			console.log(this.name);
+		}
+		Person.prototype.personage=function(){
+			console.log(this.age);
+		}
+
+
+		Person.prototype.legs=2;
+
+
+		var obj1= new Person("lilth",99);
+		obj1.personname();
+		obj1.personage();
+		console.log(obj1.legs);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

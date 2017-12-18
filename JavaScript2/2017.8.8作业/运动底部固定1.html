@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#d1{
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+			right: 0;
+			bottom: 0;
+		}
+	</style>
+	<script type="text/javascript">
+		var timer =null;
+		function move(itarget){
+			clearInterval(timer);
+			var od1=document.getElementById('d1');
+			timer=setInterval(function(){
+				var speed =(itarget-od1.offsetTop)/10;
+				speed = speed>0 ? Math.ceil(speed) : Math.floor(speed);
+				if(itarget==od1.offsetTop){
+					clearInterval(timer);
+				}else{
+					od1.style.top=od1.offsetTop+speed+"px";
+				}
+			},30);
+		}
+		window.onresize=window.onscroll=window.onload=function(){
+			var od1=document.getElementById('d1');
+			var iHeight=window.innerHeight;
+			var iScrollTop=document.body.scrollTop || document.documentElement.scrollTop;
+			move(iHeight-od1.offsetHeight+iScrollTop);
+		}
+	</script>
+</head>
+<body style="height: 2000px">
+	<div id="d1"></div>
+</body>
+</html>

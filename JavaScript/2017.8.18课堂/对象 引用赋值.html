@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		/*var a =4;
+		var a=b;
+		a=5;//a 5  b  4
+		b=5;// a 4  b 5
+		console.log(a,b);*/
+
+		var arr=[1,2,3,4,5,];
+		var arr1=arr;//arr  arr1指向了同一个对象  数组是引用赋值
+		arr1.pop();// 两个数组都是1234  pop删除了数组中的最后一位5  数组相互赋值是引用赋值  （数组是一个对象）
+		arr.push(6);//两个数组都是123456
+		console.log(arr);
+		console.log(arr1);
+
+
+		var arr2=[1,2,3,4,5,];
+		var arr3=[];//此句话就是说明了arr3有了一个新的对象，与arr2的对象已经区分开了
+		for(var i=0;i<arr2.length;i++){
+			arr3.push(arr2[i]);
+		}
+		console.log(arr3);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

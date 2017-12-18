@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>56-作业.html</title>
+	<script>
+		function printStart(n){
+			for(var i=1;i<=n;i++){
+				var str = "";
+				for(var k=1;k<=(n-i);k++){
+					str = str + "&nbsp;";
+				}
+				for(var j=1;j<=i;j++){
+					str = str + "*";
+				}
+				document.write(str+"<br>");
+			}
+		}
+		
+		printStart(10);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

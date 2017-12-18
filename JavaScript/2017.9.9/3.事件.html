@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width: 160px;
+			height: 160px;
+			background-color: red;
+			margin-top: 20px;
+		}
+		#d2{
+			width: 50px;
+			height: 60px;
+			background-color: blue;
+		}
+	
+	</style>
+	<script src="jquery-3.2.1.js"></script>
+	<script type="text/javascript">
+		$(function(){
+
+//				表单
+				
+			
+			/*$(':text').focus(function(){
+				console.log('p');//得到焦点时候触发
+			});*/
+
+			// $('.bb1').blur(function(){
+			// 	console.log('p');//失去焦点时候触发
+			// });
+
+			// $(".bb1").change(function(){
+			// 	console.log("69696");
+			// });
+			/*
+			$('#ddd').focusout(function(){
+				console.log(68556);
+			});*/
+
+			
+
+
+
+			/*
+			$("div").click(function(){
+				alert("po");
+			});
+				$("div").dblclick(function(){
+				alert("双击");
+			});
+			$("div").contextmenu(function(){
+				alert("右击");
+			});
+			$("div").mouseover(function(){
+				alert("移入");
+			});//移入子元素与父元素都会触发事件
+			$("div").mouseenter(function(){
+				alert("移入");
+			});//鼠标穿过只会触发一次事件
+			$("div").mouseleave(function(){
+				alert("移出");
+			});//鼠标溢出来触发一次事件
+			$("div").mouseup(function(){
+				alert("移出");
+			});//鼠标抬起触发 父子元素都会触发
+				$("div").mousemove(function(){
+				alert("移出");
+			});//鼠标穿过触发 父子元素都会触发
+			$("div").hover(function(){
+				alert("移入");
+			},function(){
+				alert("移除");
+			});//父子元素都会触发
+			$(':text').keydown(function(e){
+				alert(e.keyCode);
+			});//在text框内输入，就会返回该键的键码
+			$(':text').keypress(function(e){
+				alert(e.keyCode);
+			});//在text框内输入，就会返回该键的字符编码
+			$(':text').keyup(function(e){
+				alert(e.keyCode);
+			});//在text框内输入，就会返回该键的键码
+			*/
+			
+
+				//窗口
+				/*$(window).resize(function(){
+					console.log("99999");
+				});//窗口大小改变触发事件
+				$(window).scroll(function(){
+					console.log("99999");
+				});//滚动触发事件*/
+			
+		});
+	</script>
+</head>
+<body style="height: 2000px;">
+	<div id="d1" class="di1">
+		<div id="d2"></div>
+	</div>
+	<div id="ddd">
+		<input type="text" value="69">
+		<input type="text" class="bb1" value="98">
+	</div>
+	
+
+</body>
+</html>

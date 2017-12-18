@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function Person(name,age){
+			this.name=name;
+			this.age=age;
+		}
+		Person.prototype.pname=function(){
+			console.log(this.name);
+		}
+		Person.prototype.page=function(){
+			console.log(this.age);
+		}
+		Person.prototype.leg=2;
+
+
+		var obj1=new Person("lele",66);
+		obj1.pname();
+		obj1.page();
+
+		console.log(obj1.hasOwnProperty('leg'));//返回false 不在实例上
+		console.log(obj1.hasOwnProperty('name'));//true
+
+		console.log("height" in obj1);//false
+		console.log("age" in obj1);//true
+
+
+		function exptyuanxing(obj,name){
+			return !obj.hasOwnProperty(name) && (name in obj);
+		}
+		console.log(exptyuanxing(obj1,'leg'));//不在实例上 在原型链上 true
+		console.log(exptyuanxing(obj1,'name'));//false 他在实例上  属于原型链
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

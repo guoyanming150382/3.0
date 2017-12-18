@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var ou=document.getElementById('u1');
+			var oli=ou.children;
+			for(var i=0;i<oli.length;i++){
+				if(oli[i].className=='lo'){
+					oli[i].style.background='red';
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<ul id="u1">
+		<li class="lo"></li>
+		<li></li>
+		<li class="lo"></li>
+		<li></li>
+		<div class="lo">o</div><!--能够对ul下的所有class=“lo”起作用-->
+	</ul>
+</body>
+</html>

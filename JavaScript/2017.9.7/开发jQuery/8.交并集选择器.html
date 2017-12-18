@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-3.2.1.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			// $('[href]').css('color','red');//有herf属性起作用
+			// $('[href="liyuit.com"]').css('color','red');//以值全名称判断作用
+			 // $('[href|=www]').css('color','red');//以www开头或者只有www中间没有空格的作用
+			 // $('[href^=www]').css('color','red');//凡是以www开头的
+			 // $('[href$=com]').css('color','red');//以com结尾的
+			 $('[href~=liyuit]').css('color','red');//独立的或者空格可开的
+		});
+	</script>
+</head>
+<body>
+	<a href="www.liyuit.com">0</a>
+	<a href="liyuit.com">1</a>
+	<a href="www liyuit.com">2</a>
+	<a href="www-liyuit-com">3</a>
+	<a href=www>9</a>
+	<a href="www.liyuit.com">4</a>
+	<a href="www liyuit com">5</a>
+	<a href="liyuit">16</a>
+	<a >6</a>
+</body>
+</html>

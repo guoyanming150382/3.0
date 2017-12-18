@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#d1{
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		#d2{
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	</style>
+	<script type="text/javascript">
+	
+		window.onload=function(){
+			new tab('d1');
+			new tab('d2');
+		}
+		function tab(id){//把构造函数中的属性写出来
+			var ot=this;
+			this.oDiv=document.getElementById(id);
+			this.mousey=0;
+			this.mousex=0
+			this.oDiv.onmousedown=function(ev){
+				ot.fndown(ev);
+			};
+		}
+		tab.prototype.fndown=function(ev){//此处应该用实例的this
+			var ot=this;
+				var ev = ev || event;
+				this.mousex=ev.clientX-this.oDiv.offsetLeft;
+
+				this.mousey=ev.clientY-this.oDiv.offsetTop;
+
+				document.onmousemove=function(ev){
+						ot.fnmove(ev);
+				};
+				document.onmouseup=function(ev){
+					ot.fnup(ev);
+				};
+			}
+			tab.prototype.fnmove=function(ev){
+					var ev =ev || event;
+
+					this.oDiv.style.top=ev.clientY-this.mousey+"px";
+					this.oDiv.style.left=ev.clientX-this.mousex+"px";
+				}
+			tab.prototype.fnup=function(){
+					document.onmousemove=null;
+					document.onmouseup=null;
+				}
+	</script>
+</head>
+<body>
+	<div id="d1"></div>
+	<div id="d2"></div>
+</body>
+</html>

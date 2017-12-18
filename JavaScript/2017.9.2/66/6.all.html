@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		// var p1=Promise.resolve('t1');
+		// var p2=Promise.resolve('t2');
+		// var p3=Promise.resolve('t3');
+
+		// Promise.all([p1,p2,p3]).then(
+		// 	function(str){
+		// 			console.log("成功"+str);
+		// 		},
+		// 		function(str){
+		// 			console.log("失败"+str);
+		// 		});  返回成功
+
+
+		var p1=Promise.resolve('t1');
+		var p2=Promise.resolve('t2');
+		var p3=Promise.reject('t3');
+
+		Promise.all([p1,p2,p3]).then(
+			function(str){
+					console.log("成功"+str);
+				},
+				function(str){
+					console.log("失败"+str);
+				});//返回失败
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

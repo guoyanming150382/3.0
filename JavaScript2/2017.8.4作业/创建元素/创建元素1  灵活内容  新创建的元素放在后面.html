@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	window.onload=function(){
+		var ob1=document.getElementById('b1');
+		var ou1=document.getElementById('u1');
+		var ot1=document.getElementById('t1');
+		ob1.onclick=function(){
+			var oli =document.createElement('li');//新创建的内容标签li
+			oli.innerHTML=ot1.value;//新创建的li里的内容
+			ou1.appendChild(oli);//创建完毕后追加到ul中
+		}
+	}
+	</script>
+</head>
+<body>
+	<input type="text" id="t1">
+	<input type="button" value="创建元素" id="b1">
+	<ul id=u1></ul>
+</body>
+</html>

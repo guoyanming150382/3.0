@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	//对象的特性：1属性顺序是无序的2.属性名字是唯一的，相同name会取后面的
+		var obj ={
+						age:5555,
+						name:"lilth",
+						name:"netbu",//属性唯一
+
+			showname:function(){
+				console.log(this.name);
+			},
+			shownage:function(){
+				console.log("我是"+this.age);
+			
+			}
+		};
+		obj.showname();
+		obj.shownage();
+
+
+	var obj ={
+						age:5555,
+						name:"netbu",//属性无序
+
+			showname:function(){
+				console.log(this.name);
+			},
+			shownage:function(){
+				console.log("我是"+this.age);
+			
+			}
+		};
+		obj.showname();
+		obj.shownage();
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var d1=new t({width:100,height:200,color:'red'});
+			var d2=new t({width:160,height:200,color:'green'});
+		}
+		function t(json){
+			//属性的罗列
+			this.odiv=null;
+			this.mousex=0;
+			this.mousey=0;
+			this.width=json.width;
+			this.height=json.height;
+			this.color=json.color;
+			//初始化操作
+			this.int();
+			//事件绑定
+			this.bindEvent();
+		}
+		t.prototype.int=function(){
+			this.odiv=document.createElement('div');
+			this.odiv.style.width=this.width+"px";
+			this.odiv.style.height=this.height+"px";
+			this.odiv.style.backgroundColor=this.color;
+			this.odiv.style.position="absolute";
+			this.odiv.style.left=0;
+			this.odiv.style.top=0;
+			document.body.appendChild(this.odiv);
+		}
+			t.prototype.bindEvent=function(){//事件绑定
+				var ot=this;
+				this.odiv.onmousedown=function(ev){
+						
+						var ev=ev||event;
+						ot.mousex=ev.clientX-ot.odiv.offsetLeft;
+						ot.mousey=ev.clientY-ot.odiv.offsetTop;
+						document.onmousemove=function(ev){
+							ot.fnmove(ev);
+			}
+					document.onmouseup=function(ev){
+						ot.fnup(ev);
+			}
+				}
+		}	
+		t.prototype.fnmove=function(ev){
+			var ev =ev || event;
+			this.odiv.style.top=ev.clientY-this.mousey+"px";
+			this.odiv.style.left=ev.clientX-this.mousex+"px";
+		}
+		t.prototype.fnup=function(){
+			document.onmousemove=null;
+			document.onmouseup=null;
+		}
+	</script>
+	</head>
+<body>
+	
+</body>
+</html>

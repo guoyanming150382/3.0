@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var arr1=[6,66,666,6666,66666];
+		for(i in arr1){
+			console.log(i);//弹出的事0.1.2.3.4   for in中i是下表
+		}
+		console.log(arr1.keys());
+
+
+		for(i of arr1.keys()){
+			console.log(i);//弹出0.1.2.3.4
+		}
+
+		for(i of arr1){
+			console.log(i);//弹出arr1数组  i是数组
+		}
+
+
+		for(i in arr1){
+			console.log(arr1[i]);//弹出的事数组  等同于上面的
+		}
+
+
+
+		var json={a:1,b:2,c:3};
+		for(i in json){
+			console.log(i);//弹出abc
+			console.log(json[i])//弹出值
+		}
+
+		for(i of json){
+			console.log(i);
+		}//for of无法遍历json
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		/*function show(){
+			console.log(this);
+		}
+		show();//一个window
+		show.call(100);//number 100*/
+		function show(n1,n2){
+			console.log("第一个"+this+"\n第二个"+n1+"\n第三个"+n2);
+		}
+		 
+		show.call(100,200,300);//第一个调用的是函数力的this，后面是参数列表n1 n2
+		show.apply(400,[500,600]);//n1  n2通过数组穿进去   call  apply作用一样，区别在于apply接收两个参数  ，第一个是被调用函数里的this，第二个是参数列表数组
+
+
+		
+		function show(n1,n2,n3){
+			console.log("第一个"+this+"\n第二个"+n1+"\n第三个"+n2+"\n第四个是"+n3);
+		}
+		show.apply(500,[600,650,88]);
+		show.call(500,600,650,88);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

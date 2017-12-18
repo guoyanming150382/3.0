@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function show(n1,n2){
+			console.log(this,n1,n2);
+		}
+		show.call(1,2,3);
+		show.apply(1,[2,3]);//调出结果，this是1，n1 n2 是2,3
+
+
+		//bind改变函数内部的this，他和call apply区别是bind新生成一个函数
+		// show.bind(1);//用此方法调用没有反应，因为调用后没有立即执行
+
+		var fn=show.bind(1);
+		fn(6,7);
+		fn();//显示undefind，因为没有传入参数
+
+
+		//bind立即调用
+		function show1(n1,n2){
+			console.log(this,n1,n2);
+		}
+		show1.bind(1)(9,15);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

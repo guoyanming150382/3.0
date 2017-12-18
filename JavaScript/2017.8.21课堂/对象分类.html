@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		/* 1分系统对象 
+			1.1  内置对象
+			1.1.1非静态对象
+			Object Array Date  Function
+			String Number Boolean  包装类
+			RegEx  Err
+			1.1.2静态对象
+			Math  Global
+			1.2 宿主对象(依赖于运行环境)
+			DOM BOM 
+		2自定义对象*/
+
+
+		/*var arr= new Function("alert('poiu')");
+		arr();*/
+
+		var a="iwuiwio wwgjiwjio";
+		console.log(a.charAt(2));//系统new了一个String("iwuiwio wwgjiwjio").charAt(2);  调用完毕，系统会销毁这个对象
+		/*console.log(new String("iwuiwio wwgjiwjio").charAt(2));//new的string对象上有chartAt方法
+		console.log(new String('iwuiwio wwgjiwjio'));//是一串对象*/
+		// console.log(a.length);//字符串的长度
+
+
+
+		//取字符串的子集
+		//s.slice(起始位置，结束位置)
+		//s.substring(起始位置，结束位置)
+		//s.substr(起始位置，字符个数)
+
+
+		var a="jkasuhuh asebj";
+		console.log(a.slice(1));
+		console.log(a.substring(1));
+		console.log(a.substr(1));//三个显示的都是kasuhuh asebj，第二个不写默认就是最后一位
+
+		console.log(a.slice(1,6));//kasuh
+		console.log(a.substring(1,8));//kasuhuh
+		console.log(a.substr(1,9));//kasuhuh a 空格也算作一位
+		
+		console.log(a.slice(1,5));//kasu
+		console.log(a.substring(1,5));//kasu
+		console.log(a.substr(1,5));//kasuh从k开始往后取五个
+
+
+		//负数
+		//a长度14
+		console.log(a.slice(-1));//负数   两个参数是负数加上自身长度的数值就是对应的位置，14+-1=13，13就是j（从0开始算作第一位）
+		console.log(a.slice(-10));//uhuh asebj  从u开始的往后所有
+		console.log(a.slice(-10,-1));//4-13 从u开始的往后到b
+
+		console.log(a.substring(-10,-1));//只要是负数就是0，两个数字都是0，就是从0开始取0个，一个也不取
+		console.log(a.substring(-1));//对于substring来说，负数就是0，从0开始到最后就是jkasuhuh asebj
+
+		console.log(a.substr(-1));//第一个参数是想加，得13  j  第二个不写取到最后一位
+		console.log(a.substr(-3));//从十一向后取到最后ebj
+		console.log(a.substr(-10,-5));//第一个从4位开始取  第二位若是负数就是零  从第四位取零个 就是一个也没有
+
+		var n=36;
+		console.log(new Number());//查看number上的方法
+		console.log(n.toFixed(2));//用科学计数法显示两位小数36.00
+		console.log(n.toString(2));//转换成相应的进制
+		console.log(n.toString(6));
+
+		var m=true;
+		console.log(new Number());
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

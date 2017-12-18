@@ -1,0 +1,3 @@
+function ba(){
+	alert('abcd');
+}

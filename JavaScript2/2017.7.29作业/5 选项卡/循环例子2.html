@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#d1 div{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #000;
+			display: none;
+		}
+		.b1{
+			background: pink;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var a = document.getElementsByTagName('input');
+			var d = document.getElementById('d1');
+			var t = d.getElementsByTagName('div');
+			for(var i=0;i<a.length;i=i+1){
+				a[i].index=i;
+				a[i].onclick=function(){
+					for(var j=0;j<a.length;j=j+1){
+						a[j].className='';
+						t[j].style.display='none';
+					}
+					this.className='b1';
+					t[this.index].style.display='block';
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+<div id="p1">
+	<div id="i1">
+		<input type="button" value="1" class="b1">
+		<input type="button" value="2">
+		<input type="button" value="3">
+		<input type="button" value="4">
+	</div>
+	<div id="d1">
+		<div style="display: block;">1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		
+		//1把数组里面的值转换为对象属性，(利用对象属性不能重复的特点，过滤掉重复值)
+		//2.再把对象的属性转为数组的值
+		var arr=[12,36,99,88,66,22,12,88];
+		function p(arr){
+			var result=[];
+			var obj={};
+			for(var i=0;i<arr.length;i++){
+				obj[arr[i]]="";//把数组中的值变为obj的属性，去除数组中的重复值
+			}//利用循环把数组中的值转化为对象
+			console.log(obj);
+			for(i in obj){//把obj的属性赋给数组，把已经去除重复的数组放入arr中
+				result.push(i);
+			}
+			return result;
+		}
+		p(arr);
+		console.log(p(arr));
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

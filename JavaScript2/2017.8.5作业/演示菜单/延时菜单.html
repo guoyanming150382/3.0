@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			float: left;
+		}
+		#d1{
+			width: 50px;
+			height: 200px;
+			background: red;
+		}
+		#d2{
+			width: 200px;
+			height: 200px;
+			background: yellow;
+			margin-left: 20px;
+			display: none;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var od1=document.getElementById('d1');
+			var od2=document.getElementById('d2');
+			var dts=null;
+			od1.onmouseover=function(){
+				clearTimeout(dts);//鼠标移动回来时od2会消失，因此把定时器关了
+				od2.style.display='block';
+
+			}
+			od1.onmouseout=function(){
+				dts=setTimeout(function(){
+					od2.style.display='none';//当从od1移走鼠标时候，要让od2消失	
+				},500)
+				
+			}
+			od2.onmouseout=function(){//鼠标从od2移走时候要让od2消失
+				dts=setTimeout(function(){
+					od2.style.display='none';
+				},500)//用延时消除闪现现象
+			}
+			od2.onmouseover=function(){//鼠标移到od2时候要让od1消失，关闭他的定时器即可
+				clearTimeout(dts);
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="d1"></div>
+	<div id="d2"></div>
+</body>
+</html>

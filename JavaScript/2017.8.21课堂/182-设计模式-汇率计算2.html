@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>181-设计模式-汇率计算1.html</title>
+</head>
+<body>
+
+</body>
+<script>
+	function Rmb(){
+		this.oInput = null;
+		this.aForgin = [];
+		this.init();
+		this.bindEvent();
+	}
+	Rmb.prototype.init = function(){
+		var oP = document.createElement('p');
+		oP.innerHTML = "人民币:";
+
+		this.oInput = document.createElement('input');
+		oP.appendChild(this.oInput);
+
+		document.body.appendChild(oP);
+	}
+	Rmb.prototype.regsiter = function(forgin){
+		this.aForgin.push(forgin)
+	}
+	Rmb.prototype.bindEvent = function(){
+		var _self = this;
+		this.oInput.oninput = function(){
+			for(var i=0;i<_self.aForgin.length;i++){
+				_self.aForgin[i].listen(this.value);
+			}
+		}
+	}
+
+	function Forgin(name,rmb,rate){
+		this.name = name;
+		this.oInput = null;
+		this.rate = rate;
+		this.init();
+		rmb.regsiter(this);
+	}
+	Forgin.prototype.init = function(){
+		var oP = document.createElement('p');
+		oP.innerHTML = this.name + ":";
+
+		this.oInput = document.createElement('input');
+		this.oInput.disabled = 'false';
+		oP.appendChild(this.oInput);
+
+		document.body.appendChild(oP);		
+	}
+	Forgin.prototype.listen = function(val){
+		this.oInput.value = val / this.rate;
+	}
+
+	var oRmb = new Rmb();
+	var oUsd = new Forgin("美元",oRmb,6);
+	var oHkd = new Forgin("港币",oRmb,2);
+	var oJpy = new Forgin("日元",oRmb,0.06);
+	var oRur = new Forgin("欧元",oRmb,20);
+
+
+</script>
+</html>

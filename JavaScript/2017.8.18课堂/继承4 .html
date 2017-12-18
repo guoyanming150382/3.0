@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function Person(name,age){
+			this.name=name;
+			this.age=age;
+		}
+		Person.prototype.showname=function(){
+			console.log("i am "+ this.name);
+		}
+		Person.prototype.showage=function(){
+			console.log("i am "+this.age+" yearsold");
+		}
+
+		Object.defineProperty(Person.prototype,"zhiye",{value:function(){
+			console.log(this.name+" is a students");
+		}});
+
+		var obj=new Person("lilth",19);
+		obj.showage();
+		obj.showname();
+		obj.zhiye();
+		
+		student.prototype=Object.create(Person.prototype);//创建了一个新的对象，并且把Person.prototype传了进去
+		student.prototype.constructor=student;//新创建的对象没有构造器，所以给他命名一个
+
+		function student(name,age,classname){
+			Person.call(this,name,age);
+			this.classname=classname;
+		}
+
+		student.prototype.showclassname=function(){
+			console.log(this.name+" from"+this.classname+" class");
+		}
+		var s=new student("lilth",19," 9 class");
+		s.showclassname();
+		s.showage();
+		s.showname();
+		s.zhiye();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

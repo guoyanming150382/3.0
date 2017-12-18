@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var str="12w1we2gwe we1t2twe set1qw1  wet54w21gs56 e1qe3";
+		var result=[];
+		var tmp="";
+
+		for(var i=0;i<str.length;i++){
+			if(str.charAt(i)>="0" && str.charAt(i)<="9"){//对数字的条件大于等于0，小于等于9
+				tmp+=str.charAt(i);//如果数字连着，要取整体  ，当找到一个数字后先把他存起来，看他后面是否还有数字，如果有那就把他与存起来的数字连起来储存，之后再看后面是否还连着数字，如果没有了数字就把已经取到的数字存在result中，肉果有，就接着循环后面是否有数字
+			}else if(tmp){
+				result.push(tmp);
+				tmp="";//已经取出的数字储存玩后，把tmp清空，从头开始循环
+			}
+		}
+		if(tmp){//当取到最后一味的时候，后面就没有了，不会再循环，那么最后一位数字就无法执行else if，就无法放入result之中，因此在全部循环结束的时候要在执行一次else
+				result.push(tmp);
+				tmp="";
+			}
+		console.log(result);
+
+		console.log(str.match(/\d+/g)); 
+		console.log(str.match(/[0-9]+/g));
+
+
+		var sa="12w1we2gwe we1t2twe set1qw1  wet54w21gs56 e1qe3";
+		var pa=/[0-9]{2}/g;//找到数字个数是二的字符  {2}找到字符恰好是2的
+		var pat=/\d{2,}/g;//{2,}找到大于等于二的  
+		console.log(sa.match(pa));
+		console.log(sa.match(pat));
+
+
+
+		var ta="12w1we2gwe we1t26987twe set1qw1  wet54w21gs56 e1qe3";
+		var tr=/\d{2}/g;//贪婪模式  把能取到大于两位的字符取了前两位  
+		var trt=/\d{2,}/g;
+		var trtt=/\d?/g;//贪婪模式 找出最少出现0次最多出现1次的 没有出现的字符也符合条件 会显示空集
+		console.log(ta.match(tr));
+		console.log(ta.match(trt));
+		console.log(ta.match(trtt));
+
+
+		var tai="122w1we2332gwe we1t26987twe set1qw1  wet54w2661gs56 e1qe3";
+		var tait=/\d{3,4}/g;//贪婪模式  对字符进行限定  最少出现3次  最多出现4次  
+		var tatt=/\d?/g;
+		var taat=/\d*/g;//凡是没有出现的都会选择
+		console.log(tai.match(tait));
+		console.log(tai.match(tatt));
+		console.log(tai.match(taat));
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

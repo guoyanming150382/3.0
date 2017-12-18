@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#p2{
+			width: 200px;
+			height: 200px;
+			border: 1px solid #000;
+		}
+	</style>
+	<script type="text/javascript">
+		function a(n,v){
+			var b=document.getElementById('p2');
+			b.style[n]=v;
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="color" onclick="a('background','red')">
+	<input type="button" value="width" onclick="a('width','500px')">
+	<input type="button" value="height" onclick="a('height','350px')">
+	<p id="p2"></p>
+</body>
+</html>

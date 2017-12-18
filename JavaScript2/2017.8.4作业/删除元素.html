@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oa =document.getElementsByTagName('a');
+			var ou =document.getElementById('ul1');
+
+			for(var i=0;i<oa.length;i++){
+				oa[i].onclick=function(){
+				ou.removeChild(this.parentNode);//删除之后页面上就没有了这个元素
+				// console.log("987",this);
+								}
+			}
+		}
+	</script>
+</head>
+<body>
+	<ul id="ul1">
+		<!-- <li>123<a href="#">删除</a></li> -->
+		<li>123<a href="javascript:;">删除</a></li>
+		<li>223<a href="javascript:;">删除</a></li>
+		<li>323<a href="javascript:;">删除</a></li>
+		<li>423<a href="javascript:;">删除</a></li>
+		<li>523<a href="javascript:;">删除</a></li>
+	</ul>
+</body>
+</html>

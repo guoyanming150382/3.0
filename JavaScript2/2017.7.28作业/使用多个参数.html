@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#p1{
+			width: 200px;
+			height: 200px;
+			border: 1px solid #000;
+		}
+	</style>
+	<script type="text/javascript">
+		function a(width){
+				var chang = document.getElementById('p1');
+				chang.style.width=width;/*被赋予的值不带引号*/
+		}
+		function b(background){
+			var yan = document.getElementById('p1');
+			yan.style.background=background;
+		}
+		function c(height){
+			var kuan =document.getElementById('p1');
+			kuan.style.height=height;
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="长4" onclick="a('400px')">
+	<input type="button" value="长5" onclick="a('500px')">
+	<input type="button" value="红" onclick="b('red')">
+	<input type="button" value="宽6" onclick="c('600px')">
+	<input type="button" value="宽3" onclick="c('300px')">
+	<p id="p1"></p>
+</body>
+</html>

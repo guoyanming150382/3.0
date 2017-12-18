@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var obj={};
+
+		Object.defineProperties(obj,{
+			"x":{value:100,witable:true},
+			"y":{value:200,enumerable:true},
+			"z":{value:300,configurable:true}
+		});
+		obj.x=500;
+		for(i in obj){
+			console.log(i);
+		}
+
+		delete obj.z;
+		console.log(obj);
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

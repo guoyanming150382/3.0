@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#div1{
+			width: 100px;
+			height: 100px;
+			background: red;
+			border: 1px solid #000;
+		}
+	</style>
+	<script type="text/javascript">
+	window.onload=function(){
+		var odiv=document.getElementById('div1');
+		odiv.onmouseover=function(){
+
+			setInterval(function(){
+				odiv.style.width=odiv.offsetWidth-1+"px";//因为边框左右各是1px，使得原本减一的变成了加一，图形会不断地变宽
+			},30);
+		}
+	}
+		
+	</script>
+</head>
+<body>
+	<div id="div1"></div>
+</body>
+</html>

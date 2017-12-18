@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width: 200px;
+			height: 200px;
+			border: 1px solid #000;
+			float: left;
+			margin-left: 20px;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var a =document.getElementsByTagName('div');
+			// alert(a.length);
+			// a[0].style.background='red';
+			// a[2].style.background='red';
+			// a[3].style.background='red';
+			// for(i=0;i<4;i=i+1){
+			// 	a[i].style.background='red';
+			// }
+			for(var i=0;i<a.length;i++){
+				a[i].style.background='red';
+			}
+		}
+	</script>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+</body>
+</html>

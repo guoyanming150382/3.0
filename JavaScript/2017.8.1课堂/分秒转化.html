@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var miao =333;
+		alert(parseInt(miao/60)+"分"+miao%60+"秒");//取分的正数，取秒的余数
+
+
+		
+		window.onload=function(){
+			var oMin=document.getElementById('min');
+			var oMiao=document.getElementById('miao');
+			var oRest=document.getElementById('res');
+			var obtn=document.getElementById('btn');
+
+			obtn.onclick=function(){
+				oMin.value=parseInt(oRest.value/60);
+				oMiao.value=parseInt(oRest.value%60);
+			}
+
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="min">分
+	<input type="text" id="miao">秒
+	<button id="btn">zhuanhua</button>
+	<input type="text" id="res">輸入
+</body>
+</html>

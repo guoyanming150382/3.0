@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var ot1=document.getElementById('t1');
+			var ob1=document.getElementById('b1');
+			var ou1=document.getElementById('u1');
+			ob1.onclick=function(){
+				var oli=ou1.children;
+				for(var i=0;i<oli.length;i++){
+					var oi=oli[i].innerHTML.toLowerCase();
+					var ov=ot1.value.toLowerCase();
+					if(oi==ov)//toLowerCase会不分大小写的去搜索对象
+					{//判断子元素的内容是否与text的输入内容一样
+						oli[i].style.background='red';
+					}else{
+						oli[i].style.background='';
+					}
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="t1" >
+	<input type="button" id="b1" value="搜寻">
+	<ul id="u1">
+		<li>12</li>
+		<li>36</li>
+		<li>69</li>
+		<li>96</li>
+		<li>38</li>
+		<li>66</li>
+		<li>25</li>
+		<li>58</li>
+		<li>abcdu</li>
+		<li>Dbac</li>
+		<li>aER</li>
+	</ul>
+</body>
+</html>

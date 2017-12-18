@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function RMB(){
+			this.Input=null;
+			this.aForign=[];
+			this.int();
+			this.bindEvent();
+		}
+		RMB.prototype.int=function(){
+			var oP=document.createElement('p');
+			oP.innerHTML="人民币  ：";
+
+			this.oInput=document.createElement('input');
+			oP.appendChild(this.oInput);
+
+			document.body.appendChild(oP);
+		}
+		RMB.prototype.regust=function(forign){
+			this.aForign.push(forign);
+		}
+		RMB.prototype.bindEvent=function(){
+			var ot=this;
+			this.oInput.oninput=function(){
+				for(var i=0;i<ot.aForign.length;i++){
+					ot.aForign[i].listen(this.value);
+				}
+			}
+		}
+
+
+		
+
+		function Forign(name,rmb,rate){
+			this.name=name;
+			this.oInput=null;
+			this.rate=rate;
+			this.int();
+			rmb.regust(this);
+		}
+		Forign.prototype.int=function(){
+			var oP=document.createElement('p');
+			oP.innerHTML=this.name+":";
+
+			this.oInput=document.createElement('input');
+			this.oInput.disabled='false';
+			oP.appendChild(this.oInput);
+
+			document.body.appendChild(oP);
+		}
+		Forign.prototype.listen=function(val){
+			this.oInput.value=val/this.rate;
+		}
+		var ormb=new RMB();
+		var oJ= new Forign("日元",ormb,6);
+
+	</script>
+</body>
+</html>

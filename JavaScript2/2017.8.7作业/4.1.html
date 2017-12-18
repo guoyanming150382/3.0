@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#d1{
+			width: 200px;
+			height: 200px;
+			background: red;
+			position: absolute;
+			left: 0px;
+			top: 60px;
+		}
+		#d2{
+			width: 1px;
+			height: 600px;
+			background: black;
+			position: absolute;
+			left: 600px;
+			top: 0px;
+		}
+	</style>
+	<script type="text/javascript">
+		
+		window.onload=function(){
+			var od1=document.getElementById('d1');
+			var ob1=document.getElementById('b1');
+			var timer=null;
+			ob1.onclick=function(){
+				timer=setInterval(function(){
+					var speed=(600-od1.offsetLeft)/7;
+					speed =speed>0 ? Math.ceil(speed) :Math.floor(speed);
+					if(!speed){
+						clearInterval(timer);
+					}else{
+						od1.style.left=od1.offsetLeft+speed+"px";
+					}
+				},30)
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" id="b1" value="移动">
+	<div id="d1"></div>
+	<div id="d2"></div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/ajax.js"></script>
+	<script type="text/javascript">
+		function getDate(url){
+			var promise =new Promise(function(resolve,reject){
+				
+					ajax(
+						url,
+						function(str){
+							// console.log("成功"+str);
+							resolve(str);
+						},
+						function(str){
+							// console.log("失败"+str);
+							reject(str);
+						}
+					);
+				});
+			return promise;
+		}
+			
+
+		getDate("js/abc.txt").then(
+						function(str){
+							console.log("成功"+str);
+							
+						},
+						function(str){
+							console.log("失败"+str);
+						}
+			);
+
+			// promise.then(
+			// 	function(str){	
+			// 		 console.log("成功"+str);
+			// },
+			// 	function(str){
+			// 		console.log("失败"+str);
+			// 	}
+			// );
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

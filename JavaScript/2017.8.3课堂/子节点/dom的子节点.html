@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oul =document.getElementById('ul1');
+			alert(oul.childNodes.length);//弹出9；因为li前后有看不见的文本text，因为是四个li所以共四个text，以及</ul>前也有一个text，加起来共九个，
+		}
+	</script>
+</head>
+<body>
+	<ul id="ul1">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+</html>

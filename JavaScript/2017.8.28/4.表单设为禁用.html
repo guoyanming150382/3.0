@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	window.onload=function(){
+		var aForms=document.forms;
+		var oForm=aForms[0];
+		var aEl=oForm.elements;//elements是form具有的一个属性  是个集合，具有form上的所有表单
+		var A1=aEl[0];
+		// var B1=aEl['age'];
+		var C1=aEl.age;
+
+
+			
+}
+	</script>
+</head>
+<body>
+	<form action="http://www.liyuit.com" id="form1">
+	姓名：<input type="text" name="username" value="tom">
+	<br>
+	年龄：<input type="text" name="age" value="19">
+	<br>
+	性别：
+	<input type="radio" name="sex" value="men">男
+	<input type="radio" name="sex" value="nv">女
+	<input type="radio" name="sex" value="bomi">保密<br>
+		<input type="reset" value="重置1">
+		<button type="reset">重置2</button>
+		<input type="button" id="but1" value="重置3">
+	</form>
+</body>
+</html>

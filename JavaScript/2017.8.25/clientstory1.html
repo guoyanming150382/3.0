@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	
+		window.onload=function(){
+			var oUse=document.getElementById('username');
+			var oBut=document.getElementById('but1');
+			oUse.value=localStorage.getItem('username');//下次登录时候可以直接取到上次输入的值
+			oBut.onclick=function(){
+				
+				localStorage.setItem('username',oUse.value);
+			}
+		}
+	</script>
+</head>
+<body>
+	<form action="">
+		<p>用户：<input type="text" id="username" name="username"></p>
+		<p>密码：<input type="password" id="password" name="password"></p>
+		<p>提交：<input type="button" id="but1" value="提交"></p>
+	</form>
+</body>
+</html>

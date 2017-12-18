@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oli = document.getElementsByTagName('li');
+			for(var i=0;i<oli.length;i++){
+				if(i%2==0)/*百分号用来取余数*/{
+					oli[i].style.background='red';
+				}else{
+					oli[i].style.background="green";
+				}
+			}
+
+		}
+	</script>
+</head>
+<body>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+</html>

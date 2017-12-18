@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+			margin-left: 20px;
+			float: left;
+			opacity: 0.3;
+		}
+	</style>
+	<script type="text/javascript">
+		function move(obj,json,fnend){
+			clearInterval(obj.timer);
+			var odiv = document.getElementsByTagName('div');
+			obj.timer=setInterval(function(){
+				var bstop=true;//默认所有值都到了
+				for(atrr in json){//让定时器循环的去改变属性
+				var curr=parseFloat(getComputedStyle(obj,false)[atrr]);
+				if(atrr=='opacity'){
+				curr=Math.round(curr*100);
+			}
+				var speed=(json[atrr]-curr)/10;
+				speed=speed>0 ? Math.ceil(speed) : Math.floor(speed);
+				if(json[atrr] !=curr){
+					bstop=false;
+					if(atrr=='opacity'){
+						obj.style[atrr]=(curr+speed)/100;
+					}else{
+						obj.style[atrr]=curr+speed+"px";
+					}
+				}
+				/*
+				if(json[atrr]==curr){
+					clearInterval(obj.timer);
+					if(fnend){
+						fnend();
+					}
+				}else{
+					
+				}	*/
+				}
+				if(bstop){
+					clearInterval(obj.timer);
+					if(fnend){
+						fnend();
+					}
+				}
+			},30);
+			
+		}
+		window.onload=function(){
+			var odiv = document.getElementsByTagName('div');
+	
+			odiv[0].onmouseover=function(){
+				var json ={width:150,height:300,opacity:100}
+				move(odiv[0],json);
+
+			}
+			odiv[0].onmouseout=function(){
+				move(odiv[0],{width:100,height:100,opacity:30});
+			}
+
+	}
+	</script>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

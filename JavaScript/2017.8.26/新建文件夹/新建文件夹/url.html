@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var str="our website url is http://www.liyuit.com/abc";
+		//\w+ :  \/\/ [\w\.]+  \/  \w*
+		var re=/(\w+):\/\/([\w\.]+)\/(\w*)/;/*显示
+
+0:
+"http://www.liyuit.com/abc"
+1
+:
+"http"
+2
+:
+"www.liyuit.com"
+3
+:
+"abc"*/
+console.log(str.match(re));
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oT1=document.getElementById('t1');
+			var oT2=document.getElementById('t2');
+			var oBt=document.getElementById('b1');
+			var oPro=document.getElementById('jie');
+
+			oBt.onclick=function(){
+				var n1=parseFloat(oT1.value);
+				var n2=parseFloat(oT2.value);
+				if(isNaN(n1)){
+					alert("第一个输入有误");
+				}else if(isNaN(n2)){
+					alert("第二个有误");
+				}else{
+					oPro.value=n1+n2;
+					oT2.value="";
+					oT1.value="";
+				}
+			}
+		}
+	</script>
+
+</head>
+<body>
+	<input type="text" id="t1">
+	<input type="text" id="t2">
+	<input type="button" value="求和" id="b1">
+	<input type="text" id="jie">
+</body>
+</html>

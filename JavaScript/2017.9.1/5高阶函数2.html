@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		//求和的平方
+		function sum(x,y){
+			return x+y;
+		}
+		function square(x){
+			return x*x;
+		}
+
+		function mq(fn1,fn2){
+			return function(){
+				return fn2.call(this,fn1.apply(this,arguments));
+			}
+		}
+		var squareofsum=mq(sum,square);
+		console.log(squareofsum(3,3));
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

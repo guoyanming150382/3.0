@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var f1=(function(){
+			console.log('aa');
+		});
+		f1();
+		//封闭空间  把匿名函数用括号抱起来，在用var赋予一个值，调用值就可以形成自己的作用雨
+
+
+		//匿名函数立即执行
+		(function(){
+			console.log("ao");
+		})();
+
+
+		//匿名函数立即执行  传参数
+		(function(op){
+			console.log(op);
+		})("oujg");
+
+
+
+		window.onload=function(){
+			var obt=document.getElementsByTagName('input');
+
+			/*for(var i=0;i<obt.length;i++){
+				obt[i].index=i;
+				obt[i].onclick=function(){
+					alert(this.index);
+				}
+			}*/
+			for(var  i=0;i<obt.length;i++){
+				(function(index){
+					obt[index].onclick=function(){
+						alert(index);
+					}
+				})(i);
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="1">
+	<input type="button" value="2">
+	<input type="button" value="3">
+</body>
+</html>

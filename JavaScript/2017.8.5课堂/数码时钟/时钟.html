@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		body{
+			background: black;
+			color: white;
+			font-size: 50px;
+		}
+	</style>
+	<script type="text/javascript">
+	function tostr(n){
+		var str="";//让数值变成字符串
+		if(n<10){//当数值小于10，让他变成字符串”0x“；
+			str="0"+n;
+		}else{
+			str=""+n;//大于10，变成空+数值
+		}
+		return str;//把数值返给n
+
+	}
+		window.onload=function(){
+			var od=document.getElementById('clock');
+			var oimg=od.getElementsByTagName('img');
+			function clock(){
+				var date= new Date();//建立一个date去获取系统时间；
+				var str=tostr(date.getHours())+tostr(date.getMinutes())+tostr(date.getSeconds());//获取的系统时间是小时 分钟 秒，但是此时会输出一个数值和，为了显示正确时间，需要把它拼接成字符串，因此要在开头建立一个函数tostr()对系统时间进行字符串处理
+			// alert(str);
+			for(var i=0;i<oimg.length;i++){
+				oimg[i].src="t/"+str.charAt(i)+".png";//去str系统时间中选择时间
+			}
+			}
+			clock();//因为系统是1秒钟后执行，他会首先显示图片时间，在循环之前先调用执行一次，显示当前时间
+			setInterval(clock,1000);//时钟循环的动起来
+		}
+	</script>
+</head>
+<body>
+	<div id="clock">
+		<img src="t/1.png">
+		<img src="t/0.png">
+		:
+		<img src="t/0.png">
+		<img src="t/0.png">
+		:
+		<img src="t/0.png">
+		<img src="t/0.png">
+	</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var ob1=document.getElementById('b1');
+			var ob2=document.getElementById('b2');
+			var ot=document.getElementById('t1');
+			function b1(){
+				alert(258);
+			}
+			function b2(){
+				alert('afawwd');
+			}
+			ob1.addEventListener('click',b1,false);
+			ob1.addEventListener('click',b2,false);
+			ob2.addEventListener('click',function(){
+				ob1.removeEventListener('click',b2,false);
+			});
+
+
+			ot.addEventListener('keydown',function(){
+				ob2.addEventListener('click',function(){
+					ob1.removeEventListener('click',b2,false);
+				},false);
+			},false);
+		}
+	</script>
+</head>
+<body>
+	<input type="button" id="b1" value="点击">
+	<input type="button" id="b2" value="移除">
+	<input type="text" id="t1">
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var obj ={};
+		obj.x=1;
+		obj.y=2;
+		obj.z=3;
+		obj.q=function(){
+
+		}
+		console.log(obj);
+		for(i in obj){
+			console.log(i);
+		}//弹出x y z  obj上的属性和方法都可以弹出来
+
+		for(i in obj){
+					console.log(obj[i]);
+				}//弹出1 2 3
+
+		var obj1={
+			x:1,
+			y:1,
+			z:1
+			};
+		for(i in obj1){
+			console.log(i);
+		}//弹出x y z
+		//console.log(obj==obj1);//false  obj与obj1是不相等
+
+
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

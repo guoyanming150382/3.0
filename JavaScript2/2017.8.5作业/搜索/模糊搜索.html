@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var ot =document.getElementById('t1');
+			var ob =document.getElementById('b1');
+			var ou =document.getElementById('u1');
+			ob.onclick=function(){
+				var ol=ou.children;
+				for(var i=0;i<ol.length;i++){
+					var oit= ol[i].innerHTML.toLowerCase();
+					var ovt=ot.value.toLowerCase();
+					if(oit.search(ovt)!=-1){
+						ol[i].style.background='red';
+					}else {
+						ol[i].style.background='';
+					}
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="t1">
+	<input type="button" id="b1" value="搜寻">
+	<ul id="u1">
+		<li>97</li>
+		<li>78</li>
+		<li>36</li>
+		<li>69</li>
+		<li>bcder</li>
+		<li>89</li>
+		<li>qoi</li>
+		<li>bcd</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{width: 100px;
+			height: 100px;
+			background: red;
+			margin-top: 20px;
+			}
+	</style>
+	<script type="text/javascript">
+		// var timer=null;//不能让定时器公用，否则无法再离开时关闭运行对象上的定时器
+		function move(obj,itarget){//obj指的是当前运行的div，以此来区分四个div
+			clearInterval(obj.timer);//obj.timer把定时器设在当前运行的div上面
+			obj.timer=setInterval(function(){
+				var speed=(itarget-obj.offsetWidth)/10;
+				speed= speed>0 ?Math.ceil(speed) : Math.floor(speed);
+			if(itarget==obj.offsetWidth){
+				clearInterval(obj.timer);//关闭的是运行对象上的定时器
+			}else{
+				obj.style.width=obj.offsetWidth+speed+"px";
+			}
+			},30);
+			
+		}
+		window.onload=function(){
+			var odiv=document.getElementsByTagName('div');
+			for(var i=0;i<odiv.length;i++){
+
+				odiv[i].onmouseover=function(){
+					move(this,300);//this指的是当前正在运行的div
+				}
+				odiv[i].onmouseout=function(){
+					move(this,100);
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+</body>
+</html>

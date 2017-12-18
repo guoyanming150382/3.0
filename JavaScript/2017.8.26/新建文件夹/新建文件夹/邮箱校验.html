@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var ot=document.getElementById('t1');
+			var obt=document.getElementById('bt1');
+
+			obt.onclick=function(){
+				// ^ \w+ @ \w+  \. [a-z]+  $
+				var reg=/^\w+@\w+\.[a-z]+$/;
+				if(reg.test(ot.value)){
+					alert("输入正确");
+				}else{
+					alert("输入错误");
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="t1">
+	<input type="button" id="bt1" value="检查">
+</body>
+</html>

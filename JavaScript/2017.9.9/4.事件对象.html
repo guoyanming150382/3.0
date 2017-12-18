@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#div1{
+			width: 62px;
+			height: 60px;
+			background-color: red;
+		}
+		#div2{
+			width: 60px;
+			height: 69px;
+			background-color: blue;
+		}
+	</style>
+	<script src="jquery-3.2.1.js"></script>
+	<script type="text/javascript">
+	$(function(){
+	/*事件对象  1.事件对象就是event对象，里面包含了事件信息和处理方法
+	2.事件对象由系统默认传递给处理函数
+	3.处理函数可以通过参数来接收事件对象
+
+	type获取事件的类型，返回值是一个字符串，click
+	which鼠标的左中右（1,2,3）按键，或者键盘的按键码
+	keyCode键盘编码
+	altKey/ctrlKey/shiftKey 是否按下alt/ctrl/shift键
+	data绑定事件时候传递的数据
+
+	target触发事件的DOM元素
+	currentTarget绑定事件的DOM元素，等同于this（由于冒泡，触发事件的元素和绑定事件的元素不一定是同一个）
+	relatedTarget移入移除时候离目标点最近的dom元素
+
+
+	$(function(){
+
+		//事件属性
+			$(":text").keyup(function(e){
+				console.log(e);
+				console.log(e.type);//获取时间的类型返回字符串
+			});
+
+			$("#div1").contextmenu(function(e){
+				console.log(e.which);
+			});
+			$(":text").keyup(function(e){
+				console.log(e.altKey);
+			});//返回FALSE
+			$(":text").keyup(function(e){
+				console.log(e.ctrlKey);
+			});//返回FALSE
+			$(":text").keyup(function(e){
+				console.log(e.shiftKey);
+			});//返回FAL
+
+			$(":text").keyup({user:"tom"},function(e){
+				console.log(e.data.user);
+			});
+			$(":text").keyup(function(e){
+				console.log(e.target);
+			});//返回dom节点标签
+
+			$('div').click(function(e){
+				console.log(e.target);
+			});//点击div，返回dom节点标签
+
+
+			$('#div2').click(function(e){
+				console.log(e.target);
+			});//点击#div2，返回dom节点标签
+
+			$('#div2').click(function(e){
+				console.log(e.target);
+				console.log(e.currentTarget==this);//currentTarget绑定事件的DOM元素，等同于this
+			});//点击#div2，返回dom节点标签
+
+			$('#div2').mouseover(function(e){
+			
+				console.log(e.relatedTarget);//移入移出是离#div2近的dom节点会被触发
+			});
+
+	*/		
+			/*$("#div1").contextmenu(function(e){
+						console.log(e.which);//右键点击触发3
+					});
+
+			$("#div1").click(function(e){
+						console.log(e.which);
+					});//左键点击触发1
+
+			$(window).scroll(function(e){
+						console.log(e.which);//滑轮硬件存在问题，无法显示
+					});*/
+		
+			$(document).click(function(e){
+				console.log("page",e.pageX,e.pageY);//点击位置距离页面页面原点的距离，包括滚动的距离
+				console.log("sreen",e.screenX,e.screenY);//屏幕与点击位置的距离
+				console.log("client",e.clientX,e.clientY);//可视距离， 可以看见的页面内点击地方与页面匡
+			});
+
+		});
+	</script>
+</head>
+<body style="height: 2006px">
+	<!-- <input type="text" id="t1">
+	<input type="text" id="t2">
+	<div id="div1"></div>
+	<div>
+		<div>98755</div>
+		<h1>6978954</h1>
+		<div id="div2">
+			<div>69745</div>
+			<div>69745</div>
+			<div>
+				<h1>6987558</h1>
+			</div>
+		</div>
+		<p>6987</p>
+	</div> -->
+	
+</body>
+</html>

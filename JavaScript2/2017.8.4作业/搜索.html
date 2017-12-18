@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var ot=document.getElementById('t1');//提取到text
+			var ob=document.getElementById('b1');//提取到button
+			var ou=document.getElementById('u1');//提取ul
+			ob.onclick=function(){
+				var oli=ou.children;//提取ul下的li
+				for(var i=0;i<oli.length;i++){
+					if(oli[i].innerHTML==ot.value){
+						oli[i].style.background='pink';
+					}else{
+						oli[i].style.background='';
+					}
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="t1">
+	<input type="button" id="b1" value="搜寻">
+	<ul id="u1">
+		<li>88</li>
+		<li>66</li>
+		<li>33</li>
+		<li>21</li>
+		<li>12</li>
+		<li>19</li>
+		<li>86</li>
+	</ul>
+</body>
+</html>

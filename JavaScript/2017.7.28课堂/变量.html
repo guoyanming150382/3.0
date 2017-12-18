@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#b{
+			width: 200px;
+			height: 200px;
+			border: 1px solid #000;
+			background: red;
+		}
+	</style>
+	<script type="text/javascript">
+		function toblue(){
+			var abc = document.getElementById('b');//var 名字 document.getElementBye('id名字')；
+			abc.style.width='300px';
+			abc.style.height='300px';
+			abc.style.background='blue';//一个函数中的变量命名只能对应同一个事件中的触发事件
+		}
+		function tored(){
+			var ab = document.getElementById('b');
+			ab.style.width='100px';
+			ab.style.height='100px';
+			ab.style.background='red';
+		}
+	</script>
+</head>
+<body>
+	<div id="b" 
+	onmouseover="toblue()"
+	onmouseout="tored()">
+	</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+		#d1{
+			width: 50px;
+			height: 50px;
+			background: red;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var od1=document.getElementById('d1');
+			od1.onmousedown=function(ev){
+				var e= ev || event;
+				var mousex=e.clientX - od1.offsetLeft;//鼠标与物体的距离x
+				var mousey=e.clientY - od1.offsetTop;//鼠标与物体的距离y
+				od1.onmousemove=function(ev){
+					var e= ev || event;
+					od1.style.left=e.clientX - mousex+"px";
+					od1.style.top=e.clientY - mousey+"px";//物体的距离
+				}
+
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="d1"></div>
+</body>
+</html>

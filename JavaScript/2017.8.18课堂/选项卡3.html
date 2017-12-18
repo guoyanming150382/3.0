@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#div1 div{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #000;
+			background: red;
+			display: none;
+		}
+		.active{
+			background: yellow;
+		}
+	</style>
+	<script type="text/javascript">
+		
+		function t(id){
+			var Ot=this;
+			var Odiv=document.getElementById(id);
+			this.Adiv=Odiv.getElementsByTagName('div');
+			this.ob1=Odiv.getElementsByTagName('input');
+			for(var i=0;i<this.ob1.length;i++){
+				this.ob1[i].index=i;
+				this.ob1[i].onclick=function(){
+					Ot.fnclick(this);
+				} 
+			}
+
+		}
+		t.prototype.fnclick=function(ob1){
+			for(var i=0;i<this.ob1.length;i++){
+				this.ob1[i].className="";
+				this.Adiv[i].style.display="none";
+			}
+				ob1.className="active";//ob1是传入的，可以直接用
+				this.Adiv[ob1.index].style.display="block";
+		}
+
+		window.onload=function(){
+			new t('div1');
+		}
+	</script>
+</head>
+<body>
+	<div id="div1">
+		<input type="button" value="1" class="active">
+		<input type="button" value="2">
+		<input type="button" value="3">
+		<input type="button" value="4">
+		<div style="display: block">1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+	</div>
+</body>
+</html>

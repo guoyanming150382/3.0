@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var a = document.getElementById('b1');
+			var b = document.getElementById('b2');
+			var c = document.getElementById('b3');
+
+			var e = document.getElementById('div1');//由于CheckBox的选项过多，所以要把它包括起来，统一成一个标签，便于添加时间
+			var d = e.getElementsByTagName('input');//把包括在div1的众多标签提出来，
+			a.onclick=function(){
+				for(var i=0;i<d.length;i=i+1){
+					d[i].checked=true;
+				}//当被点击时候，指定选择的checkbox，
+			}
+			b.onclick=function(){
+				for(var i=0;i<d.length;i=i+1){
+					d[i].checked=false;
+				}
+			}
+			c.onclick=function(){
+				for(var i=0;i<d.length;i=i+1){
+					if(d[i].checked==true){
+						d[i].checked=false;//此处可以写""(空)，也可以写布尔值false,
+					}else{
+						d[i].checked=true;
+					}//用判断去判定被选中的将会被选不中，
+					//未被选中的会被选中，
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="全选" id="b1">
+	<input type="button" value="全不选" id="b2">
+	<input type="button" value="反选" id="b3">
+	<div id="div1">
+		<input type="checkbox">
+		<br>
+		<input type="checkbox">
+		<br>
+		<input type="checkbox">
+		<br>
+		<input type="checkbox">
+		<br>
+		<input type="checkbox">
+		<br>
+		<input type="checkbox">
+		<br>
+		<input type="checkbox">
+		<br>
+		<input type="checkbox">
+	</div>
+</body>
+</html>

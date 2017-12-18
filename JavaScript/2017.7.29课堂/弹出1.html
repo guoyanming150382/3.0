@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#di{
+			display: none;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oD=document.getElementById("di");
+			var oB=document.getElementsByTagName("button");//getElementsByTagName是数组；单个使用时候要加0
+console.log("div",oD);
+console.log("div",oB);
+			oB[0].onclick=function(){
+				console.log("5965565");
+				if(oD.style.display=="block"){
+					oD.style.display="none";
+				}else{
+					oD.style.display="block";
+				}
+			}
+
+		}
+	</script>
+</head>
+<body>
+	<button>dianji</button>
+	<div id="di">
+		<ul>
+			<li>587</li>
+			<li>2858</li>
+			<li>65454</li>
+		</ul>
+	</div>
+</body>
+</html>

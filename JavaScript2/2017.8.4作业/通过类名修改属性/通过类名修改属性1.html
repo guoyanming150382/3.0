@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	/*制定一个封装的函数用来公用，可以写在外部文件当中*/
+	function  get(fu,zicla){//get（指的是父元素，子元素的class属性）
+		var d =[];//制定一个空数组，让复合条件的class放入内部
+		var ofu =fu.children;//找到fu下面的子元素
+		for(var i=0;i<ofu.length;i++){//让ofu子元素循环与拥有zicla的class属性作比较
+			if(ofu[i].className==zicla){
+					d.push(ofu[i]);//满足条件的情况下把它放进空数组当中
+			}
+		}
+		return d;//将比较之后合格的ofu[i]返回给get（）函数	
+	}
+
+
+
+		window.onload=function(){
+			var ou=document.getElementById('u1');//获取到父元素
+
+			var oli=get(ou,'lo');//执行封装的函数时候输入父元素与子元素的class
+			for(var i=0;i<oli.length;i++){//循环所有里，符合上一行的要求就改变样式
+				oli[i].style.background='red';
+			}
+			
+		}
+	</script>
+</head>
+<body>
+	<ul id="u1">
+		<li class="lo"></li>
+		<li></li>
+		<li class="lo"></li>
+		<li></li>
+		<div class="lo">o</div><!--能够对ul下的所有class=“lo”起作用，div要加上个元素，否则无法变色-->
+	</ul>
+</body>
+</html>

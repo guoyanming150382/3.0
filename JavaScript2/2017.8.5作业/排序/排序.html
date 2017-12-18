@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var ob=document.getElementById('b1');
+			var ou=document.getElementById('u1');
+			ob.onclick=function(){
+				var ol=ou.children;
+				var arr=[];
+				for(var i=0;i<ol.length;i++){
+					arr.push(ol[i]);
+				}
+				arr.sort(function(m1,m2){
+					var m1=parseInt(m1.innerHTML);
+					var m2=parseInt(m2.innerHTML);
+					if(m1<m2){
+						return -1;
+					}else if(m1>m2){
+						return 1;
+					}else{
+						return 0;
+					}
+				})
+				for(var i=0;i<arr.length;i++){
+					ou.appendChild(arr[i]);//把空数组通过追加放ul中
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" id="b1" value="排序">
+	<ul id="u1">
+		<li>7</li>
+		<li>698</li>
+		<li>85</li>
+		<li>987</li>
+		<li>265</li>
+		<li>25</li>
+		<li>5</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width: 50px;
+			height: 50px;
+			background: red;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	</style>
+	<script type="text/javascript">
+		function getmove(ev){
+			var iscrolltop=document.body.scrollTop || document.documentElement.scrollTop;
+				var iscrollleft=document.body.scrollLeft || document.documentElement.scrollLeft;
+				var x1=ev.clientX+iscrollleft;
+				var y1=ev.clientY+iscrolltop;
+				return {x:x1,y:y1}
+		}
+		window.onload=function(){
+			var od1=document.getElementById('d1');
+			document.onmousemove=function(ev){
+				var e=ev || event;
+				
+				od1.style.left=getmove(e).x+"px";
+				od1.style.top=getmove(e).y+"px";
+			}
+		}
+	</script>
+</head>
+<body style="height: 2000px">
+	<div id="d1"></div>
+</body>
+</html>

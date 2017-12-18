@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+
+	//字符串情况下  按照首位值排序   数字时候  用比较函数
+		/*var a=['adas','dfsfs','bthet','wgwew'];
+		a.sort();//按照首字母排序
+		alert(a);*/
+
+
+		/*var b =[1554,2545,56,555652,55555];
+		console.log(b);
+		b.sort();//按照守卫数字大小排列，按字符处理
+		console.log(b);*/
+
+
+
+
+	/*var b =[1554,2545,56,555652,55555];
+		console.log(b);
+		b.sort(function(m1,m2){//m1  m2 是数组里面的值
+			if(m1<m2){
+				return -1;//说明数值小的排在前面  （只要是个负值就可以）
+			}else if(m1>m2){
+				return 1;//只要是个正值就可以
+			}else{
+				return 0;
+			}
+		});//此处的函数是比较函数   他是按照数值大小排列的
+		console.log(b);*/
+
+
+
+/*var b =[1554,2545,56,555652,55555];
+		console.log(b);
+		b.sort(function(m1,m2){
+			if(m1<m2){
+				return -66;//说明数值小的排在前面  （只要是个负值就可以）
+			}else if(m1>m2){
+				return 16;//只要是个正值就可以
+			}else{
+				return 0;
+			}
+		});//此处的函数是比较函数   他是按照数值大小排列的
+		console.log(b);*/
+
+
+
+var b =[1554,2545,56,555652,55555];
+		console.log(b);
+		b.sort(function(m1,m2){
+			return m1-m2;//效果等同于上面
+		});//
+		console.log(b);
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

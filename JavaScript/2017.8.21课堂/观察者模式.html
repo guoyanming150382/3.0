@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		//观察者模式  (发布订阅者模式)
+		/*发布者 
+			1.老师维护一个数组 这个数组里面存储所有关注者的对象
+			2.发布者提供一个订阅者可以加入的方法
+			3.发布消息是，循环遍历阅读者数组，调用订阅者关注方法
+			4.订阅者提供监听方法供发布者调用传递信息
+		*/
+		function Teacher(){
+			this.students=[];
+		}//建立一个关注对象数组
+
+		Teacher.prototype.Reglt=function(student){
+			this.students.push(student);
+		}//把关注的学生传进数组,调用时候传进一个对象，这个对象就是关注的学生
+
+		Teacher.prototype.fabu=function(zuoye){
+			for(var i=0;i<this.students.length;i++){
+					this.students[i].jieshou(zuoye);
+			}
+		}
+
+		function Student(teacher){
+			teacher.Reglt(this);//让添加的学生执行老师的构造函数，把学生添加进老师的关注数组
+			//new新对象的时候找到关注的老师
+		}
+
+		Student.prototype.jieshou=function(zuoye){
+			this.zuoye=zuoye;
+		}
+
+		var li=new Teacher();
+		var s1=new Student(li);//new对象的时候传入关注的老师
+		var s2=new Student(li);
+
+		li.fabu("没作业");
+		console.log(li.students);
+		console.log(s1.zuoye);
+		console.log(s2.zuoye);
+
+		var ti=new Teacher();
+		var l1=new Student(ti);
+		var l2=new Student(ti);
+
+		ti.fabu("作业");
+		console.log(l1.zuoye);
+		console.log(l2.zuoye);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

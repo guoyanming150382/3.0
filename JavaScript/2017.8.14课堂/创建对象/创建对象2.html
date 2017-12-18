@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		//系统自带object对象，是所有对象的祖先
+		//object有自带的属性和方法，这些属性和方法是所有对象都可以用的
+		//字面量对象 ：通过赋值形式调用到该值，内容是写死的，
+		var obj= new Object();
+
+		obj.name=66;
+		obj.age=11;
+		obj.t=function(){
+			// console.log(obj.name);
+			console.log(this.name);
+		}
+		obj.t()
+		obj.t1=function(){
+			console.log(this.age);
+		}
+		obj.t1();
+
+
+
+		var obj2= new Object();//o要大写
+		obj2.fot=999999;
+		obj2.leg=875457855;
+		obj2.d=function(){
+			console.log(this.fot);
+		}
+		obj2.d1=function(){
+			console.log(this.leg);
+		}
+		obj2.d();
+		obj2.d1();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

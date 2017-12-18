@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var ot = document.getElementById('t1');
+			var ob = document.getElementById('b1');
+			var ou = document.getElementById('u1');
+			ob.onclick=function(){
+				var ol=ou.children;
+				for(var i=0;i<ol.length;i++){
+					for(var k=0;k<ol.length;k++){
+						ol[i].style.background='';
+					}
+					var oit=ol[i].innerHTML.toLowerCase();
+					var ovt=ot.value.toLowerCase();
+					var aovt=ovt.split(" ");
+					for(var j=0;j<aovt.length;j++){
+						if(oit.search(aovt[j])!=-1){
+						ol[i].style.background='red';
+					}
+					}
+					/*else{
+						ol[i].style.background='';
+					}*/
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="t1">
+	<input type="button" id="b1" value="搜寻">
+	<ul id="u1">
+		<li>EJSJSJ</li>
+		<li>ahfuE</li>
+		<li>abc</li>
+		<li>69ADC</li>
+		<li>AS156</li>
+		<li>69</li>
+		<li>92</li>
+		<li>26</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#d1{
+			width: 50px;
+			height: 50px;
+			background: red;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var od1 = document.getElementById('d1');
+			document.onmousemove=function(ev){
+				var e=ev || event;
+
+				var iscrollleft=document.body.scrollLeft || document.documentElement.scrollLeft;
+				var iscrolltop=document.body.scrollTop || document.documentElement.scrollTop;
+
+				var x1=e.clientX+iscrollleft;
+				var y1=e.clientY+iscrolltop;
+
+				od1.style.left=x1+"px";
+				od1.style.top=y1+"px";
+			}
+		}
+	</script>
+</head>
+<body style="height: 2000px">
+	<div id="d1"></div>
+</body>
+</html>

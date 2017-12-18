@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function a(m){
+			for(var x=1;x<m;x++){
+
+				var xing="";
+
+				for(var k=1;k<=(m-x);k++){
+					xing=xing+"-";
+				}
+				
+				for(var y=1;y<=x;y++){
+					xing=xing+"*";
+				}
+				document.write("<p>"+xing+"</p>");
+			}
+		}
+		a(9);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

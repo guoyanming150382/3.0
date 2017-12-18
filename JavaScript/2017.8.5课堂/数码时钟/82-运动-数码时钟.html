@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>82-运动-数码时钟.html</title>
+	<style>
+		body{
+			background: black;
+			color: white;
+			font-size: 30px;
+		}
+	</style>
+	<script>
+		function toStr(n){
+			var str = "";
+
+			if(n<10){
+				str = "0" + n;
+			}else{
+				str = "" + n;
+			}
+
+			return str;
+		}
+		window.onload = function(){
+			var oDiv = document.getElementById('clock');
+			var aImg = oDiv.getElementsByTagName('img');
+			function clock(){
+				var date = new Date();
+				var str = toStr(date.getHours())+toStr(date.getMinutes())+toStr(date.getSeconds());
+				// alert(str);
+
+				// var str = "123345";
+
+				// alert(str.charAt(2));
+				
+				for(var i=0;i<aImg.length;i++){
+					aImg[i].src = "images/"+str.charAt(i)+".png";
+				}	
+			}
+			clock();
+			setInterval(clock,1000);
+		}
+	</script>
+</head>
+<body>
+	<div id="clock">
+		<img src="images/1.png" alt="">
+		<img src="images/1.png" alt="">
+		:
+		<img src="images/3.png" alt="">
+		<img src="images/0.png" alt="">
+		:
+		<img src="images/2.png" alt="">
+		<img src="images/5.png" alt="">
+	</div>
+</body>
+</html>

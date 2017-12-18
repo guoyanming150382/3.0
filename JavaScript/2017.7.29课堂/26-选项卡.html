@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>026-选项卡.html</title>
+	<style>
+		#content div{
+			width: 200px;
+			height: 200px;
+			border: 1px solid #000;
+			display: none;
+		}
+		.active{
+			background: yellow;
+		}
+	</style>
+	<script>
+		window.onload = function(){
+			var aBtn = document.getElementsByTagName('input');
+			var oDiv = document.getElementById('content');
+			var aDiv = oDiv.getElementsByTagName('div');
+			for(var i = 0;i<aBtn.length;i++){
+				aBtn[i].index = i;
+				aBtn[i].onclick = function(){
+					for(var j=0;j<aBtn.length;j++){
+						aBtn[j].className = '';
+						aDiv[j].style.display = 'none';
+					}
+					this.className = 'active';
+					// alert(this.value);
+					aDiv[this.index].style.display = 'block';
+					// alert(this.index);
+					
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="tab">
+		<div id="menu">
+			<input type="button" value="按钮1" class="active" >
+			<input type="button" value="按钮2" >
+			<input type="button" value="按钮3" >
+			<input type="button" value="按钮4" >
+		</div>
+		<div id="content">
+			<div style="display: block;">内容1</div>
+			<div>内容2</div>
+			<div>内容3</div>
+			<div>内容4</div>
+		</div>
+	</div>
+</body>
+</html>

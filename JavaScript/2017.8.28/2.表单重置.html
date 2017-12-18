@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	window.onload=function(){
+		var aForms=document.forms;//（document上有一个forms的属性）
+		var oForm=aForms[0];//取得的第一个form表单
+		var oForm2=document.getElementById('form1');
+		var oBut=document.getElementById('but1');
+			
+
+			oForm.onreset=function(){
+				alert("66");
+				// return false;//阻止了重置,onclick也被阻止
+			}
+
+			oBut.onclick=function(){
+				oForm.reset();//触发onclick事件会相应的触发onreset
+			}
+			
+
+	}
+
+	</script>
+</head>
+<body>
+	<form action="http://www.liyuit.com" id="form1">
+	姓名：<input type="text" name="username" value="tom">
+	<br>
+	年龄：<input type="text" name="age">
+	<br>
+		<input type="reset" value="重置1">
+		<button type="reset">重置2</button>
+		<input type="button" id="but1" value="重置3">
+	</form>
+</body>
+</html>

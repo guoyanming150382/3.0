@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-3.2.1.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			//$('#div2+p').css('color','red');//兄弟选择器与div2相邻的p起作用，如果div2与p之间有其他标签阻挡就不能起作用
+			// $('#div2').next('p').css('color','red');//兄弟选择器与div2相邻的p起作用，如果div2与p之间有其他标签阻挡就不能起作用
+			 $('#div2~p').css('color','red');//凡是在div2下面的所有都会被选中
+			 // $('#div2').nextAll('p').css('color','red');//凡是在div2下面的所有都会被选中
+			 // $("span+p").css("color","red");
+
+			  //$('#div3').prev('p').css('color','red');//找到div3上面的p，如果有阻隔就不起作用
+			  // $('#div3').prevAll('p').css('color','red');//找到div3上面所有的p，即使有间隔依然起作用
+
+
+			  // $('#div3').siblings('p').css('color','red');//找到div3上下全部，不受阻隔影响
+
+			  // $('#div3').prevUntil('p').css('color','red');//找到div3上面的第一个p就结束作用与第一个p与div3之间的标签
+			  // $('#div3').nextUntil('p').css('color','red');//找到div3下面的第一个p结束，作用与第一个p与div3之间的标签
+
+		});
+	</script>
+</head>
+<body>
+	<div id="div1" class="b1">d1</div>
+	<div id="div2" class="b2">d2</div>
+
+	<p class="p4">b4</p>
+	<p class="p6">b5</p>
+	<span>69</span>
+
+	<div id="div3" class="b3">d3</div>
+	<span>69</span>
+	<p class="t1">b1</p>
+	<p class="p2">b2</p>
+	<p class="p3">b3</p>
+</body>
+</html>

@@ -1,0 +1,89 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+ 	<meta charset="UTF-8">
+ 	<title>Document</title>
+ 	<script type="text/javascript">
+ 			/*
+	1.HTTP  hyper text transfer protcol
+	2.协议是规则，约定协议的双方
+
+	协议有 FTP SMTP TCP/IP
+	3.web的流程
+		发送请求到客户端
+		服务端处理请求返回数据
+		客户端渲染返回数据
+	4.详细的请求响应
+		用户输入网址或者刷新页面
+		1.域名解析 DNS(域名存在就是便于用户记忆，IP地址与域名进行了绑定)
+		1.1浏览器的缓存查找
+		1.2系统缓存中找
+		1.3host文件
+		1.4向网络运营商发送一个域名解析请求，运营商会查找自身的缓存
+		运营商会发送一个域名的迭代请求到根域服务器，经过服务器层层迭代，运营商得到Ip地址，把IP地址（120.76.134.29:80）返回给浏览器
+		1.5设立TCP IP 连接
+		三次握手
+		一次握手：客户发送数据到服务器向服务器请求是否可以通行
+		二次握手：服务器发送数据给客户端，并等待客户端的返回
+		三次握手：客户端发送可以通信的消息到服务器，建立TCP/
+		建立起IP连接
+	5 发送HTTP请求
+	请求行
+	请求头
+	空白行
+	请求体
+
+	响应行
+	 状态码:
+	1xxx信息
+	2xxxx成功
+	3xxxx重定向
+	4xxx请求错误
+	5xxxx服务器错误
+	响应头
+	空白行
+	响应体
+	5.1
+	浏览器渲染响应体
+	5.2关闭连接
+		也就是说HTPP请求是无状态的，每一次都是新的请求，请求不会被记忆
+	6.请求的方法
+		GET(默认方法)
+		获取数据
+		参数大小是有限制的4K
+		参数是以明文的形式显示在地址栏目中，安全系数低
+		POST
+		提交上传数据，提交表单
+		参数的大小基本没有限制 4G
+		相对来说安全系数高些
+	7.url
+	统一资源定位符  uniform resource locator
+	
+
+		http://www.liyuit.com:80/index.php(协议://域名:端口/资源文件)（叫做url）
+		资源文件:index.php  index.html  index.jsp
+
+
+			注意:协议://域名:端口 组成了一个文档源
+
+			www.liyuit.com
+			http://www.liyuit.com/
+			http://www.liyuit.com:80 写成这样的方式  系统会把他们补完写成http://www.liyuit.com:80/index.php
+			
+		url都属于uri    urn 
+
+
+
+		      IP地址 
+ 			*/
+ 	</script>
+ 
+ </head>
+ <body> 
+ 	<form action="http://www.liyuit.com" method="POST">
+ 		<input type="text" name="user">
+ 		<input type="password" name="password">
+ 		<input type="submit" value="提交">
+ 	</form>
+ </body>
+ </html>

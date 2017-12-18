@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+//五的阶乘
+		function fact(n){
+			var re=1;//阶乘最小就是1
+			for(var i=1;i<=n;i++){
+				re=re*i;
+			}
+			return re;//返回re值给fact（n）之后才能调用
+		}
+		alert(fact(5));
+
+
+
+
+
+
+
+
+
+		function fa1(n){
+			if(n<=1){
+				return 1;//小于等于一，阶乘结束，输出1；
+			}else{
+				return  n* fa1(n-1);//在不小于等于一的情况下才能进行递归计算,使他变成n*fa1(4)*fa1(3)*fa1(2)*fa1(1);
+			}
+		}
+		alert(fa1(5));
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

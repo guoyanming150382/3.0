@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>configurable</title>
+	<!--可否被删除-->
+	<script type="text/javascript">
+		var obj1={};
+		obj1.x=5;
+		obj1.y=6;
+		//configurable定义是否可以被删除，默认的值是false，无法删除，改为true就可以删除
+		Object.defineProperty(obj1,"z",{value:7,enumerable:true,writable:true,configurable:true});
+
+		delete obj1.z;//通过Object.defineProperty定义的z无法删除
+		console.log(obj1.z);
+
+
+		Object.defineProperty(obj1,"o",{value:9,configurable:true});//configurable还可以控制属性权限是否可以被修改，一旦设为false，就无法修改，
+		Object.defineProperty(obj1,"o",{value:9,writable:true});
+		obj1.o=8;
+		console.log(obj1.o);
+	
+
+
+	//configurable还可以控制属性权限是否可以被修改，一旦设为false，就无法修改，
+		Object.defineProperty(obj1,"o",{value:9,configurable:false});
+		Object.defineProperty(obj1,"o",{value:9,configurable:true});
+		//无法成功修改，一旦设为false，就无法修改，
+		Object.defineProperty(obj1,"o",{value:9,writable:true});
+		obj1.o=8;
+		console.log(obj1.o);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

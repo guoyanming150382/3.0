@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function Person(name,age){
+			this.name=name;
+			this.age=age;
+		}
+		Person.prototype.showName=function(){
+			console.log(" i am"+this.name);
+		}
+		Person.prototype.showAge=function(){
+			console.log(" i am"+this.age+"years old");
+		}
+
+		var obj= new Person("lilth",19);
+		obj.showAge();
+		obj.showName();
+		// obj.showclassname();能够调用到student
+
+		function studebt(name,age,classname){
+			Person.call(this,name,age);//属性的继承 从person上继承了name和age
+			this.classname=classname;//自己特有的属性
+		}
+
+		//引用赋值  地址赋值
+		studebt.prototype=Person.prototype;//把子类原型赋予父类,两个指向同一个原型对象，不论给student添加任何对象，person都可以访问到
+
+		studebt.prototype.showclassname=function(){
+			console.log("i from" + this.classname);
+		}
+		
+		var s= new studebt("lilth",19,'9class');
+		s.showName();
+		s.showAge();
+		s.showclassname();
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

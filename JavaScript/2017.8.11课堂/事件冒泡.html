@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			padding: 100px;
+		}
+	</style>
+</head>
+<body onclick="alert(1)">
+	<div style="background: red" onclick="alert('r')">
+		<div style="background: green" onclick="alert('g')">
+			<div style="background: yellow" onclick="alert('y')"></div><!--点击黄色时候，先弹出黄 之后 绿 红  ，点击黄时候也点了绿和红，事件一层层传了上去-->
+		</div>
+	</div>
+</body>
+</html>

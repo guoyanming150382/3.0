@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		
+	var obj=new Array(2,6,9,8,7,4,5);
+
+		//不能用系统自带的对象来创建自己的对象，这样会把系统的方法和属性覆盖掉，会存在问题
+
+		console.log(obj.sort());//不会弹出和，这个是系统的排序sort
+
+		obj.sort=function(){
+			var a=0;
+			for(var i=0;i<this.length;i++){
+				a+=this[i];
+			}
+			return a;
+		}
+		console.log(obj.sort());//弹出数组内的所有数值的和，sort被重新定义了，因此可以用来求和，但是定义过后会把系统的sort覆盖掉，系统的方法属性改变，失去了原有的作用
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

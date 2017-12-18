@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>writable</title>
+	<script type="text/javascript">
+		var obj1={};
+		obj1.x=5;
+		obj1.y=6;
+
+		Object.defineProperty(obj1,"z",{value:7,enumerable:true,writable:true});
+
+		obj1.z= 8;//用Object.defineProperty定义的属性值不从新赋值,需要通过用writable:true，就可以从新赋值
+		console.log(obj1.z);
+
+
+
+	
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

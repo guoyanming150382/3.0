@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var ou=document.getElementById('u1');
+			var oli=ou.children;
+			for(var i=0;i<oli.length;i++){
+				var scolor="";//将颜色进行储存，
+				if(i%2)/*用取余数来判断真假*/{
+					oli[i].style.background='red';//判断结果是真
+				}else{
+					oli[i].style.background='blue';//判断结果是假的
+				}
+				oli[i].onmouseover=function(){
+					scolor=this.style.backgroundColor;//将判断得来的颜色储存
+					this.style.background='pink';
+				}
+				oli[i].onmouseout=function(){
+					this.style.background=scolor;//当鼠标移动走使颜色变成储存的颜色
+				}
+			}	
+		}
+	</script>
+</head>
+<body>
+	<ul id="u1">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+</html>

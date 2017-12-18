@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		/*function show(){
+			console.log('abc');
+		}*/
+		/*setInterval(function show(){
+			console.log('abc');
+		},1000);*/
+		window.onload=function(){
+			var a=null;
+			a=setInterval(function(){
+				console.log('abxc');
+			},1000);
+			var close=document.getElementById('b1');
+			close.onclick=function(){
+				clearInterval(a);
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" id="b1">
+</body>
+</html>

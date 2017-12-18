@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		/*function a(n){
+			var s=1;
+			for(var i=1;i<=n;i++){
+				s= s*i;
+			}
+			return s;//将值返给a(),
+		}
+		alert(a(6));*/
+
+
+
+
+
+		function b(m){
+			if(m<=1){//判断m是否为小于等一的数，1,0的阶乘都是1；
+				return 1;//为1,0情况下返给b(m)的值是1
+			}else{
+				return m* b(m-1);//m不是1，0的情况（return会不断返给b(m)值）
+			}
+		}
+		alert(b(6));
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

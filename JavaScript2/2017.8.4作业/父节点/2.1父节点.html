@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#fa{
+			position: relative;/*当父元素有定位元素时候，son找的就是fa，此时显示的是fa*/
+		}
+		#son{
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oson=document.getElementById('son');
+			// console.log(oson.parentNode);//控制台显示的是son的fa，即son的父元素
+			console.log(oson.offsetParent/*与定位有关*/);//显示body，不是父元素，这时候son找的是有定位元素的父元素，谁有定位就找谁
+		}
+	</script>
+</head>
+<body>
+	<div id="fa">
+		<dir id="son"></dir>
+	</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	window.onload=function(){
+		var aForms=document.forms;//（document上有一个forms的属性）
+		var oForm=aForms[0];//取得的第一个form表单
+		var oForm2=document.getElementById('form1');
+		var oBut=document.getElementById('but1');
+		/*console.log(oForm);//反悔的是一个数组
+		console.log(oForm2);//反悔的是一个数组*/
+
+
+		//提交表单时候触发该事件   注意是数据没有发送以前
+		/*oForm.onsubmit=function(){//触发的事所在的表单
+				alert("669");
+
+				//阻止表单提交
+				return false;//表单将无法提交
+
+		}*/
+		oForm2.onsubmit=function(){
+			alert("999");
+		}
+
+		
+		oBut.onclick=function(){
+			//他不会触发onsubmit事件
+				oForm.submit();
+		}
+
+	}
+
+	</script>
+</head>
+<body>
+	<form action="http://www.liyuit.com" id="form1">
+		<input type="submit" value="提交1">
+		<button type="submit">提交2</button>
+		<input type="image" src="reg.png">
+		<input type="button" id="but1" value="提交3">
+	</form>
+</body>
+</html>

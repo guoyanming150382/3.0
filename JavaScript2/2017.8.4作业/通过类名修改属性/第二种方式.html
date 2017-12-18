@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function get(fu,ziclass){
+			var result =[];
+			var ofu=fu.children;
+			for(var i=0;i<ofu.length;i++){
+				if(ofu[i].className==ziclass){
+					result.push(ofu[i]);
+				}
+			}
+			return result;
+		}
+
+
+		window.onload=function(){
+			var ou1=document.getElementById('u1');
+			var oli=get(ou1,'box');//输入拥有类名box的子元素
+			for(var i=0;i<oli.length;i++){
+				oli[i].style.background='red';
+			}
+		}
+	</script>
+</head>
+<body>
+	<ul id="u1">
+		<li class="box"></li>
+		<li></li>
+		<li class="box"></li>
+		<li></li>
+		<li class="box"></li>
+		<li></li>
+		<li class="box"></li>
+		<li></li>
+		<li class="box"></li>
+	</ul>
+</body>
+</html>

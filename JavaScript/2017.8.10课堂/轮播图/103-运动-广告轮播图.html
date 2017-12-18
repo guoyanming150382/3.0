@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>103-运动-广告轮播图.html</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .ad {
+        width: 790px;
+        height: 340px;
+        margin: 50px auto;
+        position: relative;
+    }
+    ul#imgs{
+        width: 790px;
+        height: 340px;
+        list-style: none;
+    }
+    ul#imgs li{
+        width: 790px;
+        height: 340px;
+        position: absolute;
+        top:0;
+        left:0;
+        opacity: 0.3;
+    }
+    ul#imgs li img{
+        width: 790px;
+        height: 340px;
+    }
+    .ad span {
+        width: 40px;
+        height: 50px;
+        line-height: 50px;
+        display: block;
+        background-color: rgba(0, 0, 0, 0.7);
+        font-size: 30px;
+        color: white;
+        text-align: center;
+        z-index: 50;
+        cursor: pointer;
+    }
+
+    .ad .leftArrow {
+        position: absolute;
+        top: 145px;
+        left: 0px;
+    }
+
+    .ad .rightArrow {
+        position: absolute;
+        top: 145px;
+        right: 0px;
+    }
+
+    ul#btn {
+        list-style: none;
+        width: 160px;
+        height: 40px;
+        background-color: rgba(255, 255, 0, 0.5);
+        position: absolute;
+        left:50%;
+        bottom: 10px;
+        margin-left: -100px;
+        z-index: 50;
+    }
+
+    ul#btn li {
+        float: left;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        border: 1px solid gold;
+        box-sizing: border-box;
+        cursor: pointer;
+    }
+    ul#btn .active{
+        background-color: rgba(255, 255, 0, 1);
+    }
+    </style>
+    <script src="js/move.js"></script>
+    <script>
+        window.onload = function(){
+            var aBtn = document.getElementById('btn').children;
+            var aImg = document.getElementById('imgs').children;
+            var oPre = document.getElementById('pre');
+            var oNext = document.getElementById('next');
+            var oAdbox = document.getElementById('adbox');
+
+            var now = 0;//当前的元素
+            for(var i=0;i<aBtn.length;i++){
+                aBtn[i].index = i;
+                aBtn[i].onclick = function(){
+                    now = this.index;
+                    tab();
+                }
+            }
+            function tab(){
+                for(var i=0;i<aBtn.length;i++){
+                    aBtn[i].className = "";
+                    aImg[i].style.zIndex = 1;
+                    aImg[i].style.opacity = 0.3;
+                }
+                aBtn[now].className = "active";
+                aImg[now].style.zIndex = 30;
+                // aImg[this.index].style.opacity = 1;
+                startMove(aImg[now],{opacity:100});                
+            }
+
+            oNext.onclick = function(){
+                now++;
+                if(now == aBtn.length){
+                    now = 0;
+                }
+                tab();
+            }
+            oPre.onclick = function(){
+                now--;
+                if(now<0){
+                    now = aBtn.length -1;
+                }
+                tab();
+            }
+
+            var timer = setInterval(function(){
+                oNext.onclick();
+            },2000);
+
+            oAdbox.onmouseover = function(){
+                clearInterval(timer);
+            }
+            oAdbox.onmouseout = function(){
+                timer = setInterval(function(){
+                    oNext.onclick();
+                },2000);
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="ad" id="adbox">
+        <ul id="imgs">
+            <li style="z-index: 30;opacity: 1"><img src="1.jpg" alt=""></li>
+            <li><img src="2.jpg" alt=""></li>
+            <li><img src="3.jpg" alt=""></li>
+            <li><img src="4.jpg" alt=""></li>
+        </ul>
+        <span class="leftArrow" id="pre">&lt;</span>
+        <span class="rightArrow" id="next">&gt;</span>
+        <ul id="btn">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-3.2.1.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			/*
+			console.log('#div1');//选择元素的返回值是jQuery对象
+			console.log($('#div1'));//jQuery与$是一样的
+			console.log(jQuery('#div1'));//jQuery与$是一样的
+			console.log($);//返回一个jQuery构造函数
+			console.log($());//一个jQuery对象
+
+			console.log($('div'));//包含三个对象的数组 div1 div2 div3
+
+			//jQuery对象转化成dom元素（选择对象）
+			console.log($('div').get(2));//选择的是93
+			console.log($('div')[0]);//91对象
+*/
+			//找到某个节点，添加样式
+			//$('#div2')[0].style.color="red";//将0改成1会报错
+			//$('#div2')[0].style.fontSize="50px";
+			//在CSS中选择
+			//$('#div1').css('color','blue');//只有941变化
+			//$('#div1').css('fontSize','60px');//只有941变化
+			//从所有标签中选择
+			/*$('div').eq(1).css('fontSize','60px');
+			$('div').eq(2).css('color','purple');
+			$('div').eq(0).css('fontSize','100px');
+			$('div').eq(3).css('fontSize','100px');
+			$('div').eq(3).css('color','blue');*/
+
+			//不存在的对象
+			//console.log($("div4"));//仍然可以返回lquer对象，不会报错
+			//$('div').eq(3).css('color','green');
+		
+
+			//优先级  后写的起作用
+			
+			//$('div').css('color','pink');
+			//$('#div1')[0].style.color="red";
+
+			//id选择器
+			//$('#div1').css('color','pink');//只有一个id能起作用，同名id中的第一个会起作用
+		});
+		
+	</script>
+</head>
+<body>
+	<div id="div1">91</div>
+	<div id="div1">96</div>
+	<div id="div2">92</div>
+	<div id="div2">99</div>
+	<div id="div3">93</div>
+</body>
+</html>

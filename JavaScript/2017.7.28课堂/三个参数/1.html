@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#p1{
+			width: 200px;
+			height: 200px;
+			border: 1px solid #000;
+		}
+	</style>
+	
+</head>
+<body>
+	<input type="button" value="color" onclick="a('style','background','red')">
+	<input type="button" value="width" onclick="a('style','width','500px')">
+	<input type="button" value="height" onclick="a('style','height','600px')">
+	<button id="d1">rest</button>
+	<p id="p1"></p>
+</body>
+<script type="text/javascript">
+		function a(b,c,d){//输入的三个参数
+			var f = document.getElementById('p1');
+			var b1=document.getElementById('d1');
+			f[b][c]=d;/*p1.style.width=600px*/
+			b1.onclick=function(){
+				f[b][c]="";
+			}
+
+		} 
+	</script>
+</html>

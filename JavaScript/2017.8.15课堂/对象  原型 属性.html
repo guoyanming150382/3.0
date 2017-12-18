@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function Person(name,age){
+			this.name=name;
+			this.age=age;
+		}//构造函数
+		Person.prototype.personname=function(){
+				console.log("年龄"+this.name); 
+						}
+		Person.prototype.personage=function(){
+				console.log("名字"+this.age);
+			}
+		Person.prototype.legs=2;//构造函数原型 可以被共享
+
+		var obj1=new Person(66,88);//实例对象上添加属性会覆盖原来的
+		obj1.personname();
+		obj1.personage();
+
+		//obj1.personheight();//错误显示无法找到,实例上 构造函数原型上，原型对象上都没有，无法找到
+
+
+		obj1.legs=8;
+		 // delete obj1.legs;//显示2，因为实例上的8被删除掉了 dele能删除自定义的属性，原型上的也可以删除
+		// delete Person.prototype.legs;//原型上的也可以删除  显示无法找到
+		console.log( delete obj1.legs);//删除TRUE
+		console.log( delete obj1.legs);//删了两次还显示TRUE，delete的删除实质判断的是该属性存不存在，如果有删除，返回真，若没有直接返回真
+		console.log(obj1.legs);//显示8，在实例上添加了一个构造函数原型，因此在实例上就可以找到，因此不再去原型上找了
+
+		var obj2=new Person("ke",66);
+		console.log(obj2.legs);//显示2，因为我obj2的实例上没有，在构造原型上找得到2；8在obj1上，没有共享，无法找到；
+
+		//实例对象访问属性的方法时 首先会去对象的实例上查找，如果没有就去实例的--proto--对象（构造函数的原型）上寻找，若果没有，去构造函数的--proto--（object的原型对象）上寻找，如果还没有，就返回undefined
+		//无论属性还是方法，都是沿着属性连向上查找
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

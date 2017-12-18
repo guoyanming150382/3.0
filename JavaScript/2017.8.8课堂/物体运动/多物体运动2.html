@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{width: 100px;
+			height: 100px;
+			background: red;
+			margin-left: 20px;
+			float: left;
+			}
+	</style>
+	<script type="text/javascript">
+		function move(obj,atrr,itarget){//变化的对象元素  变化数值 变化的目标
+			
+			clearInterval(obj.timer);
+			obj.timer=setInterval(function(){
+				var curr=parseInt(getComputedStyle(obj,false)[atrr]);//curr是对象的odiv.offsetHeight  obj  是变化对象   atrr是变化的数值 （为防止抖动  取整数  用parseInt） 
+				var speed=(itarget-curr)/10;
+				speed= speed>0 ?Math.ceil(speed) : Math.floor(speed);
+			if(itarget==curr){
+				clearInterval(obj.timer);
+			}else{
+				obj.style[atrr]=curr+speed+"px";
+			}
+			},30);
+			
+		}
+		window.onload=function(){
+			var odiv=document.getElementsByTagName('div');
+			for(var i=0;i<odiv.length;i++){
+				odiv[i].onmouseover=function(){
+					move(this,'height',300);
+				}
+				odiv[i].onmouseout=function(){
+					move(this,'height',100);
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+</body>
+</html>

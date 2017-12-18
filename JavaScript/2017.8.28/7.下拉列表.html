@@ -1,0 +1,51 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	window.onload=function(){
+		var obt=document.getElementById('but1');
+		var oForm=document.forms;
+		var aForm=oForm[0];
+		var aInp=aForm.elements;
+		var oSelet=aInp["city"];
+
+		console.log(oSelet.options[3]);//要给option加上s城市列举的不止一个
+		console.log(oSelet.options[3].value);//显示value   M
+		console.log(oSelet.options[3].text);//显示美国
+
+		// oSelet.options[2].selected=true;//默认被训中的城市
+		obt.onclick=function(){
+			for(var i=0;i<oSelet.options.length;i++){
+				if(oSelet.options[i].selected){
+					console.log(oSelet.options[i].text+"被选中了");
+				}
+			}
+		}
+			
+}
+	</script>
+</head>
+<body>
+	<form action="http://www.liyuit.com" id="form1">
+	姓名：<input type="text" name="username" value="tom">
+	<br>
+	年龄：<input type="text" name="age" value="19">
+	<br>
+	<select name="city" id="city">
+		<option value="b">北京</option>
+		<option value="z">郑州</option>
+		<option value="ri">日本</option>
+		<option value="m">美国</option>
+	</select>
+	性别：
+	<input type="radio" name="sex" value="men">男
+	<input type="radio" name="sex" value="nv">女
+	<input type="radio" name="sex" value="bomi">保密<br>
+		<input type="reset" value="重置1">
+		<button type="reset">重置2</button>
+		<input type="button" id="but1" value="那个被选中了">
+	</form>
+</body>
+</html>

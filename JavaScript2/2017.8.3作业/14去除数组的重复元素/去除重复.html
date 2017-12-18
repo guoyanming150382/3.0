@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		a=[1,3,3,5,9,5,66,78,1];
+		console.log(a);
+		function output(a){
+			var b=[];
+			for(var i=0;i<a.length;i++){
+				var bcf=false;
+				for(var j=0;j<b.length;j++){
+					if(a[i]==b[j]){
+						bcf=true;
+						break;
+					}
+				}//j的括号
+				if(!bcf){
+				b.push(a[i]);	
+				}
+			}//i的括号
+			return b;
+		}//output的括号
+		console.log(output(a));
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

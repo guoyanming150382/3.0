@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#p1{
+			width: 200px;
+			height: 200px;
+			border: 1px solid #000;
+		}
+	</style>
+		<script type="text/javascript">
+		window.onload=function(){
+		var a = document.getElementById('i1');
+		a.onclick=function(){
+			var o = document.getElementById('p1');
+			o.style.background='red';
+			}
+		}
+	</script>
+</head>
+<body>
+	<input id="i1" type="button" value="red" >
+	<div id="p1"></div>
+	<!-- 当script以提取事件的方式被移到head中的时候，浏览器会没有办法加载到red，
+		只会加载到空值，用window。onload=function，是让在加载的时候把red先附上去 -->
+
+</body>
+</html>

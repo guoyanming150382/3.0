@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#di{
+			height: 150px;
+			width: 200px;
+			background-color: red;
+			padding: 50px;
+			margin: 50px;
+			border: 5px solid #000;
+		}
+		#div1{
+			width: 50px ;
+			height: 120px;
+			background-color: yellow;
+			position: absolute;
+			left: 260px;
+			top:360px;
+		}
+		.do{
+			width: 160px;
+			height: 260px;
+			background-color: pink;
+			position: relative;
+		}
+		#div2{
+			width: 60px;
+			height: 50px;
+			background-color: blue;
+			position: absolute;
+			top: 50px;
+			left: 80px;
+		}
+	</style>
+	<script src="jquery-3.2.1.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		// console.log($('#di').width());//返回宽度
+		//改变宽度
+		// $('#di').width(300);
+		// $("#di").width("300");
+		// $("#di").width("300px");
+		 // $("#di").width("300em");
+		
+		//改变宽度
+		/*$("#di").width(function(index,value){
+			return 300+value;
+		});//在原来宽度的基础上增加值*/
+
+		//改变高度
+		// console.log($("#di").height());
+		// $("#di").height(200);
+		// $("#di").height("200");
+		// $("#di").height("200px");
+		// $("#di").height("200em");
+		/*
+		$("#di").height(function(index,value){
+			return 300+value;
+		});*/
+
+
+		//内外边距
+/*
+		console.log($("#di").innerWidth());//内边距(包含原有宽高) 300
+		console.log($("#di").innerHeight()); //250
+		console.log($("#di").outerWidth());//外边距(包含原有宽高 边框) 310
+		console.log($("#di").outerHeight());//外边距(包含原有宽高 边框) 260
+
+		console.log($("#di").outerHeight(true));//包含内外边距，边框 360
+		console.log($("#di").outerWidth(true));//包含内外边距，边框 410*/
+
+		/*console.log($("#div1").offset());//返回一个位置信息，以body为相对位置
+		console.log($("#div2").position());//返回一个相对于某一个容器的位置*/
+
+		$(document).click(function(){
+			console.log($(window).scrollTop(600));
+		});
+		
+
+	});
+		
+	</script>
+</head>
+<body style="height: 2000px">
+	<div id="di"></div>
+	<div id="div1"></div>
+	<div class="do">
+		<div id="div2"></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+		#div1 #div2 {
+			width: 380px;
+			height: 600px;
+			border: 1px solid #000;
+			background-color: gray;
+			margin:20px auto;
+		}
+		#div2 li{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #000;
+			float: left;
+			margin-left: 20px;
+			margin-top: 20px;
+			list-style: none;
+			line-height: 100px;
+			text-align: center;
+			background: white;
+
+		}
+		ul:after{
+			content: "";
+			display: block;
+			height: 0px;
+			clear: both;
+			visibility: hidden;
+		}
+		#p{
+			background: pink;
+			margin-top: 20px;
+		}
+		#div2 .over{
+			background: black;
+			color: white;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oDiv2=document.getElementById('div2');
+			var oP=document.getElementById('p');
+			var oLi=document.getElementsByTagName('li');
+			var mOon=['一月闲着','二月闲着','三月闲着','四月闲着','五月闲着','六月闲着','七月闲着','八月闲着','九月闲着','十月闲着','十一月闲着','十二月闲着'];
+
+			for(var i=0;i<oLi.length;i++){
+				oLi[i].index=i;
+				oLi[i].onmouseover=function(){
+					for(var j=0;j<oLi.length;j++){
+						oLi[j].className="";
+					}
+					this.className="over";
+					oP.innerHTML="<h1>"+(this.index+1)+"月安排"+"</h1>"+"<p>"+mOon[this.index]+"</p>"
+				}
+
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="div1">
+		<div id="div2">
+			<ul>
+				<li class="over">1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
+				<li>7</li>
+				<li>8</li>
+				<li>9</li>
+				<li>10</li>
+				<li>11</li>
+				<li>12</li>
+			</ul>
+			<div id="p">
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

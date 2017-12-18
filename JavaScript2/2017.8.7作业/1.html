@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#d1{
+			width: 200px;
+			height: 300px;
+			background: red;
+			position: absolute;
+			left: 600px;
+		}
+		#d2{
+			width: 1px;
+			height: 500px;
+			background: black;
+			position: absolute;
+			left: 300px;
+		}
+	</style>
+
+	<script type="text/javascript">
+		var timer=null;
+		function yido(){
+			clearInterval(timer);
+			var od=document.getElementById('d1');
+			timer=setInterval(function(){
+				var speed=0;
+				if(od.offsetLeft>300){
+					speed=-13;
+				}else{
+					speed=13;
+				}
+				if(Math.abs(300-od.offsetLeft)<speed){
+					clearInterval(timer);
+					od.style.left=300+"px";
+				}else{
+					od.style.left=od.offsetLeft+speed+"px";
+				}
+			},30);
+		}
+		window.onload=function(){
+		var ob=document.getElementById('b1');
+		var od=document.getElementById('d1');
+		ob.onclick=function(){
+			yido();
+		}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" id="b1" value="移动">
+	<div id="d1"></div>
+	<div id="d2"></div>
+</body>
+</html>

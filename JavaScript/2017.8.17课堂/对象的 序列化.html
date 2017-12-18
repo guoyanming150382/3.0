@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var obj ={
+			x:1,
+			y:2,
+			z:3
+		}
+		console.log(typeof JSON.stringify(obj));
+		console.log(JSON.stringify(obj));//弹出的是字符串
+		var pan=JSON.stringify(obj);
+		console.log(pan.x);//无法找到 ，要用对象访问
+		console.log(obj.x);//弹出1，可以找到x
+
+		var str='{"x":1,"y":2,"z":3}';
+		var obj1=JSON.parse(str);//将字符串转化为对象
+		console.log(obj1.x);
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

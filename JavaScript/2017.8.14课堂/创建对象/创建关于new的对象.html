@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function t(){
+			// var this =new;  系统创建了一个 var this =new;
+			console.log(this);
+			//  return this；系统有返回了这个this
+		}
+		// t();//指的是window
+		// new t();//指的是一个对象
+		//1 函数会在一开始创建一个对象，并且这个对象就是this2.函数最后会把这个this返回出去
+		var obj = new t();//用new时候系统在函数内部创建了一个对象，并且返回了回来
+		console.log(obj);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

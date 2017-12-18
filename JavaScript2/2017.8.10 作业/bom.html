@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var ob1=document.getElementById('b1');
+			var ob2=document.getElementById('b2');
+			ob1.onclick=function(){
+				// window.open("about:blank","_blank");//在新的页面上打开窗口，后面的blank可以不写
+				// window.open("about:blank","_self");
+				//window.open("http://www.baidu.com");//打开网址
+				//window.open(window.loctaion);//当前页面的地址
+				window.location="http://www.baidu.com";
+			}
+			ob2.onclick=function(){
+				window.close();
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" id="b1" value="打开">
+	<input type="button" id="b2" value="guan">
+</body>
+</html>

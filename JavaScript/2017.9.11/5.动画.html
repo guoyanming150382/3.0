@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width: 200px;
+			height: 260px;
+			background-color: red;
+			padding: 20px;
+			display: none;
+		}
+	</style>
+	<script src="jquery-3.2.1.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			/*
+			$(":button").eq(0).click(function(){
+				$('#div1').show();
+			});
+			$(":button").eq(1).click(function(){
+				$('#div1').hide();
+			});
+			$(":button").eq(2).click(function(){
+				$('#div1').toggle();//切换隐藏与显示
+			});
+
+			$(":button").eq(0).click(function(){
+				$('#div1').show(1000);
+			});
+			$(":button").eq(1).click(function(){
+				$('#div1').hide(800,function(){
+					alert("结束");
+				});
+			});
+			$(":button").eq(2).click(function(){
+				$('#div1').toggle(680);//在括号内添加数字时间，单位毫秒
+			});
+
+			//速度单词
+			
+			$(":button").eq(0).click(function(){
+				$('#div1').show('');
+			});
+			$(":button").eq(1).click(function(){
+				$('#div1').hide(800);
+			});
+			$(":button").eq(2).click(function(){
+				$('#div1').toggle('fast');//默认fast是200 normal是400  slow是600  引号内什么都不写默认是normal400
+			});
+			
+
+			//上下展开 可以穿时间  单词
+			$(":button").eq(0).click(function(){
+				$('#div1').slideUp(1000);
+			});
+			$(":button").eq(1).click(function(){
+				$('#div1').slideDown('normal');
+			});
+			$(":button").eq(2).click(function(){
+				$('#div1').slideToggle();
+			});
+			*/
+			//透明度
+			$(":button").eq(0).click(function(){
+				$('#div1').fadeIn(1000);
+			});
+			$(":button").eq(1).click(function(){
+				$('#div1').fadeOut();
+			});
+			$(":button").eq(2).click(function(){
+				$('#div1').fadeToggle();
+			});
+
+			$(":button").eq(2).click(function(){
+				$('#div1').fadeTo(1000,0.5);//时长  完成时调回函数
+			});
+
+
+
+		});
+	</script>
+</head>
+<body>
+	<!-- 显示
+	<input type="button" value="显现">
+	<input type="button" value="隐藏">
+	<input type="button" value="切换">
+	<div id="div1">
+		
+	</div>
+
+
+	-->
+	<!-- 上下展开
+	<input type="button" value="向上滑动">
+	<input type="button" value="向下滑动">
+	<input type="button" value="切换">
+	<div id="div1">
+		
+	</div> -->
+	<input type="button" value="淡入">
+	<input type="button" value="淡出">
+	<input type="button" value="切换">
+	<input type="button" value="到">
+	<div id="div1">
+		
+	</div>
+</body>
+</html>

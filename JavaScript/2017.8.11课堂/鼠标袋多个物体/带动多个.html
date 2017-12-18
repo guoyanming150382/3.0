@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 50px;
+			height: 50px;
+			background: red;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	</style>
+	<script type="text/javascript">
+		function getmove(ev){
+			var iscrollleft=document.body.scrollLeft || document.documentElement.scrollLeft;
+			var iscrolltop=document.body.scrollTop || document.documentElement.scrollTop;
+			var x1=ev.clientX+iscrollleft;
+			var y1=ev.clientY+iscrolltop;
+			return {x:x1,y:y1};
+		}
+		window.onload=function(){
+			var odiv=document.getElementsByTagName('div');
+			document.onmousemove=function(ev){
+				var ev = ev || event;
+				odiv[0].style.left=getmove(ev).x+"px";
+				odiv[0].style.top=getmove(ev).y+"px";
+				for(var i=odiv.length-1;i>0;i--){
+					odiv[i].style.left=odiv[i-1].offsetLeft+10+"px";
+					odiv[i].style.top=odiv[i-1].offsetTop+10+"px";
+				}
+			}
+		}
+	</script>
+</head>
+<body style="height: 2000px">
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+</body>
+</html>

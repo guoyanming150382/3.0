@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 50px;
+			height: 50px;
+			border: 1px solid #000;
+		}
+		#div1{
+			height: 150px;
+			width: 150px;
+			background-color: red;
+		}
+		#div3{
+			width: 60px;
+			height: 60px;
+		}
+		.box2{
+			border:3px solid blue;
+		}
+		.box3{
+			background-color: pink;
+		}
+		.box4{
+			background-color: yellow;
+		}
+	</style>
+	<script src="LY1.0.1.js" ></script>
+	<script type="text/javascript">
+		window.onload=function(){
+			//html
+			// $("div").html("hello"); //给div加上hello名
+			// console.log($("div").html());//显示原来名称d1
+			//val
+			// $('input').val("hihi");
+			// console.log($('input').val());  //66
+			//attr
+			// $("div").attr("style","background:green");//三个都变成红色
+			// $("div").attr("style","border:2px solid #000");
+			// console.log($("input").attr("value"));//66
+
+			//连调两次
+			// $("input").val("hihihi");
+			// $("input").attr("style","background:green");
+			//连缀
+			// $("input").val("hihihi").attr("style","background:green");//val上返回了lq对象 ，可以继续在这里加上属性
+			// console.log($("input").val("hihihi"));//返回lq对象
+			// $("input").attr("style","background:green").val("hihihi");//在attr上返回对象  颠倒顺序也可以改变属性
+
+			//classname 添加类
+			// $("#div2").addClass("box3");
+
+			//移除类
+			// $("#div2").removeClass("box4");
+
+			//CSS 添加行间样式
+			// $('div').css("background","purple");
+			//传进一组样式
+			/*$('div').css({
+				background:"blue",width:"150px",height:"160px"
+			});*/
+
+
+			//插入
+			// $('#div1').append($("<h1>666666</h1>"));//b插到a中
+			// $("<h1>666666</h1>").appendTo($("#div1"));
+			// before
+			// $("<h2>999</h2>").before($("#div3"));
+
+			//删除节点
+			// $("#div1").remove();//删除节点
+
+
+			//绑定事件
+			$("div").bind('click',function(){
+				alert(965);
+			});
+
+		}
+
+	</script>
+</head>
+<body>
+	<div id="div1" >d1</div>
+	<div id="div2" class="box2 box4">d2</div>
+	<div>
+		<div id="div3">d3</div>
+	</div>
+	<input type="text" value="66">
+	<input type="text">
+
+</body>
+</html>

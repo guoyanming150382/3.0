@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var ob=document.getElementById('b1');
+			var ou=document.getElementById('u1');
+			ob.onclick=function(){
+				var ol=ou.children;
+				var arr=[];
+				for(var i=0;i<ol.length;i++){
+					arr.push(ol[i]);
+				}
+				arr.sort(function(m1,m2){
+					var n1=parseInt(m1.innerHTML);
+					var n2=parseInt(m2.innerHTML);
+					return n1-n2;
+				})
+				for(var i=0;i<arr.length;i++){
+					ou.appendChild(arr[i]);
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" id="b1" value="排序">
+	<ul id="u1">
+		<li>8789</li>
+		<li>69</li>
+		<li>55</li>
+		<li>36</li>
+		<li>21</li>
+		<li>5</li>
+		<li>9</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	window.onload=function(){
+		var aForms=document.forms;
+		var oForm=aForms[0];
+		var aEl=oForm.elements;//elements是form具有的一个属性  是个集合，具有form上的所有表单
+		console.log(aEl);
+
+		var U1=aEl[0];//通过此方式找到相应的表单
+		console.log(U1);
+		var R1=aEl[3];
+		console.log(R1);
+
+
+		var A1=aEl['age'];
+		console.log(A1);
+		var B1=aEl['but1'];
+		console.log(B1);
+
+
+		var A2=aEl.age;//用的是name
+		console.log(A2);
+		var B2=aEl.but1;//用的是id
+		console.log(B2);
+
+		var A3=oForm.age;
+		console.log(A3);
+		var B3=oForm.but1;
+		console.log(B3);
+
+		var Sex=oForm['sex'];//得到的是三个input
+		console.log(Sex);
+		console.log(Sex[1].value);
+
+		var Sex1=oForm[3];
+		console.log(Sex1);
+
+
+
+			
+}
+	</script>
+</head>
+<body>
+	<form action="http://www.liyuit.com" id="form1">
+	姓名：<input type="text" name="username" value="tom">
+	<br>
+	年龄：<input type="text" name="age">
+	<br>
+	性别：
+	<input type="radio" name="sex" value="men">男
+	<input type="radio" name="sex" value="nv">女
+	<input type="radio" name="sex" value="bomi">保密<br>
+		<input type="reset" value="重置1">
+		<button type="reset">重置2</button>
+		<input type="button" id="but1" value="重置3">
+	</form>
+</body>
+</html>

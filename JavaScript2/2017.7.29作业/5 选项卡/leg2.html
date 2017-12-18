@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.b1{
+			background: pink;
+		}
+		#div1 div{
+			width: 200px;
+			height: 200px;
+			border: 1px solid #000;
+			display: none;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var ab = document.getElementsByTagName('input');
+			var db = document.getElementById('div1');
+			var bb = db.getElementsByTagName('div');
+			for(var i=0;i<ab.length;i=i+1){
+				ab[i].index=i;//i因为无法被取出，所以要给每一个button保存上i的属性，就用index，每一个button具有了i，，this代表了ab[i].
+				ab[i].onclick=function(){
+					for(var j=0;j<ab.length;j=j+1){
+						ab[j].className='';
+						bb[j].style.display='none';
+					}
+					this.className='b1';
+					bb[this.index].style.display='block';
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div>
+		<div id="but">
+			<input type="button" value="1" class="b1">
+			<input type="button" value="2">
+			<input type="button" value="3">
+			<input type="button" value="4">
+		</div>
+		<div id="div1">
+			<div style="display: block;">1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+		</div>
+	</div>
+</body>
+</html>

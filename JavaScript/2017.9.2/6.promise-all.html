@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var p1=Promise.resolve('p1');
+		var p2=Promise.resolve('p2');
+		var p3=Promise.resolve('p3');
+		var p4=Promise.reject('p4');
+
+		//Pormise.all([Promise对象1,Promise对象2,Promise对象3。。。。])
+		//1.返回一个Promise对象2.只有所有Promise对象都成功情况下返回的Promise对象是成功的，只要有一个失败，返回的Promise对象就是失败的
+		Promise.all([p1,p2,p3,p4]).then(
+			function(str){
+					console.log("成功"+str);
+				},
+				function(str){
+					console.log("失败"+str);
+				}
+			);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		body{
+			background: black;
+			font-size: 50px;
+			color: white;
+		}
+	</style>
+	<script type="text/javascript">
+	function toxtime(m){
+		var xtime="";
+		if(m<10){
+			xtime="0"+m;
+		}else{
+			xtime=""+m;
+		}
+		return xtime;
+	}
+		window.onload=function(){
+			var od=document.getElementById('d1');
+			var oimg=od.getElementsByTagName('img');
+			function clock(){
+				var date=new Date();
+				var xtime=toxtime(date.getHours())+toxtime(date.getMinutes())+toxtime(date.getSeconds());
+				for(var i=0;i<oimg.length;i++){
+					oimg[i].src="t/"+xtime.charAt(i)+".png";
+				}
+			}
+			clock();
+			setInterval(clock,1000);
+		}
+	</script>
+</head>
+<body>
+	<div id="d1">
+		<img src="t/3.png">
+		<img src="t/3.png">
+		:
+		<img src="t/3.png">
+		<img src="t/3.png">
+		:
+		<img src="t/3.png">
+		<img src="t/3.png">
+	</div>
+</body>
+</html>

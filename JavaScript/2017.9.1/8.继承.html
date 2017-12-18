@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		class Person{
+			constructor(name,age){
+				this.name=name;
+				this.age=age;
+			}
+			showName(){
+				console.log(this.name);
+			}
+			showAge(){
+				console.log(this.age);
+			}
+			static hi(){
+				console.log("hi");
+			}
+		}
+
+
+		//默认继承时候系统会自动调用父类的构造函数
+		class Person1 extends Person{//extends继承关键字  Person1继承了 Person的方法   他可以继承父类的所有方法
+
+		}
+		var obj=new Person1('li',9);
+		obj.showAge();
+		obj.showName();
+
+		Person1.hi();
+
+
+
+		class Person2 extends Person{
+			constructor(name,age,classn){
+				super(name,age);//用super调用父类的构造函数 子类必须调用父类的构造函数
+				this.classn=classn;
+			}
+			showcLass(){
+				console.log(this.classn);
+			}
+		}
+
+		var obj1=new Person2('li',9,'9班');
+		obj1.showAge();
+		obj1.showName();
+		obj1.showcLass();
+		Person2.hi();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

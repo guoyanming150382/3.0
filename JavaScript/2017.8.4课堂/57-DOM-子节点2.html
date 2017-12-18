@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>56-DOM-子节2.html</title>
+    <script>
+
+    window.onload = function(){
+        var oUl = document.getElementById('ul1');
+        
+        for(var i=0;i<oUl.children.length;i++){
+            // oUl.children[i].style.background = 'red';
+            console.log(oUl.children[i]);
+        }
+        
+       /*
+        for(var i=0;i<oUl.childNodes.length;i++){
+            oUl.childNodes[i].style.background = 'red';
+        }
+        */
+    }
+    </script>
+</head>
+
+<body>
+    <ul id="ul1">
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+
+</html>

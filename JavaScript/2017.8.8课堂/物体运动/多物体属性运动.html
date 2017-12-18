@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+			margin-left: 20px;
+			float: left;
+			opacity: 0.3;
+		}
+	</style>
+	<script type="text/javascript">
+		function move(obj,atrr,itarget){
+			clearInterval(obj.timer);
+			var odiv = document.getElementsByTagName('div');
+
+			obj.timer=setInterval(function(){
+				var curr=parseFloat(getComputedStyle(obj,false)[atrr]);//阴影度是小数不能用parseInt，否则小数一律变成一，用Float可以保留小数
+				if(atrr=='opacity'){
+				curr=Math.round(curr*100);//让小数取整，四舍五入
+			}
+				var speed=(itarget-curr)/10;
+				speed=speed>0 ? Math.ceil(speed) : Math.floor(speed);
+				if(itarget==curr){
+					clearInterval(obj.timer);
+				}else{
+					if(atrr=='opacity'){
+						obj.style[atrr]=(curr+speed)/100;
+					}else{
+						obj.style[atrr]=curr+speed+"px";
+					}
+				}
+			},30);
+			
+		}
+		window.onload=function(){
+			var odiv = document.getElementsByTagName('div');
+			odiv[0].onmouseover=function(){
+				move(this,'width',300);
+			}
+			odiv[0].onmouseout=function(){
+				move(this,'width',100);
+			}
+			odiv[1].onmouseover=function(){
+				move(this,'height',300);
+			}
+			odiv[1].onmouseout=function(){
+				move(this,'height',100);
+			}
+			odiv[2].onmouseover=function(){
+				move(this,'fontSize',40);
+			}
+			odiv[2].onmouseout=function(){
+				move(this,'fontSize',10);
+			}
+			odiv[3].onmouseover=function(){
+				move(this,'opacity',100);
+			}
+			odiv[3].onmouseout=function(){
+				move(this,'opacity',30);
+			}
+
+	}
+	</script>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div>125485</div>
+	<div></div>
+</body>
+</html>

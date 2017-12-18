@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var obj={};
+
+		Object.defineProperties(obj,{
+			"x":{value:100,witable:true},
+			"y":{value:200,enumerable:true},
+			"z":{value:300,configurable:true}
+		});
+	console.log(Object.getOwnPropertyDescriptor(obj,"x"));//可以查看到对象上的某个属性权限
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>75-DOM-内容排序.html</title>
+	<script>
+		window.onload = function(){
+			var oBtn = document.getElementById('btn1');
+			var oUl = document.getElementById('ul1');
+			oBtn.onclick = function(){
+				// var aLi = oUl.children;
+				var aLi = oUl.getElementsByTagName('li');
+				// console.log(aLi);
+				// aLi.sort();
+				var arr = [];
+				for(var i=0;i<aLi.length;i++){
+					arr.push(aLi[i]);
+				}
+				// console.log(arr);
+				arr.sort(function(oLi1,oLi2){
+					var iNum1 = parseInt(oLi1.innerHTML);
+					var iNum2 = parseInt(oLi2.innerHTML);
+
+					/*
+					if(iNum1<iNum2){
+						return -1;
+					}else if(iNum1>iNum2){
+						return 1;
+					}else{
+						return 0;
+					}
+					*/
+					return iNum1 - iNum2;
+
+				});
+
+				// console.log(arr);
+				
+				for(var i=0;i<arr.length;i++){
+					// alert("现在需要删除和追加的数据是"+arr[i].innerHTML);
+					oUl.appendChild(arr[i]);
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="排序" id="btn1">
+	<ul id="ul1">
+		<li>12</li>
+		<li>21</li>
+		<li>7</li>
+		<li>18</li>
+		<li>14</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		//1story是window上的一个对象
+		//2strong有两种  localStorage     sexxionStorage
+		//3. 其实strong是一个可以持久化储存的数组
+		//赋值方法
+		localStorage.user="li";
+		localStorage["age"]=19;
+		console.log(localStorage);
+
+
+		//赋值方法   API  注意： Storage存储的信息只存在本地，不会发到服务器 他的存储容量5M 不能设置期限，关闭浏览器后在开启任然存在，localStorage持久存在，除非认为删除 
+		//localStorage的作用域是文档源（协议+域名+端口号）
+		localStorage.setItem('x',1);//在数组中添加
+		localStorage.setItem('y',3);
+		localStorage.removeItem('x');//删除数组中的值
+		console.log(localStorage);
+
+		console.log(localStorage.getItem('y'));//通过item传入一个键值
+
+		//sessionStorage和localStorage一样 作用域是文档源（协议+域名+端口号）和浏览器窗口，一旦sessionStorage关闭浏览器他的值就会被删除
+		console.log(sessionStorage);
+		sessionStorage.user="li";
+		sessionStorage["age"]=19;
+		console.log(sessionStorage);
+		sessionStorage.setItem('y',3);
+		sessionStorage.setItem('x',2);
+		sessionStorage.removeItem('x');
+		console.log(sessionStorage.getItem('y'));
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

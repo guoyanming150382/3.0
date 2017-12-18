@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width: 150px;
+			height: 160px;
+			background-color: pink;
+			margin-top: 20px;
+		}
+		.d1{
+			background-color: green;
+		}
+		.d2{
+			background-color: gray;
+		}
+		.box{
+
+			background-color: yellow;
+		}
+		.box1{
+			background-color: pink;
+		}
+		#d2{
+			background-color: orange;
+		}
+		.bd{
+			width: 60px;
+			height: 160px;
+			background-color: blue;
+		}
+	</style>
+	<script src="jquery-3.2.1.js"></script>
+	<script type="text/javascript">
+		$(function(){
+
+			//内容操作
+			// console.log($('div').html());//不传参数的情况下返回的是好1标签
+			// $('div').html("bihao");//文本内容变成了传入的文本 字符串
+			// $('div').html("<h2>标签222</h2>");//此时传入一个h2标签，会替代原有的
+			// $('div').html($("<h2>标签222</h2>"));//也可以传入一个jQuery对象
+			/*$('div').html(function(){//函数的返回值就是传入html的参数
+				return "69";
+			});*/
+			/*$('div').html(function(index,value){
+				return index+" : "+value;
+			});  //index指的是下标序号  value指的是该标签内的文本内容*/  
+
+
+			// console.log($('div').text());//返回html中的文本内容，不包括标签
+			// $('div').text("表情呢");//div标签内的文本改变
+			// $('div').text('<h2>你好</h2>');//传入的h2不会被当成标签处理，只会当成字符串，而html会当成标签处理
+
+			/*$('div').text(function(){
+				return "69";
+			});*/
+
+			/*$('div').text(function(index,value){
+				return index+" : "value;
+			});//只会生成文字标签不起作用*/
+
+
+
+			//属性操作
+			// $(':text').val("987");
+			// $(':text').val();//不传参数情况下显示默认值
+			// $(':text').val("987");//input内设置name  他会把name覆盖掉
+
+			//attr设置属性
+			// console.log($('div').attr("class"));//返回class的d1
+			// console.log($('div').attr("class","box"));
+			// $('div').attr("class","box");
+			// $(':text').attr("value","box");
+			// $(':text').attr("class","box");
+
+			//实现多个
+			// $('div').attr({class:"box",style:"color:red;"});//给div中的背景色和文本作用
+
+			//写在函数内
+			/*$('div').attr('id',function(index,val){//index指的是标签的下标序号
+				if(index%2==0){
+					return "d2";//余数为0显示
+				}else{
+					return "d1";//余数不为零显示
+				}
+			});
+				$('div').attr('class',function(index,val){
+				if(index%2==0){
+					return "box";
+				}else{
+					return "box1";
+				}
+			});
+
+
+			*/
+
+
+			//dom操作
+
+			// console.log($("<div>6989</div>"));//在控制台创建一个div
+			//内部节点
+			// $('div').append("8888888");//在div元素内部后面插入
+			 // $('div').append($('<h2>号楼</h2>'));//在div中插入div节点
+			 /*$('div').append(function(index,value){
+			 	return index+" * "+value;//index指的是序号  valu是div原有的value名
+			 });*/
+
+			 // $('9877').appendTo($('div'));//appendTo无法插入字符串
+			 // $('<span>天啊哪家建安费哈哈返回返回</span>').appendTo($('div'));//appendTo可插入标签
+			 // $('<span>天回</span>').appendTo($('h1'));
+			 // $('div').prepend($('<h2>99999</h2>'));//插入到div所有元素的前面
+
+
+
+			 // $('div').prepend($("汉字"));//无法插入字符
+			  // $('<h2>你好吗</h2>').prependTo('div');//把元素移入到div内部所有元素的前面
+			   // $("号码").prependTo('div');//无法插入字符
+
+
+			   //外部节点
+			   // $('div').after($('<h2>便桥</h2>'));//把h2插入到div外部的后面
+			   // $('<h2>9887899</h2>').insertAfter('div');//把h2移入到div的后面
+
+			   // $('div').before('<h2>空位</h2>');//插入到div前面
+			   /*$('div').before(function(index,value){
+			   	return index+"/"+value;
+			   });*/
+			   // $('<h2>2222222222222222</h2>').insertBefore('div');//移到div外部的前面
+
+			   //包裹节点
+			   // $('div').wrap($('<span></span>'));//给每一个div外部包裹一个span标签
+			    // $('div').wrap($('<div class="bd"></div>'));//给每一个div包裹一个div，并且给div天佳样式
+			    // $('div').wrapAll($('<div class="bd"></div>'));//把所有div包裹在一个整体中，
+			    // $('div').wrapInner($('<div class="bd"></div>'));//包裹div中的每一个子元素
+			    // $('h3').unwrap();//移除h3外面的div标签
+			    /*
+			    $('div').wrapInner($('<div class="bd"></div>'));
+			    $('h3').wrapInner();//也可以移除添加上的节点*/
+			    //复制节点
+			    // console.log($('h1').clone());//复制h1标签
+			    // $('h1').clone().appendTo('body');//复制h1添加的body内，但是不会赋值方法
+/*
+			    $('#d66').click(function(){
+			    	alert('p');
+			    });
+			    $('#d66').clone().appendTo('body');//克隆的d66没有原版的事件*/
+			    /*
+			     $('#d66').click(function(){
+			    	alert('p');
+			    });
+			    $('#d66').clone(true).appendTo('body');//传一个true进去，会把原版对象上的事件也克隆出来（默认情况是false，不可隆事件）*/
+			    //删除节点
+			    // $('div').remove();//移除所有div
+			    // $('div').remove().appendTo('body');//移除后再添加到body中
+
+			    /*$('#d66').click(function(){
+			    	alert('p');
+			    });
+			    $('div').remove().appendTo('body');//remove会将由原先的事件也移除掉*/
+			    /*
+			    $('#d66').click(function(){
+			    	alert('p');
+			    });
+			    $('div').remove('.d1');//移除div中的class="d1"属性*/
+
+			  /*  $('#d66').click(function(){
+			    	alert('p');
+			    });
+			    $('div').detach().appendTo('body'); 
+			    // $('div').detach(); //不添加append，页面上的div就会被删除掉*/
+
+			    // $('div').empty();//清空div中的所有节点
+
+
+			    //替换
+			    // $('div').replaceWith("<p>");//简写形式
+			    // $('div').replaceWith($('<p></p>'));//用p标签替换掉所有div标签
+			    $('<p></p>').replaceAll($('div'));//与replaceWith相同，事件将不再存在
+		});
+	</script>
+</head>
+<body>
+	<input type="text" name="36">
+	<input type="text" name="69">
+	<div class="d1" >
+		<h1>6987</h1>
+		<h3>9874</h3>
+		<h4>9874</h4>
+		<h5>9874</h5>
+	</div>
+	<div>div2</div>
+	<div>div3</div>
+	<div>div4</div>
+	<div>div5</div>
+	<div>div6</div>
+	<div id="d66">div7</div>
+</body>
+</html>

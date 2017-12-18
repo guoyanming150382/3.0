@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	//css(obj  'width'  '400px') 设置
+	//css(obj ,'width')  取值 
+		function css(){
+			if(arguments.length==2){//判断arguments的长度
+				return arguments[0]/*他指的是对象obj*/.style[arguments[1]/*指的是width*/];//等于2这个情况下取值
+			}else{
+				arguments[0].style[arguments[1]]=arguments[2]/*指的是400px，就是属性的值*/;
+				//不等于2是设置
+			}
+		}
+		window.onload=function(){
+			var od1=document.getElementById('d1');
+				alert(css(od1,'width'));//取出宽50px
+		}
+	</script>
+</head>
+<body>
+	<div id="d1" style="width:50px;"></div>
+</body>
+</html>

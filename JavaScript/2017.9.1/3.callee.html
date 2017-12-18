@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		/*function fnfact(n){
+			if(n<=1){
+				return 1;
+			}else{
+				return n*fnfact(n-1);
+			}
+		}
+		console.log(fnfact(5));
+
+		var fna=fnfact;
+		console.log(fna(5));
+
+		fnfact=null;//此处将fnfact清空了  
+		console.log(fna(5));//无法调到fnfact*/
+
+
+		function fnfact(n){
+			if(n<=1){
+				return 1;
+			}else{
+				return n*arguments.callee(n-1);//arguments.callee指的是当前执行的函数
+			}
+		}
+		console.log(fnfact(5));
+
+		var fna=fnfact;
+		console.log(fna(5));
+
+		fnfact=null;//此处将fnfact清空了  
+		console.log(fna(5));//但是能调到fnfact  
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

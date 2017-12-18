@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+
+</head>
+<body>
+	<script type="text/javascript">
+		function RMB(){
+			this.oInput=null;
+			this.Aforign=[];
+			this.int();
+			this.bindEvent();
+		}
+		RMB.prototype.int=function(){
+			var oP=document.createElement('p');
+			oP.innerHTML="人民币 :";
+
+			this.oInput=document.createElement('input');
+			oP.appendChild(this.oInput);//下面还需要用到oInput,因此把他定为全局变量
+
+			document.body.appendChild(oP);
+		}
+
+		RMB.prototype.regust=function(forgin){
+			this.Aforign.push(forgin);
+		}
+		RMB.prototype.bindEvent=function(){
+			var ot=this;
+			this.oInput.oninput=function(){
+				for(var i=0;i<ot.Aforign.length;i++){
+					ot.Aforign[i].listen(this.value);
+				}
+			}
+			
+		}
+		function Forign(name,rmb,rate){
+			this.oInput=null;
+			this.name=name;
+			this.rate=rate;
+			this.int();
+			rmb.regust(this);
+		}
+		Forign.prototype.int=function(){
+			var oP=document.createElement('p');
+			oP.innerHTML=this.name+":";
+
+			this.oInput=document.createElement('input');
+			this.oInput.disabled='false';
+			oP.appendChild(this.oInput);
+
+			document.body.appendChild(oP);
+		}
+		Forign.prototype.listen=function(val){
+			this.oInput.value=val/this.rate;
+		}
+		var ormb= new RMB();
+		var oUsd=new Forign("美元",ormb,6);
+	</script>
+</body>
+</html>

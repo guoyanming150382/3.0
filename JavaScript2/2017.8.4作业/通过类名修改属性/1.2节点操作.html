@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oul =document.getElementById('ul1');
+			console.log(oul.firstElementChild);//第一个普通节点
+			console.log(oul.firstChild);//包含文本节点的第一个
+
+			console.log(oul.lastElementChild);//最后一个普通节点
+			console.log(oul.lastChild);//包含文本的最后一个
+
+			console.log(oul.nextSibling);//对应的是相邻兄弟文本的下一个文本节点（非普通节点）
+			console.log(oul.nextElementSibling);//对应的相邻文本的下一个普通节点，在这里指的是相对于类的下一个普通文本d2
+
+			console.log(oul.previousSibling);//相对于ul1的前一个文本d1非普通文本节点
+			console.log(oul.previousElementSibling);//相对于ul1的前一个文本d1普通文本节点
+		}
+	</script>
+</head>
+<body>
+	<div id="d1">d1</div>
+	<ul id="ul1">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+	<div id="d2">d2</div>
+</body>
+</html>

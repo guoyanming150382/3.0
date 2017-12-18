@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function s1(){ //函数不属于任何对象
+			console.log('ur');
+		}
+		s1();
+
+		var arr =new Array(1,2,3);
+
+		arr.s1=function(){//方法属于特定对象
+			console.log('urguweu');
+		}
+
+		arr.s1();
+
+		console.log(window);
+		//d对象由方法和属性组成
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

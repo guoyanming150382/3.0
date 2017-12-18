@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.d1{
+			width: 800px;
+			height: 600px;
+			/*background-color: pink;*/
+			margin-left: 320px;
+			position: relative;
+		}
+		.d1 input{
+			height: 50px;
+			width: 300px;
+		}
+		.d1 .username-box .username-1{
+
+			float: left;
+			margin-left: 0px;
+		}
+		.d1 .username-box .username-2{
+			font-size: 10px;
+			float: right;
+			line-height: 50px;
+			margin-right: 100px;
+			position: relative;
+		}
+
+		.d1 .moible-box{
+			position: absolute;
+			top: 60px;
+			height: 50px;
+		}
+		.d1 .moible-box .moible-1{
+
+			float: left;
+			margin-left: 0px;
+		}
+		.d1 .moible-box .moible-2{
+			font-size: 10px;
+			float: right;
+			line-height: 50px;
+			margin-left: 30px;
+			position: relative;
+		}
+		
+		
+		.d1 .yanzhengma-box{
+			position: absolute;
+			top: 120px;
+			height: 50px;
+		}
+		.d1 .yanzhengma-box .yanzhengma-1{
+
+			float: left;
+			margin-left: 0px;
+		}
+		.d1 .yanzhengma-box .yanzhengma-2{
+			font-size: 10px;
+			float: right;
+			line-height: 50px;
+			margin-left: 30px;
+			position: relative;
+		}
+		
+
+		.d1 .password-box{
+			position: absolute;
+			top: 180px;
+			height: 50px;
+		}
+		.d1 .password-box .password-1{
+
+			float: left;
+			margin-left: 0px;
+		}
+		.d1 .password-box .password-2{
+			font-size: 10px;
+			float: right;
+			line-height: 50px;
+			margin-left: 30px;
+			position: relative;
+		}
+
+
+		.ok{
+
+	        float: left;
+	        height: 16px;
+			margin-top: 15px;
+	        padding-left: 15px;
+			background: url(reg_icons.png) -80px 0 no-repeat;
+		}
+		.err{
+			 float: left;
+	        height: 16px;
+			margin-top: 15px;
+	        padding-left: 15px;
+			background: url(reg_icons.png) -80px -23px no-repeat;
+		}
+		.cancel{
+			 float: left;
+	        height: 16px;
+			margin-top: 15px;
+	        padding-left: 15px;
+			background: url(reg_icons.png) -32px -24px no-repeat;
+			position: absolute;
+			top:0px;
+			left:-50px;
+		}
+		.pwd-checklist{
+			list-style: none;
+			margin-left: 50px;
+		}
+		.pwd-checklist li{
+			display: block;
+			height: 16px;
+
+		}
+
+	</style>
+	<script src="js/server.js"></script>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oForm=document.forms[0];
+			var oButn=document.getElementById('butn');
+
+			//用户名获取
+			var oUserInput=oForm.username;
+			var oUserBox=document.getElementById('username-box');
+			var oUser2=oUserBox.getElementById('username-2');
+			var oUserSpan=oUser2.getElementsByTagName('span');
+
+			//用户名验证
+			//设置默认焦点
+			oUserInput.focus();
+		}
+	</script>
+</head>
+<body>
+	<div class="d1">
+		<form>
+			<div class="username-box">
+				<div class="username-1">
+					<label for="username">用户名</label>
+					<input type="text" name="username" placeholder="设置用户名">
+				</div>
+				<div class="username-2" id="username-2">
+					<span class="cancel" style="display: none;"></span>
+                	<span class="ok" style="display: none;"></span>
+                	<span class="err" style="display: none;"></span>
+                	<span class="tiptext" style="display: none;">设置后不可更改,中英文均可，最长14个英文或7个汉字</span>
+				</div>
+			</div>
+			<div class="moible-box">
+				<div class="moible-1">
+					<label for="moible">手机号:</label>
+					<input type="text" name="moible" placeholder="可用于登录和找回密码">
+				</div>
+				<div class="moible-2">
+					<span class="cancel" ></span>
+                	<span class="ok" ></span>
+                	<span class="err" ></span>
+                	<span class="tiptext" >请输入中国大陆手机号,其他用户不可见</span>
+				</div>
+			</div>
+			<div class="yanzhengma-box">
+				<div class="yanzhengma-1">
+				<label for="yanzhengma">验证码:</label>
+					<input type="text" name="yanzhengma" placeholder="请输入验证码">
+				</div>
+				<div class="yanzhengma-2">
+					<span class="cancel" ></span>
+                	<span class="ok" ></span>
+                	<span class="err" ></span>
+				</div>
+			</div>
+			<div class="password-box">
+				<div class="password-1">
+				<label for="password">密码:</label>
+					<input type="text" name="password" placeholder="请设置登录密码">
+				</div>
+				<div class="password-2">
+					<span class="cancel" ></span>
+                	<span class="ok" ></span>
+                	<span class="err" ></span>
+                	<ul  class="pwd-checklist">
+                    	<li class="pwd-checklist-itm">长度为6~14个字符</li>
+                    	<li class="pwd-checklist-itm">支持数字,大小写字母和标点符号</li>
+                    	<li class="pwd-checklist-itm">不允许有空格</li>
+                	</ul>
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="but">
+		<input type="button" value="注册" id="butn">
+	</div>
+</body>
+</html>

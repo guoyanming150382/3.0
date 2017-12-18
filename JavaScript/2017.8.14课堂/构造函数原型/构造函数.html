@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function Person(name,age){
+			//构造函数救赎普通函数  不过是可以用new来创建对象 函数首字母大写
+			this.name=name;
+			this.age=age;
+			this.n=function(){
+				console.log(this.name);
+			}
+			this.b=function(){
+				console.log(this.age);
+			}
+			// return this;系统已经默认创建了
+		}
+
+
+
+		var obj1=new Person(66,88);//new会自动创建var this=new    返回  return this
+		obj1.n();
+		obj1.b();
+		var obj2=new Person(55,99);
+		obj2.n();
+		obj2.b();
+		//构造函数
+		console.log(obj1.n==obj2.n);//false  不能共享
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

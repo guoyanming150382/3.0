@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function Person(name,age){
+			this.name=name;
+			this.age=age;
+		}
+		Person.prototype.personname=function(){
+				console.log("年龄"+this.name); 
+						}
+		Person.prototype.personage=function(){
+				console.log("名字"+this.age);
+			}
+		Person.prototype.legs=2;
+
+		var obj1=new Person("afa",88);
+		console.log(obj1);
+		console.log(obj1.hasOwnProperty('name'));//1.判断对象上是否有自己实例上指定属性 ，反回的是布尔值
+		console.log(obj1.hasOwnProperty('legs'));//反回的是fasle，
+
+		console.log("legs" in obj1);//返回的是true，   2.in判断对象的整个原型链上是否有指定的属性（会从原型链上逐步寻找。只要找到就会返回真）
+		console.log("personage" in obj1);
+
+		//3.判断属性只在原型上有
+		function yuanxing(obj,name){
+			return !obj.hasOwnProperty(name) && (name in obj);
+		}
+		console.log(yuanxing(obj1,'age'));//返回假，age在原型上，属于原型链
+		console.log(yuanxing(obj1,'legs'));//true，不在原型实例上，在原型链上，返回真
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

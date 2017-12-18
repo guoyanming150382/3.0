@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/ajax.js" ></script>
+	<script type="text/javascript">
+		var promise = new Promise(function(resolve,reject){
+			ajax("js/abc.txt",
+				function(str){
+					resolve(str);
+				},
+				function(str){
+					reject(str);
+				}
+				);
+		});
+		promise.then(
+			function(str){
+				console.log("成功"+str);
+			},function(str){
+				console.log("失败"+str);
+			}
+			);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

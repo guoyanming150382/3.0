@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>停下</title>
+	<style type="text/css">
+		#d1{
+			height: 200px;
+			width: 200px;
+			background: red;
+			position: absolute;
+			left: 0px;/*系统由默认的边距，加上0px，否则无法停下图形*/
+		}
+	</style>
+	<script type="text/javascript">
+		var timer=null;
+		function move(){
+			var od=document.getElementById('d1');//在新的函数中需要重新调用要用到的标签；
+			clearInterval(timer);//关掉上一个定时器
+			timer=setInterval(function(){
+				if(od.offsetLeft==300){
+					clearInterval(timer);
+				}else{//加上else否则走到300再次点击，物体就又动了起来
+				od.style.left=od.offsetLeft+1+"px";
+				}//连续点击移动速度会变快，点击多，定时器开得多，多个定时器同时工作，速度加快,z在一个定时器运行前把上一个定时器关掉，就没有问题
+				},30);
+		}
+		window.onload=function(){
+			var ob=document.getElementById('b1');
+			var od=document.getElementById('d1');
+			ob.onclick=function(){
+				move();
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" id="b1" value="移动">
+	<div id="d1"></div>
+</body>
+</html>

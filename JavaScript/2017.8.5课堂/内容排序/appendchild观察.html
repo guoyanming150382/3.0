@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#ul1{
+			background: blue;
+		}
+		#ul2{
+			background: red;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var ou1=document.getElementById('ul1');
+			var ou2=document.getElementById('ul2');
+			var ob=document.getElementById('b1');
+			ob.onclick=function(){
+				var oli =ou1.firstElementChild;//取到ul1中的第一个元素
+				ou1.removeChild(oli);//把l1中的元素删除
+				ou2.appendChild(oli);/*在ou1中追加元素*///把删除了的元素放在ul2中
+			}
+		}
+	</script>
+</head>
+<body>
+	<ul id="ul1">
+	<li>12</li>
+	<li>35</li>
+	<li>66</li>
+	<li>99</li>
+	</ul>
+	<ul id="ul2">
+		<input type="button" value="移动" id="b1">
+	</ul>
+
+</body>
+</html>

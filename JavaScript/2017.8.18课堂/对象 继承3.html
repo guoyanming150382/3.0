@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function Person(name,age){
+			this.name=name;
+			this.age=age;
+		}
+		Person.prototype.showName=function(){
+			console.log(" i am "+this.name);
+		}
+		Person.prototype.showAge=function(){
+			console.log(" i am "+this.age+" years old");
+		}
+		
+		var obj= new Person("lilth",19);
+		obj.showAge();
+		obj.showName();
+
+		function studebt(name,age,classname){
+			Person.call(this,name,age);//属性的继承 从person上继承了name和age(person调用了一次父级函数)
+			this.classname=classname;//自己特有的属性
+		}
+
+		studebt.prototype= new Person();//原来指向的是constructor，但是new之后人为的改变了指向，指向一个新的对象，没有了constructor（person调用了一次父级函数）
+		studebt.prototype.constructor=studebt;//人为的让student加上了constructor
+
+
+		studebt.prototype.showclassname=function(){
+			console.log("i from " + this.classname);
+		}
+
+
+		var s= new studebt("lilth",19,'9class');
+		s.showAge();
+		s.showName();
+		s.showclassname();
+
+		//不足： 调用了两次父类的构造函数，在子类原型上产生了不必要属性(来自弗雷德构造函数)
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

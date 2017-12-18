@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>停下</title>
+	<style type="text/css">
+		#d1{
+			height: 200px;
+			width: 200px;
+			background: red;
+			position: absolute;
+			left: 0px;/*系统由默认的边距，加上0px，否则无法停下图形*/
+		}
+	</style>
+	<script type="text/javascript">
+		var timer=null;
+		function move(){
+			var od=document.getElementById('d1');//在新的函数中需要重新调用要用到的标签；
+			timer=setInterval(function(){
+				if(od.offsetLeft==300){
+					clearInterval(timer);
+				}else{//加上else否则走到300再次点击，物体就又动了起来
+				od.style.left=od.offsetLeft+10+"px";
+				}
+				},30);
+		}
+		window.onload=function(){
+			var ob=document.getElementById('b1');
+			var od=document.getElementById('d1');
+			ob.onclick=function(){
+				move();
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" id="b1" value="移动">
+	<div id="d1"></div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #000;
+			margin-top: 20px;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var ot = document.getElementById('t1');
+			var ob = document.getElementById('b1');
+			var ob2 = document.getElementById('b2');
+			var od = document.getElementById('d1');
+
+			var oT1=document.getElementById('put');
+			var oBt=document.getElementById('btn');
+			var oRest=document.getElementById('rest');
+			var oDiv=document.getElementById('div2');
+
+			ob.onclick=function(){
+				od.innerHTML=ot.value;//给一个元素添加内容
+			}
+			ob2.onclick=function(){
+				od.innerHTML="";
+			}
+
+
+
+			oBt.onclick=function(){
+				oDiv.innerHTML=oT1.value;
+				oT1.value="";
+			}
+			oRest.onclick=function(){
+				oDiv.innerHTML="";
+			}
+
+		}
+	</script>
+</head>
+<body>
+	 <input type="text" id="t1">
+	 <input type="button" value="设置文字" id="b1">
+	 <input type="button" value="清除文字" id="b2">
+	 <div id="d1"></div>
+
+	 <input type="text" id="put">
+	 <button id="btn">书写</button>
+	 <button id="rest">rest</button>
+	 <div id="div2"></div>
+</body>
+</html>

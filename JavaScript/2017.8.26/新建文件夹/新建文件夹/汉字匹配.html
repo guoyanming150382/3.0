@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oBtn=document.getElementById('butn1');
+			var oText=document.getElementById('txt1');
+			oBtn.onclick=function(){
+			var p= /[\u4e00-\u9fa5]+/;
+			if(p.test(oText.value)){
+				alert("汉字正确");
+			}else{
+				alert("汉字错误");
+			}
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="txt1">
+	<input type="button" id="butn1" value="检验">
+</body>
+</html>

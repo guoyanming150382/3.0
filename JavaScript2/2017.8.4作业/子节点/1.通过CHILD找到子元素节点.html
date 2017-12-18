@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oul =document.getElementById('ul1');
+			for(var i=0;i<oul.children.length;i++){
+				if(i%2==0){
+					oul.children[i].style.background='red';
+				}
+				console.log(oul.children[i]);//children只有普通节点，没有文本节点，会找到li
+			}
+		}
+	</script>
+</head>
+<body>
+	<ul id="ul1">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#div1{
+			width: 60px;
+			height: 63px;
+			background-color: orange;
+			position: absolute;
+		}
+		#div2{
+			width: 60px;
+			height: 63px;
+			background-color: red;
+			position: absolute;
+			top: 230px;
+		}
+
+	</style>
+	<script src="jquery-3.2.1.js"></script>
+	<script type="text/javascript">
+		$(function(){//动画效果一步步执行
+			/*
+			$(':button').eq(0).click(function(){
+			
+
+				$('#div1')
+				.animate({
+					width:"400px"
+				},1000);
+
+				$('#div1')
+				.animate({
+					left:"360px"
+				},1000);
+				$('#div1').queue(function(next){
+					$('#div1').css('background','yellow');
+					next();//为函数传入next参数，并且写上next（）就可以执行之后的动画了
+				});
+
+				$('#div1')
+				.animate({
+					height:"400px"
+				},1000);
+			});
+			$(':button').eq(1).click(function(){
+				$('#div1').stop();//只能停止当前正在执行的动化，其他变化还会执行，可以再次点击停止，因为stop（）内默认是false
+			});*/
+
+
+			$(':button').eq(0).click(function(){
+			
+
+				$('#div1').delay(500)//让动画在一开始就延迟些时间再去执行
+				.animate({
+					width:"400px"
+				},1000).delay(500);//delay会让接下来的动画停滞些时间再执行
+
+				$('#div1')
+				.animate({
+					left:"360px"
+				},1000).delay(1000);
+				$('#div1').queue(function(next){
+					$('#div1').css('background','yellow');
+					next();//为函数传入next参数，并且写上next（）就可以执行之后的动画了
+				});
+
+				$('#div1')
+				.animate({
+					height:"400px"
+				},1000);
+			});
+			$(':button').eq(1).click(function(){
+				/*$('#div1').stop(true);//true会停止全部动画*/
+				// $('#div1').stop(true,false);//此时与只传入一个true相同
+				$('#div1').stop(true,true);//传入两个true，停止动画，是在执行完毕的情况下执行，是动画回到执行完毕的状态
+			});
+		});	
+	</script>
+</head>
+<body>
+	<input type="button" value="开始动画">
+	<input type="button" value="停止动画">
+	<div id="div1">swing</div>
+	<div id="div2">l</div>
+
+</body>
+</html>

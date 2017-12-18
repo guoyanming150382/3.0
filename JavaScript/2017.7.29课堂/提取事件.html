@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#p1{
+			width: 200px;
+			height: 200px;
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<input id="i1" type="button" value="red" >
+	<div id="p1"></div>
+	<script type="text/javascript">
+		function to(){
+			var o = document.getElementById('p1');
+			o.style.background='red';
+		}
+		var a = document.getElementById('i1');//先获取到这个元素，
+		a.onclick=to;//i1中的onclick去掉，改变onclick事件，赋予它原来的“to（）事件”
+	</script>
+</body>
+</html>

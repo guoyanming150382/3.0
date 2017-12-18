@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-3.2.1.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			//jQuery选择器，用CSS选择器的方法来选取元素
+			//后代选择器：
+			//$("ul li").css('color','red');
+			// $("ul li").css('fontSize','30px');
+			$("ul").find("li").css("color","purple");
+
+			//子选择器
+			//$("#ul1>li").css('color','blue');//只有儿子起作用
+			 //$("#ul1 li").css('color','blue');//所有li起作用
+
+			//$("#ul1").find("li").css('color','yellow');//对所有儿子起作用与$("ul li").css('color','red');相同
+			//$("#ul1").children("li").css('color','red');//只对儿子起作用 与$("#ul1>li").css('color','blue');相同
+		});
+		
+	</script>
+</head>
+<body>
+	<ul id="ul1">
+		<li>l1</li>
+		<li>l2</li>
+		<li>l3</li>
+		<li>l4</li>
+		<li>l5</li>
+		<li>l6</li>
+		<div>
+			<ul id="ul2">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>6</li>
+			</ul>
+		</div>
+	</ul>
+</body>
+</html>

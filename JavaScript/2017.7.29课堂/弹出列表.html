@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		li{
+			list-style: none;
+		}
+		#sub{
+			display: none;
+		}
+	</style>
+	<script type="text/javascript">
+		function a(){
+			var o = document.getElementById('sub');
+			if(o.style.display=='block'){
+			o.style.display='none';
+		}else{
+			o.style.display='block';
+		}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="新闻" onclick="a()">
+	<div id="sub">
+		<ul>
+			<li>nihao蛤1</li>
+			<li>nihao蛤2</li>
+			<li>nihao蛤3</li>
+			<li>nihao蛤5</li>
+			<li>nihao蛤6</li>
+		</ul>
+	</div>
+</body>
+</html>

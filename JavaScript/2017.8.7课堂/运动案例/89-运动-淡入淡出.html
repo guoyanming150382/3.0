@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>89-运动-淡入淡出.html</title>
+	<style>
+		#div1{
+			width: 200px;
+			height: 200px;
+			background: red;
+			margin:50px auto;
+			opacity: 0.3;
+		}
+	</style>
+	<script>
+		var timer = null;
+		function startMove(iTarget){
+			clearInterval(timer);
+			var oDiv = document.getElementById('div1');
+			var iSpeed = 0;
+			timer = setInterval(function(){
+				var curr = getComputedStyle(oDiv,false)['opacity'];
+				// console.log(curr);
+				if(curr >= iTarget){
+					iSpeed = -0.1;
+				}else{
+					iSpeed = 0.1;
+				}
+
+				if(curr == iTarget){
+					clearInterval(timer);
+				}else{
+					oDiv.style.opacity = curr*1 + iSpeed;
+					// console.log(oDiv.style.opacity);
+				}
+			},30);
+		}
+		window.onload = function(){
+			var oDiv = document.getElementById('div1');
+			oDiv.onmouseover = function(){
+				startMove(1);
+			}
+			oDiv.onmouseout = function(){
+				startMove(0.3);
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="div1"></div>
+</body>
+</html>

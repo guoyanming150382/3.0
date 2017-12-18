@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function Person(name){
+			this.name=name;
+			var age=0;
+			Object.defineProperty(this,"age",{
+				get:function(){
+					return age;
+				},
+				set:function(val){
+					age=val;
+				}
+			});
+		}
+		var obj1=new Person("lilth");
+		obj1.age=66;
+		console.log(obj1.age);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

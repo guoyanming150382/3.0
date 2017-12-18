@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	//实际运用当中最好不封装
+		function Person(name,age){
+			this.name=name;
+			this.age=age;
+
+			console.log(this.personname);
+			console.log('ughuj');	
+			}
+			if(!this.personname){
+						console.log('aaaaaa');
+						Person.prototype.personname=function(){
+						console.log(this.name);
+						}
+					}
+			if(!this.personage){
+				Person.prototype.personage=function(){
+				console.log(this.age);
+				}
+			}	
+
+		var obj1= new Person("lilth",99);
+		obj1.personname();
+		obj1.personage();
+		var obj2= new Person("li",990);
+		obj2.personname();
+		obj2.personage();
+	console.log(obj1.personname==obj2.personname);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

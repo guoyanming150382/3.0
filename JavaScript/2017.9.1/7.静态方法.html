@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		class Person{
+			constructor(name,age){
+				this.name=name;
+				this.age=age;
+			}
+			showName(){
+				console.log(this.name);
+			}
+			showAge(){
+				console.log(this.age);
+			}
+			static hi(){
+				console.log("hi")
+			}//static方法是静态的，1.静态方法属于类，不能被实例继承
+		}
+		var obj=new Person("66",12);
+		// obj.hi();//无法调用
+		Person.hi();//要用类方法调用
+
+
+		function show(){
+
+		}
+		console.log(show.name);//这个name是关键字，指的是show这个名字的构造器
+
+
+		class Person{
+			constructor(name,age){
+				this.name=name;
+				this.age=age;
+			}
+			showName(){
+				console.log(this.name);
+			}
+			showAge(){
+				console.log(this.age);
+			}
+			static hi(){
+				console.log("hi",this);//2这个this是整个构造器
+			}//static方法是静态的，1.静态方法属于类，不能被实例继承
+		}
+		var obj=new Person("66",12);
+		// obj.hi();//无法调用
+		Person.hi();//要用类方法调用
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

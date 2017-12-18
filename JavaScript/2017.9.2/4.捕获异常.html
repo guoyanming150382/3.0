@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var p1 =new Promise(function(resolve,reject){
+			resolve("ok");
+		});
+		p1.then(function(str){
+			console.log(str);
+			throw Error;//这句是异常 之后程序会根据异常做出相应的处理
+		}).catch(function(){
+			console.log("err");//失败的情况下弹出err
+		});
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-3.2.1.js"></script>
+	<script type="text/javascript">
+		 $(function(){
+		 	//$("div.b1").css('color','red');//只有div1会作用 （交集）
+		 	//$('.b1,#div2').css('color','blue');//并集 凡是含有的都会选中
+		 	//$("div.#div1").css('color','red');//不起作用
+		 });
+	</script>
+</head>
+<body>
+	<div class="b1" id="div1">91</div>
+	<div id="div2" class="b2">92</div>
+	<div class="b3">93</div>
+	<ul>
+		<li id="b1">95</li>
+	</ul>
+</body>
+</html>

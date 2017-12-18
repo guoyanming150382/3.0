@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function fn1(){
+			var a ='abc';
+			alert(a);//局部变量，只能在作用域之内起作用；
+		}
+		// alert(a);
+		// fn1();//可以访问到abc ，显示abc
+		function fu1(){
+			alert(a);
+		}
+		fu1();//无法得到abc，因为abc是fn1中的局部变量，fu1中的a没有被定义,fu1访问不到fn中的a，
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

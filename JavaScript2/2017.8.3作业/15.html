@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oul =document.getElementById('ul1');
+			for(var i=0;i<oul.childNodes.length;i++){
+				// if(oul.childNodes[i].nodeType==1){
+				// oul.childNodes[i].style.background='red';
+				// }
+				if(oul.childNodes[i].nodeType==1){
+					oul.childNodes[i].style.background='blue';
+			}	
+			}		
+		}
+	</script>
+</head>
+<body>
+	<ul id="ul1">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+</html>

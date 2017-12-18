@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function Person(name,age){
+			
+			this.name=name;
+			this.age=age;
+			this.n=n;
+			this.b=b;
+			
+		}
+
+		function n(){
+			console.log(this.name);
+		}//全局函数 可以共用
+		function b(){
+			console.log(this.age);
+		}//全局函数 可以共用
+
+
+		var obj1=new Person(66,88);
+		obj1.n();
+		obj1.b();
+		var obj2=new Person(55,99);
+		obj2.n();
+		obj2.b();
+		
+		console.log(obj1.n==obj2.n);//弹出TRUE  可以共享
+		//将构造函数里面的方法指向全局函数可以解决方法共享，但是不能被其他地方调用
+		//缺点 1.全局函数会在其他地方调用，这会有风险2.方法太多的话，需要创建大量全局函数3违背面向对象的封装特性
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

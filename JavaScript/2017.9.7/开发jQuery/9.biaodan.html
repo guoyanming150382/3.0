@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-3.2.1.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			console.log($(':input'));//(_冒号+input或者type名字，就会选中该标签或属性)选中页面上所有input，button与textarea也会被选中
+			console.log($(':button'));
+			console.log($(':checkbox'));
+			console.log($(':disabled'));
+			console.log($('*'));//选中所有元素
+			console.log($('form *'));//选中form下面的所有元素
+			console.log($('body *'));//选中body下面的所有元素
+		});
+	</script>
+</head>
+<body>
+<form>
+	<input type="text" disabled="disabled">
+	<input type="password" name="">
+	<input type="button" name="">
+	<input type="checkbox" name="">
+	<input type="checkbox" name="">
+	<input type="checkbox" name="">
+	<input type="image" name="">
+	<input type="image" name="">
+	<input type="file" name="">
+	<input type="submit" name="">
+	<input type="reset" name="">
+	<button></button>
+	<textarea rows="10" cols="20"></textarea>
+	<select>
+		<option>6</option>
+		<option>3</option>
+	</select>
+	</form>
+</body>
+</html>

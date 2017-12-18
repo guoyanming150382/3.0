@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oU=document.getElementById("u1");
+			var oL=oU.children;
+			for(var i=0;i<oL.length;i++){
+				var scolor="";
+				if(i%2){
+					oL[i].style.background="red";
+				}else{
+					oL[i].style.background="green";
+				}
+
+				oL[i].onmouseover=function(){
+					scolor=this.style.backgroundColor;
+					this.style.background="yellow";
+				}
+				oL[i].onmouseout=function(){
+					this.style.background=scolor;
+				}
+			}
+		}
+	</script>
+
+</head>
+<body>
+	<ul id="u1">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+</html>

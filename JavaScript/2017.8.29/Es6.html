@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		let a=10;
+		a=66;
+		console.log(a);
+
+		/*let a=12;
+		console.log(a);//被定义过的let无法再次定义*/
+		function o(){
+			if(true){
+				var t=25;
+				let d= 10;
+				console.log(d);
+			}
+			console.log(t);//无法输出0，let起作用的范围是快儿
+		}
+		o();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

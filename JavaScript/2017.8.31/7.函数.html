@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		//赋予函数默认值
+		function tL(x,y){
+			/*if(!x){
+				x="hello";
+			}
+			if(!y){
+				y="word";
+			}*/
+			x=x|| "hello";
+			y=y|| "word";
+			console.log(x,y);
+		}
+		tL("hi","beautiful");//如果传进了参数，就会使用穿进去的参数，默认的会被覆盖
+
+
+		//1 在传参列表上面设置默认值
+		function  Ni(x,y="nihao"){
+			console.log(x,y);
+		}
+		Ni("zou");
+		Ni("10","12");
+
+		//2 默认参数的赋值有变量的话，值可以动态改变
+
+		var a=20;
+		function show(p=a+2){
+			console.log(p);
+		}
+		show();//22
+
+		a=30;
+		show();//32  动态改变了默认值
+
+
+		//3,结构赋值
+		function show1({x=1,y=2}={}){
+			console.log(x,y);
+		}
+		show1();
+		show1({x:12,y:16});
+
+
+		function show2(lo,{lp="",li="uu"}){
+				console.log(li);
+		}
+		// show2(88);//会报错  因为默认json的格式是{}={}，可以在调用时候传入{}；
+		show2("ww",{});
+
+
+		function show3(lo,{lp="",li="uu"}={}){
+				console.log(li);
+				}
+		show3("96");
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

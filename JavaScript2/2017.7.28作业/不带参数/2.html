@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#p1{
+			width: 200px;
+			height: 200px;
+			border: 1px solid #000;
+			background: blue;
+		}
+	</style>
+	<script type="text/javascript">
+		function ad(){
+			var o = document.getElementById('p1');
+			o.style.width='300px';
+			o.style.height='300px';
+			o.style.background='red';
+		}
+		function ab(){
+			var p = document.getElementById('p1');
+			p.style.width='56px';
+			p.style.height='56px';
+			p.style.background='purple';
+		}
+	</script>
+</head>
+<body>
+	<p id="p1" onmouseover="ad()" onmouseout="ab()"></p>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#d1{
+			width: 200px;
+			height: 200px;
+			background: green;
+			opacity: 0.2;
+		}
+	</style>
+	<script type="text/javascript">
+		var timer=null;
+		function dan(target){
+			clearInterval(timer);
+			var od1=document.getElementById('d1');
+			var speed=0;//阴影变化速度
+			timer=setTimeout(function(){
+				var yinying=getComputedStyle(od1,false)['opacity'];//取出要当前的阴影度，他取出的是字符串，因此要把他变成数字类型
+				if(yinying>target){
+					speed=-0.1
+				}else{
+					speed=0.1;
+				}
+				if(yinying==target){
+					clearInterval(timer);//当前阴影度变化到达实际目标时候，清除定时器；
+				}else{
+					od1.style.opacity=yinying*1+speed;//否则让阴影按匀速变化，直到与目标一致，把computed取出的字符串变成数字类型
+				}
+
+			},30);
+		}
+		window.onload=function(){
+			var od1=document.getElementById('d1');
+			od1.onmouseover=function(){
+				dan(1);
+			}
+			od1.onmouseout=function(){
+				dan(0.2);
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="d1"></div>
+</body>
+</html>

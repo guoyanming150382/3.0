@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#p1{
+			width: 200px;
+			height: 200px;
+			border: 1px solid #000;
+		}
+	</style>
+	<script type="text/javascript">
+		function ab(width){
+			var o = document.getElementById('p1');
+			o.style.width=width;
+		}
+		function ac(height){
+			var p=document.getElementById('p1');
+			p.style.height=height;
+		}
+		function bc(background){
+			var l =document.getElementById('p1');
+			l.style.background=background;
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="宽度" onclick="ab('300px')">
+	<input type="button" value="高度" onclick="ac('500px')">
+	<input type="button" value="颜色" onclick="bc('blue')">
+	<p id="p1"></p>
+</body>
+</html>

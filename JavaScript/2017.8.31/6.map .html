@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		//map是一种数据集合，和数组相似，以key和value形式存储和访问
+		var map=new Map();
+
+		map.set('a','12');//（键，值）  map.set(键,值);
+		map.set('c','16');
+		map.set('d','18');
+		console.log(map);
+
+		console.log(map.get('a'));//可以用键访问到值
+
+		map.delete('d');
+		console.log(map);
+
+
+		var ap=new Map();
+		ap.set('a','16');
+		ap.set('b','13');
+		ap.set('c','12');
+		ap.set('d','19');
+
+		for(i of ap){
+			console.log(i);
+		}
+
+
+		for(i of ap.entries()){
+			console.log(i);//与上方一样
+		}
+
+		for(i of ap.values()){
+			console.log(i);//得到的是值
+		}
+		for(i of ap.keys()){
+			console.log(i);//得到的是键
+		}
+		for([key,value] of ap){
+			console.log(key +"="+value);//同时得到键和值
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#d1{
+			height: 100px;
+			background: red;
+		}
+	</style>
+	<script type="text/javascript">
+		function css(obj,shuxing,zhi){
+			if(arguments.length==2){
+				return obj.style[shuxing];
+			}else{
+				obj.style[shuxing]=zhi;
+			}
+		}
+		window.onload=function(){
+			var od1= document.getElementById('d1');
+			 
+			css(od1,'width','50px');//设置值
+		}
+	</script>
+</head>
+<body>
+	<div id="d1" style="width: 300px;"></div>
+</body>
+</html>

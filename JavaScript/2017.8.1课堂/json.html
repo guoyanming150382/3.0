@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var a= 'abc';
+		var b=12;
+		var c='ok';
+
+		var arr= ['abc',12,'ok'];
+		// alert(arr[1]);
+
+		//键值对：key是json中的数组 a  b  c  :value是值12  ‘abcd'  'asd'等
+		var json ={a:12,b:'abcd',c:'asd',d:333};
+		alert(json['a']);// 两者相等，用中括号的时候，要给key加上引号              
+		alert(json.a);  //json的值可以被改变用来计算
+		alert(json.a++);//任然为12
+		// json没有length，数组有
+
+		//可以用for  in  来构成循环
+		// for(key in json){
+		// 	alert(json[key]);
+		// }
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

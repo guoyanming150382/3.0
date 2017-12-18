@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-3.2.1.js"></script>
+	<script type="text/javascript">
+		 $(function(){
+		 	console.log($('li').parent());//返回div3
+		 	console.log($('li').parents());//返回div4之上的所有节点包括body和html
+		 	console.log($('li').parentsUntil('#div1'));//到#div1结束，因此只找到div2和div3
+		 	console.log($('li').parentsUntil('body'));//只找到div2和div3,div1
+		 	// $('#div4').parent().css('fontSize','50px');
+		 	// $('#div4').parents().css('fontSize','50px');
+		 	// $('#div4').parentsUntil('#div2').css('fontSize','50px');
+		 });
+	</script>
+</head>
+<body>
+	<div id="div1">
+	d19687
+		<div id="div2">
+		d27896
+			<ul id="div3">
+			d398741
+				<li id="div4">li63258</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

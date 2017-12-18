@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>注册页面</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .reg {
+        width: 980px;
+        margin: 50px auto;
+    }
+
+    .reg div {
+        position: relative;
+        margin-bottom: 20px;
+        zoom: 1;
+        display: block;
+    }
+
+    .reg div:after {
+        content: "";
+        clear: both;
+        display: block;
+        visibility: hidden;
+        height: 0;
+    }
+    .reg .pwd-box{
+        height: 80px;
+    }
+    .reg label {
+        display: block;
+        float: left;
+        height: 42px;
+        width: 65px;
+        margin-right: 10px;
+        line-height: 42px;
+        font-size: 14px;
+        color: #666;
+        font-weight: 700;
+        text-align: right;
+    }
+
+    .reg input {
+        display: block;
+        position: relative;
+        float: left;
+        height: 16px;
+        width: 328px;
+        padding: 11px 10px;
+        margin-right: 10px;
+        border: 1px solid #ddd;
+        font-size: 14px;
+        color: #666;
+        transition: .3s;
+        float: left;
+    }
+
+    .reg .subBtn {
+        position: relative;
+        left: 75px;
+    }
+
+    .reg .subBtn input {
+        display: block;
+        height: 50px;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        color: #fff;
+        background-image: none;
+        border-radius: 3px;
+        border: 0;
+        float: left;
+        width: 350px;
+        background-color: #3f89ec;
+    }
+
+    .reg input:focus {
+        border-color: #488ee7;
+        outline: 0;
+    }
+
+    .ok {
+        display: inline-block;
+        position: relative;
+        float: left;
+        top: 14px;
+        height: 16px;
+        line-height: 12px;
+        padding-left: 20px;
+        background: url(images/reg_icons.png) -80px 0 no-repeat;
+    }
+
+    .err {
+        float: left;
+        position: relative;
+        width: 250px;
+        top: 12px;
+        color: #fc4343;
+        height: 16px;
+        line-height: 14px;
+        padding-left: 20px;
+        background: url(images/reg_icons.png) -80px -23px no-repeat;
+        font-size: 12px;
+    }
+
+    .cancel {
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        background: url(images/reg_icons.png) -32px -24px no-repeat;
+        top: 12px;
+        left: 398px;
+        cursor: pointer;
+    }
+
+    .cancel:hover {
+        background-position: -48px -24px;
+    }
+
+    .tiptext {
+        font-size: 12px;
+        color: #aaa;
+        height: 40px;
+        line-height: 40px;
+    }
+
+    .pwd-checklist {
+        margin-left: 10px;
+        padding: 5px 10px;
+        border: 1px solid #ddd;
+        box-shadow: 1px 1px 1px #efefef;
+        background: #f9f9f9;
+        width: 200px;
+        font-size: 12px;
+        list-style: none;
+        float: left;
+    }
+    .pwd-checklist .pwd-checklist-item-success {
+        background-position: -86px -128px;
+    }
+    .pwd-checklist  .pwd-checklist-item-error {
+        color: rgb(252, 67, 67);
+        background-position: -86px -144px;
+    }
+    .pwd-checklist-item {
+        line-height: 20px;
+        padding-left: 18px;
+        background: url(images/reg_icons.png) no-repeat -86px -112px;
+        color: #666;
+    }
+    </style>
+    <script src="js/ajax.js"></script>
+    <script>
+
+        function hide(obj){
+            obj.style.display = "none";  
+        }
+        function show(obj){
+            obj.style.display = "block";
+        }
+
+        function getLength(str){
+            return str.replace(/[\u4e00-\u9f5a]/g,'aa').length;
+        }
+        function setCancel(oInput,oSpan){
+            if(oInput.value.length > 0){
+                show(oSpan);
+            }else{
+                hide(oSpan);
+            }
+        }
+        window.onload = function(){
+            var oForm = document.forms[0];
+            var oBtn = document.getElementById('btn');
+            //每一个需要验证的项目总开关
+            var bUserFlag = false;
+            var bPhoneFlag = false;
+            var bVerfiyFlag = false;
+            var bPwdFlag = false;
+            //获取用户名表单元素
+            var oUserInput = oForm.username;
+            var oUserBox = document.getElementById('username-box');
+            var aUserSpan = oUserBox.getElementsByTagName('span');
+
+            //获取手机号表单元素
+            var oPhoneInput = oForm.phone;
+            var oPhoneBox = document.getElementById('phone-box');
+            var aPhoneSpan = oPhoneBox.getElementsByTagName('span');
+
+            //获取验证码表单元素
+            var oVerfiyInput = oForm.verfiy;
+            var oVerfiyBox = document.getElementById('verfiy-box');
+            var aVerfiySpan = oVerfiyBox.getElementsByTagName('span');
+
+            //获取密码表单元素
+            var oPwdInput = oForm.password;
+            var oPwdBox = document.getElementById('pwd-box');
+            var aPwdSpan = oPwdBox.getElementsByTagName('span');
+            var oPwdChecklist = document.getElementById('pwdChecklist');
+            var aPwdChecklistLi = oPwdChecklist.children;
+            var bPwd1 = false;
+            var bPwd2 = false;
+            var bPwd3 = false;
+
+            //用户名验证
+
+            //设置默认焦点
+            oUserInput.focus();
+
+            //取消按钮设置
+            oUserInput.onkeyup = function(){
+                setCancel(oUserInput,aUserSpan[0]);
+            }
+            //取消操作
+            aUserSpan[0].onclick = function(){
+                oUserInput.value = "";
+                
+                hide(aUserSpan[0]);
+                hide(aUserSpan[1]);
+                hide(aUserSpan[2]);
+                
+                show(aUserSpan[3]);
+
+                oUserInput.focus();
+                bUserFlag = false;
+            }
+
+            //验证用户名
+            oUserInput.onblur = function(){
+                //隐藏提示信息,成功，失败消息
+                hide(aUserSpan[1]);
+                hide(aUserSpan[2]);
+                hide(aUserSpan[3]);
+
+                var sVal = oUserInput.value;
+                var reg1 = /[\w|\u4e00-\u9f5a]+/g;
+                var reg2 = /^[0-9]+$/g;
+                
+                //用户名不能超过7个汉字或14个字符
+                if(sVal == ""){
+                    bUserFlag = false;
+                }
+                else if(getLength(sVal)>14){
+                    show(aUserSpan[2]);
+                    aUserSpan[2].innerHTML = '用户名不能超过7个汉字或14个字符';
+                    bUserFlag = false;
+                }
+                //用户名仅支持中英文、数字和下划线,且不能为纯数字
+                else if(!reg1.test(sVal) || reg2.test(sVal)){
+                    show(aUserSpan[2]);
+                    aUserSpan[2].innerHTML = '用户名仅支持中英文、数字和下划线,且不能为纯数字';
+                    bUserFlag = false;
+                }
+                //此用户名太受欢迎,请更换一个
+                else{
+                        (
+                        'http://127.0.0.1:3000/checkData?username='+sVal,
+                        function(str){
+                            var bCanReg = eval(str);
+                            if(bCanReg){
+                                show(aUserSpan[1]);
+                                bUserFlag = true;
+                            }else{
+                                show(aUserSpan[2]);
+                                aUserSpan[2].innerHTML = "此用户名太受欢迎,请更换一个";
+                                bUserFlag = false;
+                            }
+                        },
+                        function(str){
+                            console.log("err:"+str);
+                        }
+                    );
+                }
+            }
+
+            //得到焦点显示提示信息
+            oUserInput.onfocus = function(){
+                hide(aUserSpan[1]);
+                hide(aUserSpan[2]);
+                show(aUserSpan[3]);
+            }
+
+            //手机号验证
+            
+            //取消按钮设置
+            oPhoneInput.onkeyup = function(){
+                setCancel(oPhoneInput,aPhoneSpan[0]);
+            }
+
+            //取消操作
+            aPhoneSpan[0].onclick = function(){
+                oPhoneInput.value = "";
+                
+                hide(aPhoneSpan[0]);
+                hide(aPhoneSpan[1]);
+                hide(aPhoneSpan[2]);
+                
+                show(aPhoneSpan[3]);
+
+                oPhoneInput.focus();
+                bPhoneFlag = false;
+            }
+
+            //限制手机号的输入位数
+            oPhoneInput.onkeydown = function(ev){
+                var oEvent = ev || event;
+
+                if(oPhoneInput.value.length > 10 && oEvent.keyCode != 8 && oEvent.keyCode != 37 && oEvent.keyCode != 39){
+                    return false;
+                }
+            }
+
+            //验证
+            oPhoneInput.onblur = function(){
+                //隐藏提示信息,成功，失败消息
+                hide(aPhoneSpan[1]);
+                hide(aPhoneSpan[2]);
+                hide(aPhoneSpan[3]);
+
+                var sVal = oPhoneInput.value;
+                var reg = /1[3578][\d]{9}/;
+                
+                if(sVal == ""){
+                    bPhoneFlag = false;
+                }
+                else if(!reg.test(sVal)){
+                    show(aPhoneSpan[2]);
+                    aPhoneSpan[2].innerHTML = '手机号码格式不正确';
+                    bPhoneFlag = false;                               
+                }else{
+                   //此处省略了ajax请求
+                   show(aPhoneSpan[1]); 
+                   bPhoneFlag = true;
+                }                
+            }
+
+            //得到焦点显示提示信息
+            oPhoneInput.onfocus = function(){
+                hide(aPhoneSpan[1]);
+                hide(aPhoneSpan[2]);
+                show(aPhoneSpan[3]);
+            }
+
+            //验证码的校验
+            
+            //取消按钮设置
+            oVerfiyInput.onkeyup = function(){
+                setCancel(oVerfiyInput,aVerfiySpan[0]);
+            }
+
+            //取消操作
+            aVerfiySpan[0].onclick = function(){
+                oVerfiyInput.value = "";
+                
+                hide(aVerfiySpan[0]);
+                hide(aVerfiySpan[1]);
+                hide(aVerfiySpan[2]);
+
+                oVerfiyInput.focus();
+
+                bVerfiyFlag = false;
+            }
+            //限制验证码的输入位数
+            oVerfiyInput.onkeydown = function(ev){
+                var oEvent = ev || event;
+
+                if(oVerfiyInput.value.length > 5 && oEvent.keyCode != 8 && oEvent.keyCode != 37 && oEvent.keyCode != 39){
+                    return false;
+                }
+            }
+            //验证
+            oVerfiyInput.onblur = function(){
+                //隐藏成功，失败消息
+                hide(aVerfiySpan[1]);
+                hide(aVerfiySpan[2]);
+
+                var sVal = oVerfiyInput.value;
+                var reg = /[\d]{6}/;
+                
+                if(sVal == ""){
+                    bVerfiyFlag = false;
+                }
+                else if(!reg.test(sVal)){
+                    show(aVerfiySpan[2]);
+                    aVerfiySpan[2].innerHTML = '验证码格式不正确';
+                    bVerfiyFlag = false;                               
+                }else{
+                   show(aVerfiySpan[1]);
+                   bVerfiyFlag = true; 
+                }                
+            }
+            //得到焦点隐藏信息
+            oVerfiyInput.onfocus = function(){
+                hide(aVerfiySpan[1]);
+                hide(aVerfiySpan[2]);
+            }
+
+            //密码校验
+            //
+            oPwdInput.onkeyup = function(){
+
+                setCancel(oPwdInput,aPwdSpan[0]); 
+
+                var sVal = oPwdInput.value;
+                var sSucc = "pwd-checklist-item pwd-checklist-item-success";
+                var sError = "pwd-checklist-item pwd-checklist-item-error";
+                var reg1 = /[\da-z\~\`\!\@\#\$\%\^\&\*\(\)\-\_\=\+\\\}\]\{\}\'\"\;\:\?\/\.\>\,\<]+/ig;
+                var reg2 = /\s/g;
+                // 长度为6~14个字符
+                if(sVal.length>=6 && sVal.length<=14){
+                    aPwdChecklistLi[0].className = sSucc;
+                    bPwd1 = true;
+                }else{
+                    aPwdChecklistLi[0].className = sError; 
+                }
+                // 支持数字,大小写字母和标点符号
+                if(reg1.test(sVal)){
+                    aPwdChecklistLi[1].className = sSucc;
+                    bPwd2 = true;
+                }else{
+                    aPwdChecklistLi[1].className = sError;
+                }
+                // 不允许有空格
+                if(!reg2.test(sVal)){
+                     aPwdChecklistLi[2].className = sSucc;
+                     bPwd3 = true;
+                }else{
+                     aPwdChecklistLi[2].className = sError;
+                }
+
+            }
+            //失去焦点校验
+            oPwdInput.onblur = function(){
+
+                if(bPwd1 &&  bPwd2 && bPwd3){
+                    hide(oPwdChecklist);
+                    show(aPwdSpan[1]);
+                    bPwdFlag = true;
+                }else{
+                    bPwdFlag = false;
+                }
+
+                if(oPwdInput.value == ""){
+                    hide(oPwdChecklist);
+                    bPwdFlag = false;
+                }
+            }
+
+            //取消操作
+            aPwdSpan[0].onclick = function(){
+                oPwdInput.value = "";
+                
+                hide(aPwdSpan[0]);
+                hide(aPwdSpan[1]);
+                hide(aPwdSpan[2]);
+
+                bPwd1 = false;
+                bPwd2 = false;
+                bPwd3 = false;
+                bPwdFlag = false;
+                for(var i=0;i<aPwdChecklistLi.length;i++){
+                    aPwdChecklistLi[i].className = "pwd-checklist-item";
+                }
+                show(oPwdChecklist);
+                oPwdInput.focus();
+            }
+            //得到焦点隐藏信息
+            oPwdInput.onfocus = function(){
+                hide(aPwdSpan[1]);
+                hide(aPwdSpan[2]);
+                for(var i=0;i<aPwdChecklistLi.length;i++){
+                    aPwdChecklistLi[i].className = "pwd-checklist-item";
+                }                
+                show(oPwdChecklist);
+            }
+
+            oBtn.onclick = function(){
+                if(oUserInput.value == ""){
+                    show(aUserSpan[2]);
+                    aUserSpan[2].innerHTML = '请您输入用户名';
+                    bUserFlag = false;     
+                }
+
+                if(oPhoneInput.value == ""){
+                    show(aPhoneSpan[2]);
+                    aPhoneSpan[2].innerHTML = '请您输入手机号';
+                    bPhoneFlag = false;   
+                }
+
+                if(oVerfiyInput.value == ""){
+                    show(aVerfiySpan[2]);
+                    aVerfiySpan[2].innerHTML = '请您输入验证码';
+                    bVerfiyFlag = false;   
+                }
+
+                if(oPwdInput.value == ""){
+                    show(aPwdSpan[2]);
+                    aPwdSpan[2].innerHTML = '请您输入验证码';
+                    bPwdFlag = false;  
+                }
+
+                if(bUserFlag && bPhoneFlag && bVerfiyFlag && bPwdFlag){
+                    oForm.submit();
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="reg">
+        <form action="http://www.liyuit.com">
+            <div id="username-box">
+                <label for="username">用户名</label>
+                <input type="text" name="username" placeholder="请设置用户名">
+                <span class="cancel" style="display: none;"></span>
+                <span class="ok" style="display: none;"></span>
+                <span class="err" style="display: none;"></span>
+                <span class="tiptext" style="display: block;">设置后不可更改,中英文均可，最长14个英文或7个汉字</span>
+            </div>
+            <div id="phone-box">
+                <label for="phone">手机号</label>
+                <input type="text" name="phone" placeholder="可用于登录和找回密码">
+                <span class="cancel" style="display: none;"></span>                
+                <span class="ok" style="display: none;"></span>
+                <span class="err" style="display: none;"></span>
+                <span class="tiptext" style="display: none;">请输入中国大陆手机号,其他用户不可见</span> 
+            </div>
+            <div id="verfiy-box">
+                <label for="verfiy">验证码</label>
+                <input type="text" name="verfiy" placeholder="请输入验证码">
+                <span class="cancel" style="display: none;"></span>                
+                <span class="ok" style="display: none;"></span>
+                <span class="err" style="display: none;"></span>
+            </div>
+            <div id="pwd-box" class="pwd-box">
+                <label for="password">密码</label>
+                <input type="password" name="password" placeholder="请设置登录密码"/>
+                <span class="cancel" style="display: none;"></span>               
+                <span class="ok" style="display: none;"></span>
+                <span class="err" style="display: none;"></span>
+                <ul id="pwdChecklist" class="pwd-checklist" style="display: none">
+                    <li class="pwd-checklist-item ">长度为6~14个字符</li>
+                    <li class="pwd-checklist-item ">支持数字,大小写字母和标点符号</li>
+                    <li class="pwd-checklist-item ">不允许有空格</li>
+                </ul>
+            </div>
+            <div class="subBtn">
+                <input type="button" value="注册" id="btn">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

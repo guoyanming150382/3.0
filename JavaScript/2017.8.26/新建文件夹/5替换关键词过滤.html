@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oTxt2=document.getElementById('txt2');
+			var oTxt1=document.getElementById('txt1');
+			var oBtn=document.getElementById('but1');
+
+			oBtn.onclick=function(){
+				var reg=/[明|日]/g;
+				oTxt2.value=oTxt1.value.replace(reg,"**");
+			}
+		}
+	</script>
+</head>
+<body>
+	<textarea id="txt1" cols="30" rows="20"></textarea>
+	<textarea id="txt2" cols="30" rows="20"></textarea>
+	<input type="button" id="but1" value="过滤">
+	<!--明日复明日，明日何其多。
+我生待明日，万事成蹉跎。
+世人若被明日累，春去秋来老将至。
+朝看水东流，暮看日西坠。
+百年明日能几何？请君听我明日歌。
+明日复明日，明日何其多！
+日日待明日，万世成蹉跎。
+世人皆被明日累，明日无穷老将至。
+晨昏滚滚水东流，今古悠悠日西坠。
+百年明日能几何？请君听我明日歌。-->
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var arr = new Array(36,25,99,2,7,6,8);
+	
+		Array.prototype.ji=function(){
+			var re=1;
+			for(var i=0;i<this.length;i++){
+				re*=this[i];
+			}
+			return re;
+		}
+		console.log(arr.ji());
+
+
+		var arr1= new Array(3,6,2,7,8);
+		console.log(arr1.ji());
+
+		var arr2 = new Array(12,3,6,5);
+		console.log(arr2.ji());
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

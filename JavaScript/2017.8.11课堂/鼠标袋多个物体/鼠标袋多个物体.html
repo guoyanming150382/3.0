@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+		div{
+			width: 50px;
+			height: 50px;
+			background: red;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	</style>
+	<script type="text/javascript">
+		function getmove(ev){
+				var iscrolltop=document.body.scrollTop || document.documentElement.scrollTop;
+				var iscrollleft=document.body.scrollLeft || document.documentElement.scrollLeft;
+				var x1=ev.clientX+iscrollleft;
+				var y1=ev.clientY+iscrolltop;
+				return{x:x1,y:y1};
+		}
+
+		window.onload=function(){
+			var odiv=document.getElementsByTagName('div');
+			document.onmousemove=function(ev){
+				var e=ev || event;
+				odiv[0].style.left=getmove(e).x+"px";
+				odiv[0].style.top=getmove(e).y+"px";
+
+				for(var i=odiv.length-1;i>0;i--){//倒着循环,
+					odiv[i].style.left=odiv[i-1].offsetLeft+25+"px";
+					odiv[i].style.top=odiv[i-1].offsetTop+25+"px";
+				}
+
+			}
+		}
+	</script>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+</body>
+</html>

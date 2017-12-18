@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#d1{
+			height: 200px;
+			width: 200px;
+			background: red;
+			position: absolute;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var ob=document.getElementById('b1');
+			var od=document.getElementById('d1');
+			ob.onclick=function(){
+				// od.style.left="300px";
+				setInterval(function(){
+					od.style.left=od.offsetLeft+10+"px";
+				},30);//10是速度，30也可以用来调速度；
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" id="b1" value="移动">
+	<div id="d1"></div>
+</body>
+</html>

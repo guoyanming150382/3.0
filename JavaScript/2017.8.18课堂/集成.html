@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function Person(name,age){
+			this.name=name;
+			this.age=age;
+		}
+		Person.prototype.showname=function(){
+			console.log("i am "+ this.name);
+		}
+		Person.prototype.showage=function(){
+			console.log("i am "+this.age);
+		}
+		Object.defineProperty(Person.prototype,"zhiye",{value:function(){
+			console.log(this.name+" is student");
+		}});
+		/*Object.defineProperty(Person.prototype,"zhiye",{value:function(){
+			console.log(this.name+" is student");
+		},enumerable:true});*/
+
+		var obj=new Person("lilth",19);
+		obj.showname();
+		obj.showage();
+		obj.zhiye();
+
+		function student(name,age,classname){
+			Person.call(this,name,age);
+			this.classname=classname;
+		}
+
+		//1. student.prototype=Person.prototype;
+
+		/*2. for(i in Person.prototype){
+			student.prototype[i]=Person.prototype[i];
+		}//打开enumerable:true，子元素就可以访问父元素中追加的属性*/
+
+		/*student.prototype=new Person();
+		student.prototype.constructor=student;*/
+
+		student.prototype=Object.create(Person.prototype);
+		student.prototype.constructor=student;
+
+
+		student.prototype.shownclassname=function(){
+			console.log(this.name+" from "+this.classname);
+		}
+		var s=new student("lilth",6,"9 class");
+		s.showname();
+		s.shownclassname();
+		s.showage();
+		s.zhiye();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

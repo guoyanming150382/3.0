@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#d1{
+			width: 600px;
+			height: 50px;
+			background: gray;
+			position: relative;
+			margin: 0 auto;
+			margin-top: 50px;
+		}
+		#d2{
+			width: 50px;
+			height: 50px;
+			background: red;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		#d3{
+			background: blue;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var od2=document.getElementById('d2');
+			var od1=document.getElementById('d1');
+			var od3=document.getElementById('d3');
+			od2.onmousedown=function(ev){
+				var ev =ev || event;
+				var mousex=ev.clientX-od2.offsetLeft;
+				
+				document.onmousemove=function(ev){
+					var ev =ev || event;
+					var ileft=ev.clientX-mousex;
+					
+					if(ileft<0){
+						ileft=0;
+					}else if(ileft>(od1.offsetWidth-od2.offsetWidth)){
+						ileft=od1.offsetWidth-od2.offsetWidth;
+					}
+
+					od2.style.left=ileft+"px";
+					var bili=ileft/(od1.offsetWidth-od2.offsetWidth);//拖动的距离占可以拖动距离的百分比
+					// console.log(bili);可以显示当前所占的比例
+					// document.title=bili;//可以显示当前所占的比例
+					od3.style.width=600*bili+"px";
+					od3.style.height=600*bili+"px";
+				}
+				document.onmouseup=function(){
+					document.onmousemove=null;
+					document.onmouseup=null;
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="d1">
+		<div id="d2"></div>
+	</div>
+	<div id="d3"></div>
+</body>
+</html>

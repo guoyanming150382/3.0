@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var promise=new Promise(function(resolve,reject){
+			console.log("m1");
+			resolve("成功");
+		});
+		promise.then(
+			function(str){
+				console.log("m2");
+			});
+		console.log("m3");
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

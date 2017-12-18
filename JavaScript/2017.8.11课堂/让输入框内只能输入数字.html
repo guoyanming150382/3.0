@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var ot=document.getElementById('t1');
+			ot.onkeydown=function(ev){
+				var e = ev || event;
+				// alert(e.keyCode);
+				if(e.keyCode!=8 && !((e.keyCode>=97 && e.keyCode<=106) || (e.keyCode>=48 && e.keyCode<=57))　&&　e.keyCode!=37 &&　e.keyCode!=39){
+					return false;
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="t1">
+</body>
+</html>

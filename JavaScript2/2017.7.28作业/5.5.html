@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#p1{
+			width: 200px;
+			height: 200px;
+			border: 1px solid #000;
+		}
+	</style>
+	<script type="text/javascript">
+		function abc(a,b,c){
+			var o = document.getElementById('p1');
+			o[a][b]=c;
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="color" onclick="abc('style','background','red')">
+	<input type="button" value="width" onclick="abc('style','width','350px')">
+	<input type="button" value="height" onclick="abc('style','height','350px')">
+	<p id="p1"></p>
+</body>
+</html>

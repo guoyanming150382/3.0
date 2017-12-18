@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#d1{
+			height: 100px;
+			background: red;
+		}
+	</style>
+	<script type="text/javascript">
+		function css(obj,shuxing,zhi){
+			if(arguments.length==2){
+				// return obj.style[shuxing];
+				// return getComputedStyle(obj,false)[shuxing];
+				return window.getComputedStyle(obj,false)[shuxing];//在getComputerStyle前加上window.也可以，等同于上一行
+			}else{
+				obj.style[shuxing]=zhi;
+			}
+		}
+		window.onload=function(){
+			var od1= document.getElementById('d1');
+			 alert(css(od1,'width'));
+			// css(od1,'width','50px');//设置值
+		}
+	</script>
+</head>
+<body>
+	<div id="d1" style="width: 300px;"></div>
+</body>
+</html>

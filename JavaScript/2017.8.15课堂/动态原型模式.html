@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		//实际运用当中最好不封装
+		function Person(name,age){
+			this.name=name;//初始化实例的属性
+			this.age=age;//初始化实例的属性
+
+			console.log(this.personname);//第一次执行时候是假，因为还没有personname;所以要在假的情况下去执行personname函数
+			console.log('ughuj');//在每次调用new的时候，他都会被执行一次
+
+			if(!this.personname){
+				console.log('aaaaaa');//在第一次this是假的情况下，会执行到aaaaa，第二次this已经调用过，是真，所以就不会再执行aaaa。也不会显示undefined
+				Person.prototype.personname=function(){//添加的方法
+				console.log(this.name);
+				}
+			}
+			if(!this.personage){
+				Person.prototype.personage=function(){//添加的方法
+				console.log(this.age);
+				}
+			}
+			
+	}
+
+		var obj1= new Person("lilth",99);
+		obj1.personname();
+		obj1.personage();//先显示undefind，之后显示console.log('ughuj');，因为this是假，所以会执行personname函数，显示aaaaa，之后显示 名字和年龄的值
+
+		var obj2= new Person("li",990);
+		obj2.personname();
+		obj2.personage();//不会显示undifind，因为obj1的this用过了personname函数，所以是真，不会再去调用personname函数，所以显示console.log('ughuj');之后不会再显示aaaaa，
+	console.log(obj1.personname==obj2.personname);//显示ture
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

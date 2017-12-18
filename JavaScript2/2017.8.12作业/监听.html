@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var ot1=document.getElementById('t1');
+			var ot2=document.getElementById('t2');
+			var ot3=document.getElementById('t3');
+			function s1(){
+				alert('jrj');
+			}
+			function s2(){
+				alert(1256);
+			}
+			function s3(){
+				alert(98778);
+			}
+			ot1.addEventListener('click',s1,false);
+			ot1.addEventListener('click',s2,false);
+			ot2.addEventListener('click',function(){
+				ot1.removeEventListener('click',s1,false);
+			},false);
+			document.addEventListener('keydown',function(){
+				ot1.removeEventListener('click',s2,false);
+			},false);
+
+			ot3.addEventListener('keydown',s3,false);
+			ot3.addEventListener('keydown',function(){
+				ot3.removeEventListener('keydown',s3,false);
+			},false);
+
+		}
+	</script>
+</head>
+<body>
+	<input type="button" id="t1" value="dianji">
+	<input type="button" id="t2" value="del">
+	<input type="text" id="t3">
+</body>
+</html>

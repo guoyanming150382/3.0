@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		document.oncontextmenu=function(){
+			// alert(56);
+			// return false;//将默认取消，不让执行,还可以用来消除bug
+			var ev = ev || event;
+			ev.preventDefault();//方法2,将默认取消，不让执行,
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

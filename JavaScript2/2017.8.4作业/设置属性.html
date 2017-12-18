@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var ot=document.getElementById('txt1');
+			var ob=document.getElementById('b1');
+			var ob1=document.getElementById('b2');
+			ob.onclick=function(){
+				// ot.value='abc';//方法一
+				// ot['value']='abc';//方法2
+				ot.setAttribute('value','abc');
+				// alert(ot.getAttribute('id'));//通过id取到了元素
+			}
+			ob1.onclick=function(){
+				// ot.removeAttribute('value');取消后value的属性将会没有
+				// ot.value='';//取消后value=abc还存在控制台上
+				ot['value']='';//取消后value=abc还存在控制台上
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="txt1" value="">
+	<input type="button" id="b1" value="设置文字">
+	<input type="button" id="b2" value="取消文字">
+</body>
+</html>

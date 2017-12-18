@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/ajax.js"></script>
+	<script type="text/javascript">
+		/*ajax(
+			"js/abc.txt",
+			function(str){
+				console.log("成功"+str);
+			},
+			function(str){
+				console.log("失败"+str);
+			}
+		);*/
+
+		//1.promise  三个状态
+		//pending（等待处理中）
+		//resolve （处理成功）
+		//reject  处理失败
+		//2.状态改变   pending->resole    pending->reject 
+			var promise =new Promise(function(resolve,reject){
+				/*if(异步成功){
+					resolve();
+				}else{
+					reject();
+				}
+				对异步请求结果的处理
+				*/
+
+				ajax(
+					"js/abc.txt",
+					function(str){
+						// console.log("成功"+str);
+						resolve(str);
+					},
+					function(str){
+						// console.log("失败"+str);
+						reject(str);
+					}
+					);
+				});
+
+
+
+			promise.then(
+				function(str){	
+					 console.log("成功"+str);
+			},
+				function(str){
+					console.log("失败"+str);
+				}
+			);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

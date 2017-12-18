@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function getleng(st){
+			return st.replace(/[\u4e00-\u9fa5]/g,"aa").length;
+		}
+		window.onload=function(){
+			var oTxt=document.getElementById('txt1');
+			var oMsg=document.getElementById('msg');
+			oTxt.onkeyup=function(){
+				var leng=getleng(oTxt.value);
+				oMsg.innerHTML="一输入"+leng+"个字符";
+			} 
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="txt1">
+	<div id="msg"></div>
+</body>
+</html>

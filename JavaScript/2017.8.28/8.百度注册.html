@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	.div1{
+		margin-left: 260px;
+	}
+	.div2{
+		margin-left: 380px;
+	}
+	.div2 input{
+		width: 385px;
+		height: 45px;
+	}
+	.div2{
+		margin-top: 65px;
+	}
+
+	.div2 .fdiv3,.fdiv4,.fdiv5{
+		
+		margin-top: 25px;
+	}
+	
+	.div2 {
+		position: relative;
+	}
+	.div2 .fdiv22{
+		position: absolute;
+		right: 320px;
+		top: 0px;
+	}
+	.div2 .fdiv22 .userul li{
+		font-size: 10px;
+		width: 300px;
+		height: 20px;
+		line-height: 45px;
+		list-style: none;
+	}
+
+	.div2 .fdiv5 .fdiv51{
+		position: relative;
+	}
+
+	.div2 .fdiv5 span .u51{
+		width: 320px;
+		font-size: 8px;
+		list-style: none;
+		position: absolute;
+		top:  -5px;
+		right: -350px;
+	}
+	
+
+	.div6{
+		width: 390px;
+		height: 95px;
+		/*background: pink;*/
+		margin-top: 26px;
+		margin-left: 447px;
+
+	}
+	.div6 .div61{
+		height: 40px;
+		/*background-color: yellow;*/
+		font-size: 12px;
+		text-align: center;
+
+	}
+	.div6 .div61 .div611{
+		height: 14px;
+		width: 14px;
+		border: 1px solid gray;
+		background-color: white;
+		float: left;
+	}
+	.div6 .div61 .div611:hover{
+		border: 1px solid blue;
+	}
+	.div6 .div61 .div612{
+		color: gray;
+		float: right;
+		margin-right: 65px;
+	}
+
+	.div6 .div61 .div612 span a{
+		color:blue;
+		text-decoration: none;
+	}
+	/*.div6 .div62{
+		height: 55px;
+		background-color: #3f89ec;
+		font-size: 18px;
+		color: white;
+		text-align: center;
+		line-height: 55px;
+
+	}*/
+	.div6 .div62 input{
+		display: block;
+		height: 55px;
+		width: 390px;
+		background-color: #3f89ec;
+		font-size: 18px;
+		color: white;
+		text-align: center;
+		line-height: 55px;
+		cursor: pointer;
+
+	}
+	.ok{
+		background: url(reg_icons.png) -80px 0 no-repeat;
+	}
+	.err{
+		background: url(reg_icons.png) -80px -23px no-repeat;
+	}
+	.cancel{
+		background: url(reg_icons.png) -32px -24px no-repeat;
+	}
+	</style>
+	<script src="js/server.js"></script>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oForm=document.forms;
+			var aForm=oForm[0];
+			var oBtn=document.getElementById('btn');
+			
+			//获取用户名表单信息
+			var oUserInt=aForm.username;
+			oUserInt.focus();
+
+			
+
+			
+			
+		}
+	</script>
+</head>
+<body>
+	<div class="div1">
+		<img src="b.gif" class="i1">
+	</div>
+	<div class="div2">
+		<form >
+			<div class="fdiv2" id="fdiv2">
+				<div class="fdiv21">
+					<label for="username">
+						用户名：
+					</label>
+					<input type="text" name="username" id="username">
+					<span class="ok"></span>
+					<span class="err"></span>
+					<span class="tiptext"></span>
+				</div>
+				<div class="fdiv22">
+					<ul class="userul" style="display:block">
+						<li>设置后不可更改</li>
+						<li>中英文均可，最长14个字符或7个汉字</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div  class="fdiv3">
+				<label for="phone">
+					手机号：
+				</label>
+				<input type="text" name="phone" id="phone">
+				<span class="fdiv31" style="display:block">	
+					输入中国大陆手机号，其他用户不可见
+				</span>
+				
+			</div>
+			
+			<div  class="fdiv4">
+				<label for="verfy">
+					验证码：
+				</label>
+				<input type="text" name="verfy" id="verfy">
+				
+			</div>
+			
+			<div  class="fdiv5">
+				<label for="pwd">
+					&nbsp;&nbsp;&nbsp;密码：
+				</label>
+				<input type="password" name="password" id="password">
+				<span class="fdiv51" >
+					<ul class="u51" style="display: block">
+						<li>长度是6-14个字符</li>
+						<li>支持数字、大小写、标点符号</li>
+						<li>不允许有空格</li>
+					</ul>
+				</span>
+			</div>
+				
+		</form>
+	</div>
+	<div class="div6">
+		<div class="div61">
+			<div class="div611"  id="div611">
+				<span style="display: block" id="div611span">√</span> 
+			</div>
+			<div class="div612">阅读并接受
+				<span><a href="#">《百度用户协议》</a></span>及
+				<span><a href="#">《百度隐私权保护声明》</a></span>
+			</div> 
+		</div>
+		<div class="div62">
+			<input type="button" id="btn" value="注册">
+		</div>
+	</div>
+
+	
+</body>
+</html>

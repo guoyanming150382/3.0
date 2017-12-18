@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function fn1(){
+			var a ='abc';
+			alert(a);
+			function fn2(){
+				// var a = 'ced';
+				alert(a);//可以访问到外部的a，也可以用内部自定义的a；
+			}
+			fn2();
+		}
+		fn1();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

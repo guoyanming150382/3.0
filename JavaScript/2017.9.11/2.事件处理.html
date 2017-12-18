@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		p{
+			width: 50px;
+			height: 50px;
+			background-color: blue;
+		}
+	</style>
+	<script src="jquery-3.2.1.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			/*
+			$(':button').click(function(){
+				alert("kierj");
+			}).trigger('click');//涮新页面时候系统点击了button
+
+			//连缀写法
+			$(':button').click(function(){
+				alert("kierj");
+			});
+			$(':button').trigger('click');
+			
+			//简写
+			var ojb=$(':button').click(function(){
+				alert("kierj");
+			});
+			ojb.trigger('click');
+
+
+			$(':button').click(function(){
+				alert("kierj");
+			}).click();
+
+
+			$(':button').click(function(e,data1,data2){
+				alert("kierj+++"+data2+"---"+data1);
+			}).trigger('click',["a","b"]);
+
+
+			$(':button').click([6987,{user:"ko"}],function(e,data1,data2){
+				alert(e.data[1].user);//click上的e自带data事件
+				alert("kierj+++"+data2+"---"+data1);
+			}).trigger('click',["a","b"]);//中括号里面不是数组，代表data1与data2
+
+
+			$(':submit').click(function(){
+			}).trigger('click');//一刷新，就会提交
+
+			//triggerHandler与trigger的区别
+			//1
+			$(':submit').click(function(){
+				alert("987");
+			}).triggerHandler('click');//本来一刷新，就会提交，但是triggerHandler将默认行为阻止了，而没有提交
+			//2
+			$('p').click(function(){
+				alert("operujwe");
+			}).trigger('click');//刷新后所有p都会被点击
+			$('p').click(function(){
+				alert("operujwe");
+			}).triggerHandler('click');//刷新后只有一个p都会被点击
+			//3
+			var ao=$('p').click(function(){
+				alert("operujwe");
+			}).trigger('click');
+			console.log(ao);//返回一个jQuery对象
+			var ab=$('p').click(function(){
+				alert("operujwe");
+				return "78994";
+			}).triggerHandler('click');
+			console.log(ab);//返回undefind或者事件当中的返回值
+
+			*/
+			
+			
+			var ab=$('p').click(function(){
+				alert("operujwe");
+				return this;//返回p标签
+			}).triggerHandler('click');
+			console.log(ab);//返回undefind或者事件当中的返回值
+
+			
+
+
+		});
+	</script>
+</head>
+<body>
+	<input type="button" value="按钮">
+	<form action="6987">
+		<input type="submit" value="提交">
+	</form>
+	<p></p>
+	<p></p>
+	<p></p>
+</body>
+</html>

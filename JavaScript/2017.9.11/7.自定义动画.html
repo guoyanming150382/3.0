@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#div1{
+			width: 60px;
+			height: 63px;
+			background-color: orange;
+			position: absolute;
+		}
+		#div2{
+			
+			width: 60px;
+			height: 63px;
+			background-color: orange;
+			
+			position: absolute;
+			top: 120px
+
+		}
+	</style>
+	<script src="jquery-3.2.1.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			/*
+			$(':button').click(function(){
+				$('#div1').animate({
+					width:"300px",
+					height:"350px",
+					opacity:0.3,
+					left:"200px",
+					top:"160px"
+				},600,function(){
+					alert('abc');
+				});//所有效果同步执行
+			});*/
+
+			/*$(':button').click(function(){
+				$('#div1').animate({
+					width:"-=60px",//通过减等，每次点击都会减少60px
+					height:"350px",
+					opacity:0.3,
+					left:"+=200px",//通过加等，每次点击都会向右移动200px
+					top:"160px"
+				},600);
+				$('#div1').animate({//上面动画执行完毕后再执行这里
+					width:"230px"
+				});
+			});*/
+			$(':button').click(function(){
+				$('#div1').animate({
+					left:"360px",
+				},630,'swing');//先快后慢  后快
+				$('#div2').animate({
+					left:"360px",
+				},630,'linear');//匀速
+				});
+			});
+				
+	</script>
+</head>
+<body>
+	<input type="button" value="开始动画">
+	<div id="div1">swing</div>
+	<div id="div2">linear</div>
+</body>
+</html>

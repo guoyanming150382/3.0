@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function Person(name){
+			this.name=name;
+			var age=0;
+			Object.defineProperty(this,"age",{
+				get:function(){
+					
+					if(age>0){
+						return age;
+					}else{
+						return new Date().getFullYear()-1990;
+					}
+				},
+				set:function(val){
+					if(!isNaN(parseInt(val))){
+						age=val;
+					}else{
+						console.log("这不是数字");
+					}
+					
+				}
+			});
+		}
+		var obj1=new Person("lilth");
+		// obj1.age=66;
+		obj1.age=-3;
+		//obj1.age='ooo';弹出这不是数字
+		console.log(obj1.age);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

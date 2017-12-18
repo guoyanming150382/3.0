@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var arr1=[1,2,3,6,9,5,8,7];
+		/*
+		var arr2=[];
+		for(var i=0;i<arr1.length;i++){
+			arr2.push(arr1[i]);
+		}
+		console.log(arr2);
+		arr2.pop();
+		console.log(arr2);
+		console.log(arr1);*/
+
+		/*
+		var arr2=Array.from(arr1);
+		console.log(arr2);
+		arr2.pop();
+		console.log(arr2);
+		console.log(arr1);*/
+
+		var arr2=[...arr1];//复制一份arr1给arr2
+		arr2.pop();
+		console.log(arr2);
+		console.log(arr1);
+		//作用1用来赋值数组
+
+
+		function ab(...argus){
+			argus.push(66);
+			console.log(argus);//显示整个数组
+			console.log(argus[0],argus[2]);//显示数组中的某一位 
+		}
+		ab(12,15,16);
+		//2函数定义时候，把参数保存在一个数组中
+		function t(x,y,z){
+			console.log(x,y,z);
+		}
+		var tt=[1,6,3];//用扩展名叫数组传入调入函数
+		t(...tt);
+		//3.调用时候，通过扩展运算把数组里的值变成参数列表
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

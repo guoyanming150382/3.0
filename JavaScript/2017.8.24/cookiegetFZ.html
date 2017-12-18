@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		
+
+		function setCookie(key,value,iDate){
+			var oDate=new Date();
+			oDate.setDate(oDate.getDate()+iDate);
+			document.cookie=key+"="+value+";expires="+oDate;
+		}
+		function getCOOKIe(name){
+			var str=document.cookie;
+			var arr=str.split(";");
+			var result="";
+			for(var i=0;i<arr.length;i++){
+				var arr1=arr[i].split("=");
+				if(arr1[0].trim()==name.trim()){
+					result=arr1[1];
+				}
+			}
+			return result;
+		}
+		function removeCookie(name){
+			setCookie(name,false,-1);//输入name参数，false值随便，-1是在前一天就该删除，所以系统现在删除他
+		}
+		setCookie("li","x",2);
+		removeCookie("li");
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

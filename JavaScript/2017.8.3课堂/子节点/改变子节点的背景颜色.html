@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oul =document.getElementById('ul1');
+			for(var i=0;i<oul.childNodes.length;i++){
+				//文本节点的节点类型是3  普通节点的节点类型是1
+				// console.log(oul.childNodes[i].nodeType);
+				if(oul.childNodes[i].nodeType==1){//普通文本类型是1  ，当类型是1的时候添加颜色
+				oul.childNodes[i].style.background='red';}
+			}
+			
+		}
+	</script>
+</head>
+<body>
+	<ul id="ul1">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function a(n){
+
+			for(var x=0;x<n;x++){
+
+				var fuhao="";//设置空的符号，他包括*  -  两种
+
+				for(var y=0;y<(n-x);y++){
+					fuhao=fuhao+"*";
+				}//每一行*的数量
+
+				for(var z=0;z<=x;z++){
+					fuhao=fuhao+"-";
+				}//每一行-的数量
+
+
+				document.write("<p>"+fuhao+"</p>")
+			}
+
+		}
+		a(10)
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

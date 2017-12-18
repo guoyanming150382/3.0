@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var ot1=document.getElementById('txt1');
+			var ot2=document.getElementById('txt2');
+			var oBt=document.getElementById('bnt1');
+			oBt.onclick=function(){
+				var reg=/<[^<>]+>/g;//<任意字符>  用点表示任意字符
+				//^<>表示出了<>以外    意思是找除了<>以外的值  +是量词表示多个
+				ot2.value=ot1.value.replace(reg," ");
+			}
+		}
+	</script>
+</head>
+<body>
+	<textarea id="txt1" cols="30" rows="20"></textarea>
+	<input type="button" id="bnt1" value="过滤">
+	<textarea id="txt2" cols="30" rows="20"></textarea>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var p1=Promise.resolve('p1');
+		p1.then(function(str){
+				console.log("ok"+str)
+			},
+			function(str){
+				console.log("no"+str);
+			});
+		var o2=Promise.reject('o2');
+		o2.then(function(str){
+				console.log("ok"+str);
+			},
+			function(str){
+				console.log("no"+str);
+			});
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

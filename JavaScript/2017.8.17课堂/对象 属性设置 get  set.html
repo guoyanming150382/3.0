@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var obj={
+			name:"oo",
+			get age(){
+				return new Date().getFullYear()-1993;
+			},
+			get time(){
+				// return new Date().getHours()+new Date().getMinutes()+new Date().getSeconds();
+				return new Date().getHours();//返回具体设置的值，这个值设置在了实力上了
+			}
+		}
+		console.log(obj.age);//弹出20 
+		console.log(obj.time);
+
+		obj.age=19;//同get设置的属性不会更改，
+		console.log(obj.age);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		body{
+			background: black;
+			font-size: 50px;
+			color:white;
+		}
+	</style>
+	<script type="text/javascript">
+		function totime(m){
+			var time="";
+			if(m<10){
+				time="0"+m;
+			}else{
+				time=""+m;
+			}
+			return time;
+		}
+		window.onload=function(){
+			var od=document.getElementById('d1');
+			var oimg=od.getElementsByTagName('img');
+			function clock(){
+				var date = new Date();
+				var time= totime(date.getHours())+totime(date.getMinutes())+totime(date.getSeconds());
+				for(var i=0;i<oimg.length;i++){
+					oimg[i].src="t/"+time.charAt(i)+".png";
+				}
+			}
+			clock();
+			setInterval(clock,1000);
+		}
+		
+	</script>
+</head>
+<body>
+	<div id="d1">
+		<img src="t/6.png">
+		<img src="t/6.png">
+		:
+		<img src="t/6.png">
+		<img src="t/6.png">
+		:
+		<img src="t/6.png">
+		<img src="t/6.png">
+	</div>
+</body>
+</html>

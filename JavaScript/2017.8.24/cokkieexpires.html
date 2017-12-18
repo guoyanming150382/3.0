@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var oDate=new Date();
+		oDate.setDate(oDate.getDate()+14);//用expirex给name设定过期时间  关闭重启后  只有name age是默认绘画期限，关闭后cookie就清除了
+		document.cookie="name=li;expires="+oDate;
+		document.cookie="age=19";
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

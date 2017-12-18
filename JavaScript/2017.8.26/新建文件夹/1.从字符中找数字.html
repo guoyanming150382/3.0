@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var str="dg55wg  wetqer55qegtqerqwg8qw999   qwtrqwrqwr  8998";
+		var result=[];
+		var tmp="";
+		for(var i=0;i<str.length;i++){
+			if(str.charAt(i)>="0" && str.charAt(i)<="9"){
+				tmp+=str.charAt(i);
+
+			}else if(tmp){
+				result.push(tmp);
+				var tmp="";
+			}
+		}
+		if(tmp){
+			result.push(tmp);
+		}
+		console.log(result);
+		console.log(str.match(/\d+/g));
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

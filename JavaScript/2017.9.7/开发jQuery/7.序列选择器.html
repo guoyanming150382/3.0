@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-3.2.1.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			// $('div:first-child').css('color','red');//不区分类型，受阻隔影响，第一个div不起作用
+
+			// $('div:first-of-type').css('color','red');//区分类型，不受阻隔影响，第一个div起作用
+
+			// $('div:nth-of-type(1)').css('color','red');//区分类型第一个div  起作用
+			// $('div:nth-child(1)').css('color','red');//不分类型，第一个div不起作用
+			// $('div:nth-child(odd)').css('color','red');//不分类型 奇数div作用
+			// $('div:nth-of-type(odd)').css('color','red');//分类型，只会算div中的奇数
+
+			// $('div:nth-child(even)').css('color','red');//不区分类型只有偶数div作用
+			$('div:nth-of-type(even)').css('color','red');//区分类型只有偶数div作用
+
+		});
+	</script>
+</head>
+<body>
+	<h1>99</h1>
+	<div id="div1" class="b1">d1</div>
+	<div id="div2" class="b2">d2</div>
+	<p class="p4">b4</p>
+	<p class="p6">b5</p>
+	<span>69</span>
+	<div id="div3" class="b3">d3</div>
+	<span>69</span>
+	<p class="p1">b1</p>
+	<div id="div6" class="b3">d6</div>
+	<p class="p2">b2</p>
+	<p class="p3">b3</p>
+</body>
+</html>

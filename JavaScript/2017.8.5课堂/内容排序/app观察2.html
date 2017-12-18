@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#ul1{
+			background: blue;
+		}
+		#ul2{
+			background: red;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var ou=document.getElementById('ul1');
+			var ou1=document.getElementById('ul2');
+			var ob=document.getElementById('b1');
+			ob.onclick=function(){
+				var oli =ou.firstElementChild;//取到ul1中的第一个元素
+				// ou.removeChild(oli);//把l1中的元素删除,  删除remove同样有效
+				ou1.appendChild(oli);/*在ou1中追加元素*/
+				//1把删除了的元素放在ul2中，2除此之外还会把他从原先的位置移动出来，添加给自己
+			}
+		}
+	</script>
+</head>
+<body>
+	<ul id="ul1">
+	<li>12</li>
+	<li>35</li>
+	<li>66</li>
+	<li>99</li>
+	</ul>
+	<ul id="ul2">
+		<input type="button" value="移动" id="b1">
+	</ul>
+
+</body>
+</html>

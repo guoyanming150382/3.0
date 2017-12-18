@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		/*console.log(this);//指的是window
+
+		function s2(){
+			console.log(this);//指的是window，window调用了s2函数
+		}
+		s2();
+
+		var s=function(){
+			console.log(this);//指的是window，window调用了s函数
+		}
+		s();*/
+
+
+		window.onload=function(){
+			var ob=document.getElementById('b1');
+			ob.onclick=function(){
+			console.log(this);//指的是ob即按钮，<input type="button" id="b1" value="点击">
+			}
+		}
+		
+
+		var arr=[6,9,3,5,8];
+		arr.b=function(){
+			console.log(this);//指的是arr数组
+		}
+		arr.b();
+
+
+		//函数属于谁，函数里面的this就是谁
+	</script>
+</head>
+<body>
+	<input type="button" id="b1" value="点击">
+</body>
+</html>

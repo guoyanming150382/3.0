@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>176-对象-面向对象实现轮播图.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.leftBtn{
+			width: 30px;
+			height: 30px;
+			background: rgba(0,0,0,0.7);
+			color: white;
+			font-size: 20px;
+			text-align: center;
+			line-height: 30px;
+			position: absolute;
+			left:0;
+			top:50%;
+			margin-top: -15px;
+		}
+		.rightBtn{
+			width: 30px;
+			height: 30px;
+			background: rgba(0,0,0,0.7);
+			color: white;
+			font-size: 20px;
+			text-align: center;
+			line-height: 30px;
+			position: absolute;
+			right:0;
+			top:50%;
+			margin-top: -15px;
+		}
+		.bottomBtn{
+			position: absolute;
+			bottom: 20px;
+			left:50%;
+			list-style: none;
+		}
+		.bottomBtn li{
+			float: left;
+			width: 20px;
+			height: 20px;
+			background: yellow;
+			margin-left: 10px;
+		}
+		.bottomBtn li.active{
+			background: red;
+		}		
+	</style>
+</head>
+<body>
+	<div id="div1"></div>
+	<div id="div2"></div>
+</body>
+<script src="js/move.js"></script>
+<script>
+	function Carousel(json){
+		//罗列属性
+		this.dom = document.getElementById(json.id);
+		this.aImg = json.aImg;
+		this.width = json.width;
+		this.height = json.height;
+		this.playDraution = json.playDraution;
+		this.aImgUl = null;
+		this.oLeftBtn = null;
+		this.oRightBtn = null;
+		this.oBottomBtn = null;
+		this.now = 0;
+
+		//初始化页面，主要是DOM节点的创建
+		this.init();
+
+		//事件绑定
+		this.bindEvent();
+
+		//自动播放
+		this.autoPlay();
+	}
+
+	Carousel.prototype.init = function(){
+		this.dom.style.position = 'relative';
+		this.dom.style.width = this.width + "px";
+		this.dom.style.height = this.height + "px";
+		//存放图片的ul节点
+		this.aImgUl = document.createElement('ul');
+
+		for(var i=0;i<this.aImg.length;i++){
+			//创建li
+			var oLi = document.createElement('li');
+			
+			//创建图片节点
+			var oImg = document.createElement('img');
+			oImg.src = this.aImg[i];
+			oImg.style.width = this.width + "px";
+			oImg.style.height = this.height + "px";
+
+			oLi.style.position = "absolute";
+			oLi.style.top = 0;
+			oLi.style.left = 0;
+			oLi.style.zIndex = 0;
+			oLi.style.opacity = 0.5;
+			if(i==0){
+				oLi.style.zIndex = 50;
+				oLi.style.opacity = 1;	
+			}
+
+			oLi.appendChild(oImg);
+
+			this.aImgUl.appendChild(oLi);
+		}
+
+		//把存放图片的ul添加到容器节点
+		this.dom.appendChild(this.aImgUl);
+
+		//左右按钮
+		this.oLeftBtn = document.createElement('span');
+		this.oLeftBtn.className = 'leftBtn';
+		this.oLeftBtn.innerHTML = "&lt;";
+		this.oLeftBtn.style.zIndex = 99;
+
+		this.oRightBtn = document.createElement('span');
+		this.oRightBtn.className = 'rightBtn';
+		this.oRightBtn.innerHTML = "&gt;";
+		this.oRightBtn.style.zIndex = 99;
+
+		this.dom.appendChild(this.oLeftBtn);
+		this.dom.appendChild(this.oRightBtn);
+
+		//底部按钮
+		this.oBottomBtn = document.createElement('ul');
+		this.oBottomBtn.className = 'bottomBtn';
+		this.oBottomBtn.style.zIndex = 99;
+
+		for(var i=0;i<this.aImg.length;i++){
+			var oLi = document.createElement('li');
+			if(i==0){
+				oLi.className = "active";
+			}
+			this.oBottomBtn.appendChild(oLi);
+		}
+
+
+		this.dom.appendChild(this.oBottomBtn);
+
+		this.oBottomBtn.style.marginLeft = -this.oBottomBtn.offsetWidth/2 + "px";
+
+	}
+	Carousel.prototype.bindEvent = function(){
+		var _self = this;
+		this.oRightBtn.onclick = function(){
+			_self.next();
+		}
+		this.oLeftBtn.onclick = function(){
+			_self.pre();
+		}
+		for(var i=0;i<this.oBottomBtn.children.length;i++){
+			this.oBottomBtn.children[i].index = i;
+			this.oBottomBtn.children[i].onclick = function(){
+				_self.now = this.index;
+				_self.tab();
+			}
+		}
+
+	}
+	Carousel.prototype.autoPlay = function(){
+		var _self = this;
+		var timer = setInterval(function(){
+			_self.next();
+		},this.playDraution);
+
+		this.dom.onmouseover = function(){
+			clearInterval(timer);
+		}
+
+		this.dom.onmouseout = function(){
+			timer = setInterval(function(){
+				_self.next();
+			},_self.playDraution);
+		}
+	}
+	Carousel.prototype.next = function(){
+		this.now++;
+		if(this.now == this.aImg.length){
+			this.now = 0;
+		}
+		this.tab();
+	}
+	Carousel.prototype.pre = function(){
+		this.now--;
+		if(this.now < 0){
+			this.now = this.aImg.length -1;
+		}
+		this.tab();
+	}	
+	Carousel.prototype.tab = function(){
+		for(var i=0;i<this.aImg.length;i++){
+			this.oBottomBtn.children[i].className = "";
+			this.aImgUl.children[i].style.zIndex = 0;
+			this.aImgUl.children[i].style.opacity = 0.5;
+		}
+		this.oBottomBtn.children[this.now].className = 'active';
+		this.aImgUl.children[this.now].style.zIndex = 50;
+		// this.aImgUl.children[this.now].style.opacity = 1;
+		startMove(this.aImgUl.children[this.now],{opacity:100});
+	}
+
+	new Carousel({
+		id:'div1',
+		aImg:[
+			'images/jd1.jpg',
+			'images/jd2.jpg',
+			'images/jd3.jpg',
+			'images/jd4.jpg',
+		],
+		width:790,
+		height:340,
+		playDraution:1000
+	});	
+	new Carousel({
+		id:'div2',
+		aImg:[
+			'images/jd1.jpg',
+			'images/jd2.jpg',
+			'images/jd3.jpg',
+			'images/jd4.jpg',
+		],
+		width:790,
+		height:340,
+		playDraution:1000
+	});
+</script>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#d1{
+			width: 500px;
+			height: 50px;
+			background: gray;
+			margin: 0 auto;
+			margin-top: 50px;
+			position: relative;
+		}
+		#d2{
+			width: 50px;
+			height: 50px;
+			background: red;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		#d3{
+			background: blue;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var od1=document.getElementById('d1');
+			var od2=document.getElementById('d2');
+			var od3=document.getElementById('d3');
+			od2.onmousedown=function(ev){
+				var ev =ev || event;
+				mousex=ev.clientX-od2.offsetLeft;
+				
+				document.onmousemove=function(ev){
+					var ev= ev || event;
+					ileft=ev.clientX-mousex;
+					if(ileft<0){
+						ileft=0;
+					}else if(ileft>(od1.offsetWidth-od2.offsetWidth)){
+						ileft=od1.offsetWidth-od2.offsetWidth;
+					}
+					
+					od2.style.left=ileft+"px";
+					var bili= ileft/(od1.offsetWidth-od2.offsetWidth);
+					od3.style.height=500*bili+"px";
+					od3.style.width=500*bili+"px";
+
+
+				}
+				document.onmouseup=function(){
+					document.onmousemove=null;
+					document.onmouseup=null;
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="d1">
+		<div id="d2"></div>
+	</div>
+	<div id="d3"></div>
+</body>
+</html>

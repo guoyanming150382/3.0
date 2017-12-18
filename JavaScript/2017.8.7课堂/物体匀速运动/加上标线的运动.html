@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>停下</title>
+	<style type="text/css">
+		#d1{
+			height: 200px;
+			width: 200px;
+			background: red;
+			position: absolute;
+			left: 0px;/*系统由默认的边距，加上0px，否则无法停下图形*/
+		}
+		#d2{
+			width: 1px;
+			height: 500px;
+			background: black;
+			position: absolute;
+			left: 300px;
+		}
+	</style>
+	<script type="text/javascript">
+		var timer=null;
+		function move(){
+			var od=document.getElementById('d1');//在新的函数中需要重新调用要用到的标签；
+			var ot=document.getElementById('t1');
+			clearInterval(timer);//关掉上一个定时器
+			timer=setInterval(function(){
+				var speed=0;
+				if(od.offsetLeft>300){
+					speed=-12;
+				}else{
+					speed=12;
+				}
+				if(Math.abs/*加上绝对值，否则在值等于负的情况下，直接执行第二个判断依据，没有速度直接贴到300的标线上*/(300-od.offsetLeft)<speed){//判断需要用的距离减去实际移动的距离是否小于实际速度
+					clearInterval(timer);//小于实际速度情况下，关闭定时器，不在移动，是它的实际移动距离直接等于所需要移动的距离
+					od.style.left="300px";
+				}else{
+					od.style.left=od.offsetLeft+speed+"px";
+				}
+				/*if(od.offsetLeft==300){
+					clearInterval(timer);
+				}else{//不加上else否则走到300再次点击，物体就又动了起来
+				od.style.left=od.offsetLeft+speed+"px";//10的正负可以改变运动方向
+				}//连续点击移动速度会变快，点击多，定时器开得多，多个定时器同时工作，速度加快,z在一个定时器运行前把上一个定时器关掉，就没有问题
+				ot.value=od.offsetLeft+"$"+speed;//可以在text内移动的距离   移动的速度*/
+				},30);
+		}
+		window.onload=function(){
+			var ob=document.getElementById('b1');
+			var od=document.getElementById('d1');
+			ob.onclick=function(){
+				move();
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" id="b1" value="移动">
+	<input type="text" id="t1">
+	<div id="d1"></div>
+	<div id="d2"></div>
+</body>
+</html>

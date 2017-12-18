@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width: 230px;
+			height: 260px;
+			background-color: red;
+			display: none;
+		}
+		span{
+			
+			width: 50px;
+			height: 60px;
+			background-color: pink;
+			display: block;
+			margin-top: 20px;
+			display: none;
+		}
+	</style>
+	<script src="jquery-3.2.1.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		/*
+		//先展开后透明度变化
+		$(":button").eq(0).click(function(){
+			$("#div1").show(1000,function(){
+				$("#div1").fadeTo(1000,0.5);
+			});
+		});
+
+		*/
+
+		//一个个出现
+		$(":button").eq(0).click(function(){
+			/*
+			//一个个出现
+			$('span').first().show(1000,function f1(){//第一个先出现
+				$(this).next('span').show(1000,f1);//之后下一个出现 ，在之后让其执行f1函数(next中要写出指定那个出现，否则在下方的隐藏都会出现)
+			});*/
+
+			//使用匿名函数可以用arguments来指定
+			$('span').first().show(300,function(){
+				$(this).next('span').show(300,arguments.callee);
+			});
+		});
+		//一个个消失
+		$(":button").eq(1).click(function(){
+			$('span').last().hide(500,function(){
+				$(this).prev('span').hide(500,arguments.callee);
+			});
+		});
+	});
+		
+	</script>
+</head>
+<body>
+	<!-- <input type="button" value="动画"> -->
+	<input type="button" value="显示">
+	<input type="button" value="隐藏">
+	<div id="div1"></div>
+
+	<span>1</span>
+	<span>2</span>
+	<span>3</span>
+	<span>4</span>
+	<span>5</span>
+	<div></div>
+</body>
+</html>

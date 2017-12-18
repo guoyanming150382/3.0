@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function a(name,age){
+			//var this=new; 系统默认创建了
+			this.name=name;
+			this.age=age;
+			this.n=function(){
+				console.log(this.name);
+			}
+			this.b=function(){
+				console.log(this.age);
+			}
+			// return this;系统已经默认创建了
+		}
+
+
+
+		var obj1=new a(66,88);//new会自动创建var this=new    返回  return this
+		obj1.n();
+		obj1.b();
+
+		//构造函数
+
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

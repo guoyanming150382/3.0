@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>54-去除数组的重复元素.html</title>
+	<script>
+	/*
+	空间
+	时间
+	 */
+		var arr = [12,34,12,44,55,34,57,44];
+		console.log(arr);
+		function removeDup(arr){
+			var result = [];
+			for(var i=0;i<arr.length;i++){
+				var isDup = false;
+				for(var j=0;j<result.length;j++){
+					if(arr[i]==result[j]){
+						isDup = true;
+						break;
+					}
+				}
+				if(!isDup){
+					result.push(arr[i]);//result[12,34,44]
+				}
+			}
+			return result;
+		}
+
+		console.log(removeDup(arr));
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

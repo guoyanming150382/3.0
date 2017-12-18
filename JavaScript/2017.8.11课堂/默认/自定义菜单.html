@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width: 50px;
+			height: 100px;
+			background: gray;
+			display: none;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	</style>
+	<script type="text/javascript">
+		document.oncontextmenu=function(ev){
+			var odiv = document.getElementById('d1');
+			var ev =ev || event;
+			var iscrolltop=document.body.scrollTop || document.documentElement.scrollTop;
+			// var iscrollleft=document.body.scrollLeft || document.documentElement.scrollLeft;
+			var x1=ev.clientX/*+iscrollleft*/;//鼠标在超出可视范围内显示自定义标签，只用加上，页面最上端到可视的最上端距离，左右的距离不用加
+			var y1=ev.clientY+iscrolltop;
+
+			odiv.style.left=x1+"px";
+			odiv.style.top=y1+"px";
+			odiv.style.display="block";
+			return false;
+		}
+		document.onclick=function(){
+			var odiv = document.getElementById('d1');
+			odiv.style.display="none";//当鼠标点击空白是菜单关闭
+		}
+	</script>
+</head>
+<body style="height: 2000px">
+	<div id="d1">菜单</div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.bt{
+			background-color: yellow;
+		}
+		#dd div{
+			width: 200px;
+			height: 200px;
+			border: 1px solid #000;
+			display: none;
+		}
+		#n1{
+			display: none;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var abtn=document.getElementsByTagName('button');
+			var odiv=document.getElementById('dd');
+			var oDiv=odiv.getElementsByTagName('div');
+
+			var oNew=document.getElementById('n1');
+			var oBBT=document.getElementById('bbt');
+
+			for(var i=0;i<abtn.length;i++){
+				abtn[i].index=i;
+				abtn[i].onclick=function(){
+					for(var j=0;j<abtn.length;j++){
+						abtn[j].className="";
+						oDiv[j].style.display='none';
+					}
+						this.className='bt';
+						oDiv[this.index].style.display='block';
+					}
+			}
+
+			
+		}
+	</script>
+</head>
+<body>
+	<div id="db">
+		<button class="bt">1</button>
+		<button>2</button>
+		<button>3</button>
+		<button>4</button>
+	</div>
+	<div id="dd">
+		<div style="display: block;">11</div>
+		<div>12</div>
+		<div>13</div>
+		<div>14</div>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	//字面量对象（单体对象）
+	//适合系统中只有一个对象的情况下
+		var obj ={
+			name:"lilth",
+			age:5555,
+			showname:function(){
+				console.log(this.name);
+			},
+			shownage:function(){
+				console.log("我是"+this.age);
+			
+			}//内部是一个json
+		};
+		obj.showname();
+		obj.shownage();
+
+
+		//若想创建需要再写一个，改变对象明就可以
+		var obj1={
+			height:88,wieght:99,t:function(){
+				console.log(this.height);
+			},t2:function(){
+				console.log("身高"+this.wieght);//this=obj1
+			}
+		}
+		obj1.t();
+		obj1.t2();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

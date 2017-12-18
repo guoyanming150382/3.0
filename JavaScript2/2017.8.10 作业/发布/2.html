@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		#u1{
+			height: 600px;
+			width: 600px;
+			overflow: hidden;
+			list-style: none;
+		}
+		#u1 li{
+			border-bottom: 1px dashed #000;
+			overflow: hidden;
+			padding: 5px;
+			opacity: 0;
+		}
+	</style>
+	<script src="move.js"></script>
+	<script type="text/javascript">
+		window.onload=function(){
+			var ot= document.getElementById('t1');
+			var ou= document.getElementById('u1');
+			var ob= document.getElementById('b1');
+			ob.onclick=function(){
+				var ol=document.createElement('li');
+				ol.innerHTML=ot.value;
+				ot.value="";
+				ou.insertBefore(ol,ou.firstChild);
+				var iHeight=ol.offsetHeight;
+				ol.style.height=0;
+
+				move(ol,{height:iHeight},function(){
+					move(ol,{opacity:100});
+				});
+			}
+		}
+	</script>
+</head>
+<body>
+	<textarea id="t1" cols="30" rows="10"></textarea>
+	<input type="button" id="b1" value="发布">
+	<ul id="u1"></ul>
+</body>
+</html>

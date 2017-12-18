@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function a(){
+			alert('99');
+			return '66';//
+		}
+		// var b= a();//调用的是99；
+		// alert(b);//弹出返回值66
+
+		var b=a;//  什么也弹不出
+		alert(a());//弹出66
+
+		// var =a;//调用的是整个函数 
+
+
+
+		/*function a(){
+			return 66;//return只能执行一次，一旦执行后，return之后的程序将不再执行
+			alert(99);
+		}
+		//var b=a();
+		//alert(a);//当括号里写的是函数的名字，不带括号，整个函数都将被调出*/
+
+		/*var b=a();//无法调出99
+		alert(a());//一旦执行后，return之后的程序将不再执行,*/
+
+
+
+
+
+		/*function a(){
+			
+			alert(99);
+			return 66;
+		}
+		var b= a();
+		console.log(b);//用来调试，内容显示在控制台，不会再页面上，显示信息完善*/
+
+
+
+		// var a=[1,3,6,4,8,9,];
+		// console.log(a);
+	</script>
+</head>
+<body>
+	 
+</body>
+</html>

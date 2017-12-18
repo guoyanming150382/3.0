@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+			margin-left: 20px;
+			float: left;
+			opacity: 0.3;
+		}
+	</style>
+	<script type="text/javascript">
+		function move(obj,atrr,itarget,fnend){//传递的一个函数
+			clearInterval(obj.timer);
+			var odiv = document.getElementsByTagName('div');
+			obj.timer=setInterval(function(){
+				var curr=parseFloat(getComputedStyle(obj,false)[atrr]);//阴影度是小数不能用parseInt，否则小数一律变成一，用Float可以保留小数
+				if(atrr=='opacity'){
+				curr=Math.round(curr*100);//让小数取整，四舍五入
+			}
+				var speed=(itarget-curr)/10;
+				speed=speed>0 ? Math.ceil(speed) : Math.floor(speed);
+				if(itarget==curr){
+					clearInterval(obj.timer);
+					if(fnend){
+						fnend();
+					}//当数值改变完毕后，再调一次函数，继续改变当前运行值的其他属性变化
+				}else{
+					if(atrr=='opacity'){
+						obj.style[atrr]=(curr+speed)/100;
+					}else{
+						obj.style[atrr]=curr+speed+"px";
+					}
+				}
+			},30);
+			
+		}
+		window.onload=function(){
+			var odiv = document.getElementsByTagName('div');
+			odiv[0].onmouseover=function(){
+				move(this,'width',300,function(){
+					// alert('2568');
+					move(odiv[0],'height',300,function(){
+						move(odiv[0],'opacity',100);
+					});
+			});}
+			odiv[0].onmouseout=function(){
+				move(this,'width',100,function(){
+					// alert('2568');
+					move(odiv[0],'height',100,function(){
+						move(odiv[0],'opacity',30);
+					});
+			});
+			}
+
+	}
+	</script>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var a=[12,13,15,12,19,99,12,19];
+		console.log(a);
+		function output(a/*把数组a传进去*/){
+			var b=[];//定义一个空数组，要把符合条件得a数组中的数值放入
+			for(var i=0;i<a.length;i++){
+				var bc=false;//默认取出的数组中的值是不重复的
+				for(var j=0;j<b.length;j++){
+					if(a[i]==b[j]){
+						bc=true;
+						break;
+					}/*第一次比较时候，因为J是空数组，所以跳过了a与b数组的比较，直接输入到了b数组之中  
+					// 第二次时候j=0  i=1   a[1]与j[0]比较,因为12与13不相同 所以13被输入到b中，
+					第三次  i=2   当j=0时与 a[2]与j[0]比较  15与12不相同  ，循环  此时j=1，a[2]与j[1]比较 15与13 不相同  a数组与b数组比较完毕  break生效 停止循环 
+					a[2]输入到b数组之中
+					4     i=3  当j=0时与 a[3]与j[0]比较  12与12相同  不符合再次循环条件  break生效  停止循环 a[3]不会输入到b数组之中 
+					5 i=4 与上相同 当比较到a[4]与b[3]时候，因为j只有三个数组，所以比较完毕，a[4]不重复，被输入到b[]当中
+					之后比较形式相同
+*/
+				}//j的括号
+				if(!bc){
+					b.push(a[i]);//当不重复情况下，把当前值a[i]放入数组b[i]当中
+				}//i的括号	
+			}//onput的括号
+			return b;//将值返给output(a);
+		}
+		console.log(output(a));//在控制台调用结果
+	</script>
+<body>
+	
+</body>
+</html>

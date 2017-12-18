@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			
+			padding: 0;
+			margin: 0;
+		}
+		#d1{
+			width: 790px;
+			height: 340px;
+			margin: 50px auto;
+			/*background: pink;*/
+			position: relative;
+		}
+		#d1 img{
+			width: 790px;
+			height: 340px;
+			cursor: pointer;
+		}
+		#d1 span{
+			width: 50px;
+			height: 40px;
+			display: block;
+			line-height: 40px;
+			text-align: center;
+			background-color:rgba(0, 0, 0, 0.5); 
+			color: white;
+			z-index: 50;/*防止图片的index改变的时候，盖住左右箭头和数字框*/
+			cursor:pointer;/*当鼠标放上去变成手*/
+		}
+		#d1 .l{
+			position: absolute;
+			top: 120px;
+			left: 0px;
+		}
+		#d1 .r{
+			position: absolute;
+			top: 120px;
+			right: 0px;
+		}
+		#d1 #u1{
+			width: 160px;
+			height: 40px;
+			background-color: rgba(255, 255, 0, 0.5);
+        	position: absolute;
+        	left:50%;
+        	bottom: 10px;
+        	margin-left: -100px;
+        	z-index: 50;/*防止图片的index改变的时候，盖住左右箭头和数字框*/
+        	cursor: pointer;
+
+		}
+		#d1 #u1 li{
+			float: left;
+        	width: 40px;
+        	height: 40px;
+        	text-align: center;
+        	line-height: 40px;
+        	border: 1px solid gold;
+        	box-sizing: border-box;
+        	list-style: none;
+		}
+		#d1 #u2 li{
+			width: 790px;
+			height: 340px;
+			list-style: none;
+			position: absolute;
+			left: 0;
+			top: 0;
+			opacity: 0.3;
+		}
+		.mo{
+			background-color: rgba(255, 255, 0, 1);
+		}
+	</style>
+	<script src="move.js"></script>
+	<script type="text/javascript">
+	window.onload=function(){
+		var ol1=document.getElementById('u1').children;//取出数字框
+		var ol2=document.getElementById('u2').children;//取出图片
+		var olast=document.getElementById('last');
+		var onext=document.getElementById('next');
+		var od1=document.getElementById('d1');
+		var now=0;//全局变量，当前元素，使得他可以共用
+		//变化数字框
+		for(var i=0;i<ol1.length;i++){
+			ol1[i].index=i;
+			ol1[i].onclick=function(){
+				now=this.index;
+				table();
+				
+			}
+		}
+
+		function table(){
+			for(var i=0;i<ol1.length;i++){
+					ol1[i].className="";
+					ol2[i].style.zIndex=1;
+					ol2[i].style.opacity=0.3;
+				}
+				ol1[now].className="mo";
+				ol2[now].style.zIndex=30;
+				move(ol2[now],{opacity:100});//使opcity有动画效果
+		}
+
+
+		//箭头
+		onext.onclick=function(){
+			now++;
+			if(now==ol1.length){
+				now=0;
+			}
+			table();
+		}
+			olast.onclick=function(){
+			now--;
+			if(now<0){
+				now=ol1.length-1;//当走到第一张的时候，需length-1,否则数字越界
+			}
+			table();
+		}
+
+
+		//自动播放
+
+		var timer=setInterval(function(){
+			onext.onclick();
+		},2000);
+
+
+		od1.onmouseover=function(){
+			clearInterval(timer);
+		}
+
+		od1.onmouseout=function(){
+			timer=setInterval(function(){
+			onext.onclick();
+		},2000);
+		}
+	}
+		
+
+
+	
+	</script>
+</head>
+<body>
+	<div id="d1">
+		<ul id="u2">
+			<li style="z-index: 30;opacity: 1"><img src="1.jpg"></li>
+			<li><img src="2.jpg"></li>
+			<li><img src="3.jpg"></li>
+			<li><img src="4.jpg"></li>
+	
+		</ul>
+		<span class="l" id="last">&lt;</span>
+		<span class="r" id="next">&gt;</span>
+		<ul id="u1">
+			<li class="mo">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+	</div>
+</body>
+</html>

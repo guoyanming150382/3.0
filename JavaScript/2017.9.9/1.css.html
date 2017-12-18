@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width: 160px;
+			height: 160px;
+			background-color: red;
+			margin-top: 20px;
+		}
+		
+		.di1{
+			border: 230px solid #000;
+		}
+		.di{
+			border: 5px solid #000;
+		}
+		
+
+		.de{
+			background-color: black;
+		}
+		.d3{
+			height: 360px;
+		}
+	</style>
+	<script src="jquery-3.2.1.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			/*console.log($('div').css('width'));
+			console.log($('div').css('height'));*/
+			// console.log($('div').css(['height','width']));//返回数组 ，高宽
+			// $('div').css('width','600px');//设置样式
+			/*$('div').css({width:'200px',height:'350px',color:'pink',background:'purple'});//设置一组样式*/
+
+
+			/*// $('div').addClass('di de d3');//位div添加样式
+			// $('div').removeClass('de');//移除样式*/
+			/*
+			console.log($('div').hasClass('di'));//返回false 判断div上是否有类di
+			console.log($('div').hasClass('di1'));//true*/
+
+			//绑定类与指定类相互切换(要把将要改变的值写在默认值前面)
+			// $('div').toggleClass('di');
+			$('div').click(function(){
+				// console.log(this);//指的是类di1
+				// this.toggleClass('di');
+				$(this).toggleClass('di');
+			});
+
+		});
+	</script>
+</head>
+<body>
+	<div id="d1" class="di1">1</div>
+	<!-- <div id="d2" class="di2">2</div> -->
+</body>
+</html>

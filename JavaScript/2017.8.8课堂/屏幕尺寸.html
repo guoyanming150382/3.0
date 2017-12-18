@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			document.onclick=function(){
+				console.log(window.innerWidth);
+				console.log(window.innerHeight);//可以显示当前可视区域的大小
+
+				/*console.log(document.body.scrollTop);//主要是  chrome浏览器使用  可视区域的最上端与划过的内容最上端的距离
+				console.log(document.documentElement.scrollTop);//火狐浏览器 可视区域的最上端与划过的内容最上端的距离  所使用的代码*/
+
+				var iScrollTop=document.body.scrollTop || document.documentElement.scrollTop;//解决浏览器识别冲突问题
+				console.log(iScrollTop);
+			}
+		}
+	</script>
+</head>
+<body style="height: 2000px ">
+	
+</body>
+</html>

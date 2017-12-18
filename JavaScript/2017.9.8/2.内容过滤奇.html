@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width: 60px;
+			height: 60px;
+			border: 1px solid #000;
+		}
+	</style>
+	<script src="jquery-3.2.1.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			// $("div:contains(d2)").css('color','purple');//只要div中含有紧挨着的d2两个元素就会被选中
+			// $("div:empty").css('width','360px');//选择div中内容是空的改变他的样式（内容是空指的是没有内容）
+
+			// $("div:parent").css('width','360px');//选择div中内容不是空的改变他的样式（内容是至少包含一个子元素的元素）
+
+			// $("div:has('#div22')").css('width','360px');//选择的是div中的子元素
+
+		});
+	</script>
+</head>
+<body>
+	<p>96</p>
+	<div id="div1" class="d1">d2
+		<div id="div22"></div>
+		<div id="div23"></div>
+		<div id="div24"></div>
+	</div>
+	<div id="div6" class="d2">d2</div>
+	<div id="div7" class="d3"></div>
+	<input type="text" id="i1">
+	<input type="text" id="i2">
+	<input type="text" id="i3">
+	<h1>369</h1>
+	<p>96</p>
+	<p>666</p>
+	<div></div>
+	<div id="p1" class="p2">d5</div>
+	<div id="div2" class="d4">d3</div>
+	<h2>369</h2>
+	<h3>369</h3>
+	<h4>369</h4>
+	<h5>968</h5>
+	<h6>56876</h6>
+	<div id="div3" class="d5">dd2</div>
+	<div id="div4" class="d6">ddd222</div>
+	<div id="div5" class="d7">d72</div>
+</body>
+</html>

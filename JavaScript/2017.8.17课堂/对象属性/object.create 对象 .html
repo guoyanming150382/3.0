@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	//create是object上的一个静态方法，不属于某个实例，属于构造函数和类
+	//构造函数=类
+	//create方法接收一个参数，这个参数是一个对象,他传的是一个对象，这个对象就是新创建对象的__proto__对象
+		var obj =Object.create({x:1});//他属于构造函数，指向对象
+		console.log(obj); //显示的是一个object，他有__proto__对象
+		console.log(obj.x);//能够访问到x，弹出1
+		console.log(typeof obj.toString);//返回一个function，因为在object原型对象上本身就存在一个toString方法，这个方法就对应这一个原有的函数function
+
+		var obj1=Object.create(null);
+		console.log(obj1);//这是一个空对象，里面什么也没有，没有toString，null不指向任何对象
+		console.log(typeof obj1.toString);//显示undefind ,实例上没有toString，null不指向object，原型链在此断开，null是一个空，
+		var obj2={};
+		console.log(obj2);//与null不同他有__proto__，有指向对象，属于实例
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

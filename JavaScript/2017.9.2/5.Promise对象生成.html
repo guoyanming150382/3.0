@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> </title>
+	<script type="text/javascript">
+		var p1=	Promise.resolve('p1');//正确
+		p1.then(
+			function(str){
+				console.log("ok"+str)
+			},
+			function(str){
+				console.log("no"+str);
+			}
+			);
+		var p2=Promise.reject('p2');//错误
+		p2.then(
+			function(str){
+				console.log("ok"+str);
+			},
+			function(str){
+				console.log("no"+str);
+			}
+			);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

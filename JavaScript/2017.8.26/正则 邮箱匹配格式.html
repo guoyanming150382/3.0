@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oBtn=document.getElementById('butn1');
+			var oText=document.getElementById('txt1');
+			oBtn.onclick=function(){
+				/*邮箱格式分为： 1.任意个数字 字母 下画线 
+				2.@           3. 数字 字母 -         .      4.多个字母
+换成代码  1.\w+   2.@  3.[0-9a-z-]+   4.\.  5.[a-z]+
+					*/
+				var reg=/^\w+@[0-9a-z-]+\.[a-z]+$/i;//用^和$来控制边界，不让前后有错误输入
+				//\w表示任意字母下画线
+				if(reg.test(oText.value)){
+					alert("格式正确");
+				}else{
+					alert("输入错误");
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="txt1">
+	<input type="button" id="butn1" value="检验">
+</body>
+</html>

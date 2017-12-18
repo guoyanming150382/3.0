@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	//工厂模式
+		function a(name,age){//输入参数年龄  名字
+			var obj=new Object();//创建一个新对象
+			obj.name=name;//对象的名字=
+			obj.age=age;//对象的年龄=
+			obj.n=function(){
+				console.log(this.name);
+			}
+			obj.b=function(){
+				console.log(this.age);
+			}
+			return obj;
+		}
+
+
+
+		var obj1=a(66,88);
+		obj1.n();
+		obj1.b();
+
+
+
+		var t=a(99,66);
+		t.n();
+		t.b();
+		console.log(obj1.n==t.n);//false
+		//问题 1.不能用new来创建对象 2.方法不能被实例共享
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

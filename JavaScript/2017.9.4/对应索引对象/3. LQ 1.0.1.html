@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#div1{
+			height: 150px;
+			width: 150px;
+			background-color: red;
+		}
+		.b,.b1,.b2{
+			width: 60px;
+			height: 150px;
+			background-color: blue;
+		}
+	</style>
+	<script src="LY1.0.1.js" ></script>
+	<script type="text/javascript">
+		window.onload=function(){
+			// var arr=$('.b1');
+			// for(var i=0;i<arr.length;i++){
+			// 	arr[i].innerHTML="hello";
+			// }
+			/*
+			反回的事lQ对象
+			console.log($('.b1'));
+			console.log($('#div1'));
+			console.log($('div'));
+			返回对象长度
+			console.log($('div').size());
+			console.log($('.b1').size());*/
+
+			/*//返回dom节点
+			console.log($('div').get(0));
+			console.log($('div').get(2));
+			console.log($('.b1').get(1));//class为b1  b*/
+
+			// console.log($('<div>hrll<p>568754<span>56944</span></p></div>'));
+
+			console.log($('.b1'));
+			console.log($('.b1').eq(0));
+
+
+		}
+	</script>
+</head>
+<body>
+	<div id="div1">d1</div>
+	<div class="b1 b2 b">d2</div>
+	<div class="b1 b">d3</div>
+	<div class="b1">d4</div>
+	<p>p1</p>
+
+</body>
+</html>

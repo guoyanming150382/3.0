@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<style type="text/css">
+		#d1{
+			height: 200px;
+			background: red;
+		}
+	</style>
+	<title>Document</title>
+		<script type="text/javascript">
+		function css(obj,name,value){
+			if(arguments.length==2){
+				// return obj.style[name];
+				return window/*写上window也可以*/.getComputedStyle(obj,false/*这个值可以随便写  true*/)[name];//提取行间样式
+
+			}else{
+				obj.style[name]=value;
+			}
+		}
+		window.onload=function(){
+			var od1=document.getElementById('d1');
+				alert(css(od1,'height'));//取出宽50px
+				// css(od1,'width','200px')
+		}
+	</script>
+</head>
+<body>
+	<div id="d1" style="width:50px"></div>
+</body>
+</html>

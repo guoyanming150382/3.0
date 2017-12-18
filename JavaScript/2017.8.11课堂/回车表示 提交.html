@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var ob1=document.getElementById('b1');
+			var ot1=document.getElementById('t1');
+			var otext1=document.getElementById('text1');
+			ob1.onclick=function(){
+				otext1.value=ot1.value+"\n"+otext1.value;//要让后面写的放在前面，斜杠+n表示换行
+				ot1.value="";
+			}	
+			ot1.onkeydown=function(ev){
+				var ev=ev || event;
+				// alert(ev.keyCode);//不知键盘上键的数字可以弹出数值
+				//回车 13
+				if(ev.keyCode==13){
+					if(ot1.value==""){
+						alert("没有输入内容");
+					}else{
+						if(ev.keyCode==13 && ev.shiftKey){//用shift和Ctrl配合回车使用可以避免，输入内容换行时候 ，误提交
+							ob1.onclick();//当按下回车键时候，执行ob1.onclick，起到按下提交按钮的效果
+						}
+						
+					}
+					
+				}
+			}		
+		}
+	</script>
+</head>
+<body>
+	<input type="button" id="b1" value="提交">
+	<input type="text" id="t1">
+	<textarea id="text1" cols="30" rows="10"></textarea>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function zu(n){
+			for(var i=1;i<n;i++){
+				var xing="";//定义xing
+				for(var x=1;x<(n-i);x++){
+					xing=xing+"-";
+				}//定义每一行的“-”;
+				for(var j=1;j<=i;j++){
+					xing=xing+"*";
+				}
+				document.write("<p>"+xing+"</p>")
+			}
+		}
+		zu(6);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

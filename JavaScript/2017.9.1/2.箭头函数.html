@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function  show10(){
+			console.log("oi");
+		}
+
+		show10();
+
+//箭头函数格式
+		var show2=()=>{
+			console.log('oi');
+		}
+		show2();//用箭头函数调用省去写function
+
+		var show22=()=>{
+			console.log('oi');
+		}
+		show22();
+
+
+
+
+//传餐
+		var show1=(op)=>{
+			console.log(op+'ad');
+		}
+		show1("12");
+
+		var show11=(uu)=>{
+			console.log(uu+'oi');
+		}
+		show11(30);
+
+
+
+//简写  只有返回值
+		var show3=()=>100;
+		console.log(show3());
+
+		var show4=()=>{
+			return 100;
+		}
+		console.log(show4());
+
+		var show33=()=>60;
+		console.log(show33());
+		var show44=()=>{
+			return 36;
+		}
+		console.log(show44());
+
+
+
+		var show5=(msg) =>{
+			return msg;
+		}
+		console.log(show5('ok'));
+		var show6=msg=>msg;
+		console.log(show6('ok'));
+
+		var show55=(mu)=>{
+			return mu;
+		}
+		console.log(show55(99));
+		var show66=mu=>mu;//只有一个参数括号可以省略
+		console.log(show66(9996));
+		var show666=(mi,mo)=>{return (mi+mo)};
+		console.log(show666(96,69));
+
+		//偶判断
+		var show77=function(i){
+			return i%2==0;
+		}
+		console.log(show77(9));//返回false
+
+
+		var show7=(i)=>{
+			return i%2==0;
+		}
+		console.log(show7(6));//返回true
+//奇判断
+		var show71=i=>i%2!=0;
+		console.log(show71(9));
+
+
+		//数组排序
+		var arr=[12,3,6,8,98,7,8,5,85];
+		arr.sort(function(n1,n2){
+			return n1-n2;
+		});
+		console.log(arr);
+
+		var arr1=[12,3,6,8,98,7,8,5,85];
+
+		arr1.sort((n1,n2)=>n1-n2);
+		console.log(arr1);
+
+		//箭头函数rest
+		var show9=function(n1,...arr){
+			console.log(n1,arr);
+		}
+		show9(1,2,3,6,5,8,5);//arr都是在数组中
+
+		var show99=(n1,...arr)=>{
+			console.log(n1,arr);
+		}
+		show99(12,3,6,8,98,7,8,5,85);
+
+		//箭头函数的this指向，是定义的时候就确定的，之后不可以再次更改
+		var a=22;
+		var Age=function(){
+			console.log(this.a);
+		}
+		a=30;
+		Age();//30
+		Age.call({a:60});//60
+
+		var a1=22;
+		var Age1=function(){
+			console.log(this,this.a1);
+		}
+		a1=30;
+		Age1();//30
+		Age1.call({a1:60});//60
+
+		var a2=50;
+		var Age2=()=>{
+			console.log(this,this.a2);
+		}
+		Age2();//50
+		var a2=60;
+		Age2();//60
+		Age2.call({a2:90});//依然是60,箭头函数的this在定义时候就确定了，之后无法更改
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width: 150px;
+			height:263px;
+			background-color: red;
+			padding: 20px;
+		}
+	</style>
+	<script src="jquery-3.2.1.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			/*
+			$('#d1').click(function(e){
+				e.stopPropagation();//阻止冒泡后，点击div document不会被触发
+				console.log(e.isPropagationStopped());
+				alert("div");
+			});
+			$(':button').click(function(e){
+				e.stopPropagation();//阻止冒泡后，点击按钮document和div不会被触发
+				console.log(e.isPropagationStopped());//判断buton的冒泡是否被取消了  返回布尔值
+				alert("button");
+
+			});
+			$(document).click(function(){
+				alert("document");
+
+			});
+
+
+
+
+			
+			$(':button').click(function(e){
+				e.stopImmediatePropagation();//两桶2button2也被取消了 ，不但取消冒泡连后续的处理函数也被取消了
+				console.log(e.isImmediatePropagationStopped());//判断是否取消了冒泡和后续处理函数
+				alert("button");
+			});
+			$(':button').click(function(e){
+				alert("第二个button");
+			});
+			$('#d1').click(function(e){
+				e.stopImmediatePropagation();//不但取消冒泡连后续的处理函数也被取消了
+				console.log(e.isImmediatePropagationStopped());
+				alert("div");
+			});
+			$('#d1').click(function(e){
+			
+				alert("第二个div");
+			});
+			$(document).click(function(){
+				alert("document");
+
+			});
+			*/
+
+			//默认行为
+			/*
+			$(":submit").click(function(e){
+				e.preventDefault();//阻止了提交作用
+				console.log(e.isDefaultPrevented());//判断是否阻止了默认行为
+				alert("jshs");
+			});
+
+*/			$(":submit").click(function(e){
+				return false;//用return false可以组织默认行为
+				console.log(e.isDefaultPrevented());
+				alert("jshs");
+			});
+
+
+
+			$(':button').click(function(e){
+				return false;//用return false可以组织冒泡行为（return false 之后的就不会再执行）
+				console.log(e.isImmediatePropagationStopped());//判断是否取消了冒泡和后续处理函数
+				alert("button");
+			});
+
+			$('#d1').click(function(e){
+			
+				alert("第二个div");
+			});
+			$(document).click(function(){
+				alert("document");
+
+			});
+
+
+		});
+	</script>
+</head>
+<body>
+	<div id="d1">
+		<input type="button" value="按钮">
+	</div>
+	<form action="56974.kdjd">
+		<input type="submit" value="提交">
+	</form>
+</body>
+</html>

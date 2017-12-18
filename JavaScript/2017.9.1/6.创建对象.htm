@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	/*var obj=new Person("66",12);
+		// obj.showAge();//无法调用到，还没有这个方法
+		console.log(obj);//可以被引用
+	function Person(name,age){
+		this.name=name;
+		this.age=age;
+	}
+	Person.prototype.showName=function(){
+		console.log(this.name);
+	}
+	Person.prototype.showAge=function(){
+		console.log(this.age);
+	}*/
+
+	//类声明没有提升
+	// var obj=new Person("66",12);
+	// 	console.log(obj);//声明不可以提升
+		class Person{
+			constructor(name,age){
+				this.name=name;
+				this.age=age;
+			}
+			showName(){
+				console.log(this.name);
+			}
+			showAge(){
+				console.log(this.age);
+			}
+		}
+
+		var obj=new Person("66",12);
+		obj.showAge();
+		obj.showName();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

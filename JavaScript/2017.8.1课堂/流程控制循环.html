@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var i=0;
+		while(i<5){
+			alert(i);
+			i++;
+		// }
+		// break 中断整个循环,之后的循环不再执行   
+		/*for(var i=0;i<5;i++){
+			if(i==3){
+				break;
+			}
+			alert(i);
+		}*/
+		//continue 终止当前正在执行的本次循环,之后进行下次循环
+		
+		/*for(var i=0;i<5;i++){
+			if(i==2){//终止i=2，之后继续执行下一个；
+				continue;
+			}
+			alert(i);
+		}*/
+
+
+		var a=['aa',1,'kl',56];
+		// for(var i=0;i<a.length;i++){
+		// 	alert("第"+(i+1)+"是"+a[i]);
+		// }
+		for(i in a){
+			alert("第"+(i*1+1)+"是"+a[i]);
+		}//i乘以1是要把字符串转化成数字，否则输出的是数字
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

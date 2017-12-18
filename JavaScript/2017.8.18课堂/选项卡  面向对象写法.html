@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+	#d1 div{
+		width: 100px;
+		height: 100px;
+		border: 1px solid #000;
+		display: none;
+		background: red;
+	}
+	.i1{
+		background: yellow;
+	}
+	</style>
+	<script type="text/javascript">
+	/*面向对象实现选项卡步骤
+	1.用面向过程的方法实现功能
+	2.取消函数的嵌套，设置全局变量
+	3.window.onload改造成构造函数，
+		全局变量改造成属性，
+		函数改造成原型上的方法
+	4.改this，调试
+	*/
+		/*var ob1=null;
+		var odiv=null;//把ob1 和odiv写成全局变量，让fnclick找到*/
+
+		window.onload=function(){
+			new t('d1');
+		}
+		function t(id){//改造后的构造函数
+			var othis=this;//把this存储起来，指的是新创键的对象
+			  // console.log(this);//这个this是t()函数的新创键的对象
+			var od1=document.getElementById(id);//通过new传入id
+			this.ob1=od1.getElementsByTagName('input');
+			// console.log(this)//指的是
+			this.odiv=od1.getElementsByTagName('div');
+			//console.log(this);  
+			for(var i=0;i<this.ob1.length;i++){
+				this.ob1[i].index=i;
+				this.ob1[i].onclick=function(){
+					othis.fnclick(this);
+					// console.log(this);
+				};//在此this变化，是等于命名的fnclick；
+			}
+		}
+		//把fnclick加到原型上
+		t.prototype.fnclick=function(ob1){//把函数提出，新命名   ,  传入button
+			// console.log(this);//这里this是fnclick, 
+					for(var i=0;i<this.ob1.length;i++){
+						this.ob1[i].className="";
+						this.odiv[i].style.display="none";
+					}
+					ob1.className="i1";
+					this.odiv[ob1.index].style.display="block";
+				}
+	</script>
+</head>
+<body>
+	<div id="d1">
+		<input type="button" value="1" class="i1">
+		<input type="button" value="2">
+		<input type="button" value="3">
+		<input type="button" value="4">
+			<div style="display: block">1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+	</div>
+</body>
+</html>

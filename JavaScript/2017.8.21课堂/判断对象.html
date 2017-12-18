@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var oDate = new Date();
+		console.log(typeof oDate=='object');
+
+		console.log(oDate instanceof Date);//odate是不是date创造出的
+		console.log(oDate instanceof Object);
+
+		console.log(oDate.constructor == Date);
+		console.log(oDate.constructor == Object);//false
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

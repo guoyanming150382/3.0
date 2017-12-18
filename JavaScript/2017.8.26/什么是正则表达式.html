@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		/*
+		正则是制定匹配字符串的规则
+		
+		*/
+		var str="gaF5afAFQAWasratqwgaderq65GASD56aqtq";
+
+		//方法一
+		var reg= new RegExp('f');
+
+		//方法二    /规则/修正模式    来自Perl语言
+		var reg2=/f/;//i忽略规则ignore
+
+		//search是string对象上的方法，接受一个正则表达式为参数，会按照这个参数的规则来搜索
+		console.log(str.search('f'));
+		console.log(str.search(reg));
+		console.log(str.search(reg2));//找的都是小写的f
+
+
+		var st="gaFf5aAFQAWasratqwgaderq65GASD56aqtq";//当没有小写f时候就会无法找到显示-1
+		var bb=/f/i;
+		console.log(st.search(bb));//选中第三位的大写F
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function Teacher(){
+			this.students=[];
+		}
+		Teacher.prototype.regu=function(student){
+			this.students.push(student);
+		}
+		Teacher.prototype.fabu=function(zuoye){
+			for(var i=0;i<this.students.length;i++){
+				this.students[i].jieshou(zuoye);
+			}
+		}
+
+		function Student(teacher){
+			teacher.regu(this);
+		}
+		Student.prototype.jieshou=function(zuoye){
+			this.zuoye=zuoye;
+		}
+
+		var li=new Teacher();
+		var s1=new Student(li);
+		var s2=new Student(li);
+		var s3=new Student(li);
+
+		li.fabu("作业");
+		console.log(s1.zuoye);
+		console.log(s2.zuoye);
+		console.log(s3.zuoye);
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

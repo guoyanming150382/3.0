@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+			
+		/*s();//函数会被提升 ，可以调出
+
+		function s(){
+			alert(899899);
+		}*/
+
+
+		/*t();
+		b();//不论放在那里都可以被调出
+		
+		function t(){
+			console.log(5855644);
+		}
+		function b(){
+			console.log(999999999);
+		}*/
+
+
+
+		/*f();//无法调出,以变量的形式来命名的函数，没有提升，无法调出
+		var f=function(){
+			alert(126855);
+		}*/
+
+
+		var t=1;
+		function b(){
+			console.log(t);
+			var t=3;//系统默认的将他提升了，提升到b函数内的最前面：var t，但是仅是提升，没有赋值，调用的时候找不到t的值，
+		}
+		b();//显示undifind，
+
+
+
+
+
+		//声明提升  函数和函数内的函数和变量的声明会被提升到函数顶部，但是不会赋值，
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

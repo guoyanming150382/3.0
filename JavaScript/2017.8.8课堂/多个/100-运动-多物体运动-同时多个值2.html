@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>100-运动-多物体运动-同时多个值2.html</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+			margin-top: 20px;
+			margin-right: 20px;
+			float: left;
+			opacity: 0.3;
+		}
+	</style>
+	<script>
+	
+		function startMove(obj,json,fnEnd){
+			clearInterval(obj.timer);
+			//所有的属性都改变了才关闭定时器
+			//只要有一个属性没有到达目标，就不关定时器
+			obj.timer = setInterval(function(){
+				var bStop = true;//默认所有的值都到了
+				for(attr in json){
+					var curr = parseFloat(getComputedStyle(obj,false)[attr]);
+
+					if(attr == 'opacity'){
+						curr = Math.round(curr * 100);
+					}
+
+					var speed = (json[attr] - curr)/10;
+					
+					speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+
+					if(json[attr] != curr){
+						bStop = false;
+						if(attr == 'opacity'){
+							obj.style[attr] = (curr + speed)/100;
+						}else{
+							obj.style[attr] = curr + speed + "px";
+						}
+					}
+				}
+				if(bStop){
+					clearInterval(obj.timer);
+					if(fnEnd){
+						fnEnd();
+					}	
+				}
+			},30);
+		}
+		window.onload = function(){
+			var aDiv = document.getElementsByTagName('div');
+
+			aDiv[0].onmouseover = function(){
+				var json = {width:150,height:300,opacity:100};
+				startMove(aDiv[0],json);
+			}
+			aDiv[0].onmouseout = function(){
+				startMove(aDiv[0],{width:100,height:100,opacity:30});
+			}
+
+
+		}
+	</script>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

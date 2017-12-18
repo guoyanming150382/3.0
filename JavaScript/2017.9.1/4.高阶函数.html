@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		//高阶函数  操纵函数的函数，这个函数可以传一个或者多个函数，还能够返回一个函数
+		var oushu=function(i){
+			return i%2==0;
+		}//判断是否为偶数
+		//奇数判断  1.通过一个函数实现  2.不能用取余数
+		function jishu(fun){//传进一个函数
+			return function(){//返回一个函数
+				var result =fun.apply(this,arguments);
+				 return !result;//将结果取反
+			}
+		}
+		var nooushu=jishu(oushu);//把判断偶数的函数传入
+		console.log(nooushu(9));
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

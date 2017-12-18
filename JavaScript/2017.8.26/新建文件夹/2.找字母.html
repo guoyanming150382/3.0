@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var str="gaF5afAFQAWasratqwgaderq65GASD56aqtq";
+		console.log(str.search('f'));//不区分大小写
+		var reg=new RegExp('f');
+		console.log(str.search('f'));
+		var reg1=/f/;
+		console.log(str.search(reg1));
+		var st="gaooF5aAFQAWasratqwgaderq65GASD56aqtq";
+		var  re=/f/;
+		console.log(st.search(re));//无法找到显示-1
+		var tb=/f/i;//i无事规则，不区分大小写找到一个f就不在向后寻找
+		console.log(st.search(tb));
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

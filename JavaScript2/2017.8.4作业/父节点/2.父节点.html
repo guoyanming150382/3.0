@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oa =document.getElementsByTagName('a');
+			for(var i=0;i<oa.length;i++){
+				oa[i].onclick=function(){
+					// console.log(this.parentNode);//通过点击可以找到对应的a标签
+					this.parentNode/*他获取的是父元素*/.style.display='none';//当点击的时候a的父元素li被隐藏了起来
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<ul id="ul1">
+		<!-- <li>123<a href="#">删除</a></li> -->
+		<li>123<a href="javascript:;">隐藏</a></li>
+		<li>223<a href="javascript:;">隐藏</a></li>
+		<li>323<a href="javascript:;">隐藏</a></li>
+		<li>423<a href="javascript:;">隐藏</a></li>
+		<li>523<a href="javascript:;">隐藏</a></li>
+	</ul>
+</body>
+</html>

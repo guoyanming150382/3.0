@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function Person(name,age){
+			this.name=name;
+			this.age=age;
+		}
+		Person.prototype.personname=function(){
+			console.log(this.name);
+		}
+		Person.prototype.personname=function(){
+			console.log(this.age);
+		}
+		Person.prototype.leg=2;
+
+		var obj1= new Person(66,33);
+		obj1.leg=6;
+		console.log(obj1.leg);//6  ,实例上有六不在向上寻找
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

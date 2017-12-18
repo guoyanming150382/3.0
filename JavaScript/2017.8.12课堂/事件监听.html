@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var ob=document.getElementById('d1');
+			var od=document.getElementById('b1');
+			
+			ob.addEventListener('click',function(){
+				alert('ert');
+			},false);//点击时候 执行什么事件，布尔值
+			ob.addEventListener('click',function(){
+				alert(6966666);
+			},false);
+
+
+
+
+			
+			document.addEventListener('keydown',function(){
+				alert(669898556557);
+			},false);
+
+
+			od.addEventListener('keydown',function(){
+				alert('sgsbse');
+			},false);
+
+
+
+
+			function t(){
+				alert(2154);
+			}
+			ob.addEventListener('click',t,false);//绑定  监听事件
+		}
+	</script>
+</head>
+<body>
+	<input type="button" id="d1" value="dian">
+	<input type="text" id="b1" >
+</body>
+</html>
