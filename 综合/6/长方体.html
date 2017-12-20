@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			margin: 50px auto;
+			width: 300px;
+			height: 300px;
+			/*border: 1px solid #000;*/
+			position: relative;
+			transform-style: preserve-3d;
+			/*transform: rotateX(0deg) rotateY(0deg);*/
+			animation: do 3s linear 0s infinite normal;
+		}
+		li{
+			width: 300px;
+			height: 300px;
+			list-style: none;
+			text-align: center;
+			line-height: 300px;
+			position: absolute;
+			top:0px;
+			left: 0px;
+		}
+		li:nth-child(1){
+			background-color: red;
+			transform: rotateX(90deg) translateZ(150px) scale(1.5,1);
+		}
+		li:nth-child(2){
+			background-color: gold;
+			transform: rotateX(180deg) translateZ(150px) scale(1.5,1);
+		}
+		li:nth-child(3){
+			background-color: pink;
+			transform: rotateX(270deg) translateZ(150px) scale(1.5,1);
+		}
+		li:nth-child(4){
+			background-color: purple;
+			transform: rotateX(360deg) translateZ(150px) scale(1.5,1);
+		}
+		li:nth-child(5){
+			background-color: yellow;
+			transform: rotateY(90deg) translateZ(225px);
+		}
+		li:nth-child(6){
+			background-color: green;
+			transform: rotateY(-90deg) translateZ(225px);
+		}
+		@keyframes do{
+			form{
+				transform: rotateX(0deg);
+			}
+			to{
+				transform:rotateX(360deg);
+			}
+		}
+		img{
+			width: 450px;
+			height: 300px;
+		}
+		img:nth-child(5,6){
+			width: 300px;
+			height: 300px;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li><img src="1.jpg"></li>
+		<li><img src="2.jpg"></li>
+		<li><img src="3.jpg"></li>
+		<li><img src="4.jpg"></li>
+		<li><img src="5.jpg"></li>
+		<li><img src="6.jpg"></li>
+	</ul>
+</body>
+</html>

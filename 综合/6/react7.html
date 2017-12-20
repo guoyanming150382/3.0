@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+    <script src="https://cdn.bootcss.com/react/16.0.0/umd/react.production.min.js"></script>
+    <script src="https://cdn.bootcss.com/react-dom/16.0.0/umd/react-dom.production.min.js"></script>
+    <script src="https://cdn.bootcss.com/prop-types/15.6.0/prop-types.min.js"></script>
+    <script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./lunbo.css"/>
+  </head>
+  <body>
+  	<div id="react"></div>
+    <script type="text/babel">
+      const imgs = ["1.jpg", "2.jpg","4.jpg","3.jpg","5.jpg","6.jpg","7.jpg","1.jpg"];
+       var imgdom = imgs.map((v, i) => {
+        return <li key={i}><img src={v}/></li>
+      });
+  
+      class Lunbo extends React.Component {
+        render() {
+          const imgs = this.props.imgs;
+          const width =(imgs.length  )* 350;
+          return (
+            <div className="lunbo">
+              <ul style={{width: width}}>
+               {imgdom}
+              </ul>
+            </div>
+          )
+        }
+      }
+      class React1 extends React.Component {
+        render() {
+          return (
+            <div>
+            <h1>这个是轮播屏幕
+            </h1>
+            <Lunbo imgs={imgs}/>
+            </div>
+          )
+        }
+      }
+      ReactDOM.render(<React1 />, document.getElementById('react'));
+    </script>
+    </body>
+    </html>

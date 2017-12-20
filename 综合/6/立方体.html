@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			margin: 50px auto;
+			width: 300px;
+			height: 300px;
+			transform-style: preserve-3d;
+			/*transform:rotateX(0deg) rotateY(0deg);*/
+			position: relative;
+			animation-name: xu;
+			animation-duration: 8s;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+		}
+		ul li{
+			width: 300px;
+			height: 300px;
+			list-style: none;
+			position: absolute;
+			text-align: center;
+			line-height: 300px;
+			top: 0px;
+			left: 0px;
+		}
+		@keyframes xu{
+			0%{
+				left: 0px;
+				top: 0px;
+				transform: rotateX(0deg) rotateY(0deg);
+			}
+			25%{
+				left: 800px;
+				top: 0px;
+				transform: rotateX(0deg) rotateY(360deg);
+			}
+			50%{
+				left: 800px;
+				top: 400px;
+				transform: rotateX(360deg) rotateY(360deg);
+			}
+			75%{
+				left: 0px;
+				top: 400px;
+				transform: rotateX(360deg) rotateY(-360deg);
+			}
+			100%{
+				left: 0px;
+				top: 0px;
+				transform: rotateX(-360deg) rotateY(-360deg);
+			}
+		}
+		li:nth-child(1){
+			background-color: blue;
+			transform: rotateX(90deg) translateZ(150px);
+		}
+		li:nth-child(2){
+			background-color: red;
+			transform: rotateX(180deg) translateZ(150px);
+		}
+		li:nth-child(3){
+			background-color: green;
+			transform: rotateX(270deg) translateZ(150px);
+		}
+		li:nth-child(4){
+			background-color: purple;
+			transform: rotateX(360deg) translateZ(150px);
+		}
+		li:nth-child(5){
+			background-color: pink;
+			transform: rotateY(90deg) translateZ(150px);
+		}
+		li:nth-child(6){
+			background-color: yellow;
+			transform: rotateY(-90deg) translateZ(150px);
+		}
+		ul li img{
+			width: 300px;
+			height: 300px;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li><img src="1.jpg"></li>
+		<li><img src="2.jpg"></li>
+		<li><img src="3.jpg"></li>
+		<li><img src="4.jpg"></li>
+		<li><img src="5.jpg"></li>
+		<li><img src="6.jpg"></li>
+	</ul>
+</body>
+</html>

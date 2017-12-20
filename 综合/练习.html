@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	//倒叙拍列
+		/*var b =[1554,2545,56,555652,55555];
+		// console.log(b);
+		b.sort(function(m1,m2){
+			return m2-m1;//效果等同于上面
+		});//
+		console.log(b);*/
+
+		//将两个数组合并
+		/*
+		var arr1=['a','b','c'];
+		var arr2=['o','g','f'];
+		var arr3=arr1.concat(arr2);
+		arr3.splice(1,2);
+		console.log(arr3);*/
+		/*
+		//13
+		for(var i=0;i<=3;i++){
+			setTimeout(function(){
+				console.log(i);
+			},0);
+
+		}*/
+
+		/*var user={
+			count:1,
+			getCount:function(){
+				return this.count;
+			}
+		};
+		console.log(user.getCount());//返回1
+		var a=user.getCount;
+
+		console.log(a());*/
+
+/*
+		x=1;
+		if (x===true) {
+			console.log("yes");
+		}else{
+			console.log("no");
+		}//no
+
+
+		x=1;
+		if (x==true) {
+			console.log("yes");
+		}else{
+			console.log("no");
+		}//yes
+*/
+
+	/*var obj1={x:1};
+	var obj2={x:2};
+	(function(obj2){
+		delete obj2.x
+	})(obj1);
+
+	console.log(obj1.x,obj2.x);*/
+
+/*
+	var x=1;
+	setTimeout(function(){
+		x=2;
+	},0);
+	console.log(x);//1
+	*/
+
+
+	/*var obj={
+		1:'a',2:'b','length':2,push:Array.prototype.push
+	};
+	obj.push('c');*/
+
+/*
+	for(var i=0;i<2;i++){
+		console.log(i+10);
+	}
+	console.log(i);*/
+
+/*
+阶乘
+	function fact(n){
+		if(n<=1){
+			return 1;
+		}else{
+			return n*arguments.callee(n-1);
+		}
+	}
+	console.log(fact(5));
+
+
+	function fact(n){
+		if(n<=1){
+			return 1;
+		}else{
+			return n* fact(n-1);
+		}
+	}
+	console.log(fact(5));*/
+
+
+		function Animal(legs,hasTail){
+			 this.legs = legs;
+			 this.hasTail = hasTail;
+		}
+		function Cat(legs, hasTail, name){
+			Animal.call(this,legs,hasTail);
+			this.name = name;
+		}
+
+		Cat.prototype = Object.create(Animal.prototype);
+		Cat.prototype.sayInfo = function(){
+			console.log(this.name + " has" + this.legs + " legs" + " and has tail is " + 
+			this.hasTail);
+		}
+		var cat = new Cat(4, true, 'miaomiao');
+		cat.sayInfo();
+
+
+
+		//ES6语法
+		 class Animal {
+			 constructor(legs, hasTail) {
+			 this.legs = legs;
+			 this.hasTail = hasTail;
+		 	}
+		 }
+		 class Cat extends Animal {
+			 constructor(legs, hasTail, name) {
+			 super(legs, hasTail);
+			 this.name = name;
+		 }
+		 sayInfo() {
+				 console.log(this.name + " has" + this.legs + " legs" + " and has tail is " + this.hasTail);
+		 	}
+		 }
+	</script>
+</head>
+<body>
+		
+</body>
+</html>

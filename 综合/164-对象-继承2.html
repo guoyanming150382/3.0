@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>164-对象-继承2.html</title>
+	<script>
+		function Person(name,age){
+			this.name = name;
+			this.age = age;
+		}
+		Person.prototype.showName = function(){
+			console.log("I am " + this.name);
+		}
+		Person.prototype.showAge = function(){
+			console.log("I am " + this.age + " years old");
+		}
+
+		Object.defineProperty(Person.prototype,"sayHi",{value:function(){
+			console.log("Hello I am " + this.name);
+		}});
+
+		var obj = new Person("Leo",88);
+		obj.showName();
+		obj.showAge();
+		obj.sayHi();
+		
+
+		function Student(name,age,className){
+			Person.call(this,name,age);//属性的继承
+			this.className = className;
+		}
+
+		for(i in Person.prototype){
+			Student.prototype[i] = Person.prototype[i];
+		}
+
+		Student.prototype.showClassName = function(){
+			console.log("I am from " + this.className + " class");
+		}
+		
+		var s1 = new Student("Tom",18,"Computer");
+		s1.showName();
+		s1.showAge();
+		s1.showClassName();
+		s1.sayHi();
+
+		// obj.showClassName();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

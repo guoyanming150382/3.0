@@ -1,0 +1,70 @@
+
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.d1{
+			width: 790px;
+			height: 340px;
+			margin: 50px auto;
+			background: pink;
+			position: relative;
+
+		}
+		.d2,.d3{
+			width: 50px;
+			height: 40px;
+			background-color:rgba(213, 213, 213, 0.5); 
+			line-height: 40px;
+			text-align: center;
+			cursor: pointer;
+			z-index: 50;
+		}
+		.d2{
+			position: absolute;
+			left: 0;
+			top: 150px;
+		}
+		.d3{
+			position: absolute;
+			right: 0;
+			top: 150px;
+		}
+		.u1{
+			width: 312px;
+			height: 50px;
+			background-color: rgba(13,246,201,0.3);
+			list-style: none;
+			position: absolute;
+			left: 50%;
+			margin-left: -150px;
+			bottom: 20px;
+			z-index: 50;
+		}
+		.u1 li{
+			width: 50px;
+			height: 50px;
+			border: 1px solid gray;
+			float: left;
+			line-height: 50px;
+			text-align: center;
+			cursor: pointer;
+		}
+		.u2 li{
+			position: relative;
+			list-style: none;
+			position: absolute;/*不要给图片定位，要给图片所在的li定位*/
+			top: 0;
+			left:0;
+			opacity: 0.3;/*所有的li都是0.3，变化的是图片的阴影度*/
+		}
+		.u2 img{
+			width: 790px;
+			height: 340px;
+			cursor: pointer;
+			
+			
+		}
+		.mo{
+			background-color: rgba(13,246,201,1);
+		}

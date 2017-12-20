@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>header</title>
+	<link rel="stylesheet" type="text/css" href="./header.css"/>
+	<script type="text/javascript">
+		window.onload=function(){
+			var OUL=document.getElementById('Oul');
+			var OLi=OUL.getElementsByTagName('li');
+			var Odiv=OUL.getElementsByTagName('div');
+			console.log(OLi);
+			for(var i=0;i<OLi.length;i++){
+				OLi[i].index=i;
+				OLi[i].onclick=function(){
+					for(var i=0;i<OLi.length;i++){
+						OLi[i].style.color="";
+						Odiv[i].className="underline";
+					}
+					OLi[this.index].style.color="#6173f4";
+					Odiv[this.index].className="under";
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div class="navbar">
+		<div class="container">
+			<div class="navbar-header">
+				<div class="navbar-brand">
+					<img src="./picture/shandian.jpg"/>
+					<span>闪电拍卖</span>
+				</div>
+			</div>
+			<div class="navbar-right">
+				<ul class="navbar-right-ul" id="Oul">
+					<li>网站首页
+						<div class="underline"></div>
+					</li>
+					<li>公司简介
+						<div class="underline"></div>
+					</li>
+					<li>产品介绍
+						<div class="underline"></div>
+					</li>
+					<li>常见问题
+						<div class="underline"></div>
+					</li>
+					<li>联系我们
+						<div class="underline"></div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

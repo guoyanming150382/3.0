@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdn.bootcss.com/react/16.0.0/umd/react.production.min.js"></script>
+    <script src="https://cdn.bootcss.com/react-dom/16.0.0/umd/react-dom.production.min.js"></script>
+    <script src="https://cdn.bootcss.com/prop-types/15.6.0/prop-types.min.js"></script>
+    <script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="lunbo.css"/>
+	<script src="./move.js"></script>
+	
+</head>
+<body>
+	<div id="react"></div>
+	<script type="text/babel">
+        class Lunbo extends React.Component{
+        	componentDidMount() {
+        		var odiv2=document.getElementById('div2');
+			var odiv1=document.getElementById('div1');
+			var odiv3=document.getElementById('div3');
+			var oimg=document.getElementById('img').children;
+			var ol1=document.getElementById('ul1').children;
+			var now=0//当前元素,
+
+
+			for(var i=0;i<ol1.length;i++){
+				ol1[i].index=i;
+				ol1[i].onclick=function(){
+					now=this.index;
+					tab()
+				}
+			}
+			function tab(){
+				for(var i=0;i<ol1.length;i++){
+						ol1[i].className="";
+						oimg[i].style.zIndex=1;
+						oimg[i].style.opacity=0.3;
+					}
+					ol1[now].className="mo";
+					oimg[now].style.zIndex=30;
+					// oimg[this.index].style.opacity=1;
+					move(oimg[now],{opacity:100});//输入封装函数 改变对象  改变属性
+			}
+
+
+			odiv3.onclick=function(){
+				now++;
+				if(now==ol1.length){
+					now=0;
+				}
+				tab();
+			}
+			odiv2.onclick=function(){
+				now--;
+				if(now<0){
+					now=ol1.length-1;
+				}
+				tab();
+			}
+
+
+
+			var timer=setInterval(function(){
+				odiv3.onclick();
+			},3000);
+			odiv1.onmouseover=function(){
+				clearInterval(timer);
+			}
+			odiv1.onmouseout=function(){
+				timer=setInterval(function(){
+				odiv3.onclick();
+			},3000);
+			}
+        	}
+        	render(){
+        		return(
+        		<div className="lunbotu">
+				<div class="d1" id="div1">
+					<div class="d2" id="div2">&lt;</div>
+					<div class="d3" id="div3">&gt;</div>
+					<ul class="u1" id="ul1">	
+						<li class="mo">1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+						<li>5</li>
+						<li>6</li>
+					</ul>
+					<ul class="u2" id="img">
+						<li style={{zIndex: 30,opacity: 1}}>  
+						<img src="1.jpg"/></li>
+						<li><img src="2.jpg"/></li>
+						<li><img src="3.jpg"/></li>
+						<li ><img src="4.jpg"/></li>
+						<li><img src="6.jpg"/></li>
+						<li><img src="5.jpg"/></li>
+					</ul>
+				</div>
+			</div>
+        		)
+        	}
+        }
+			 class React1 extends React.Component {
+			        render() {
+			          return (
+			            <div>
+			            <h1>这个是轮播屏幕
+			            </h1>
+			            <Lunbo />
+			            </div>
+			          )
+			        }
+			      }
+		 ReactDOM.render(<React1 />, document.getElementById('react'));
+	</script>
+</body>
+</html>

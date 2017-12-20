@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.d1{
+			width: 500px;
+			height:500px;
+			border:1px solid #000;
+			margin-top: 50px;
+		
+			position: relative;
+			animation-name: yi;
+			animation-duration: 15s;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+			position: absolute;
+			top: 0px;
+			right: 0px;
+
+		}
+		@keyframes yi{
+			0%{
+				top: 0px;
+				right: 0px;
+			}
+			25%{
+				top: 0px;
+				right: 500px;
+			}
+			50%{
+				top: 500px;
+				right: 500px;
+			}
+			75%{
+				top:500px;
+				right: 0px;
+			}
+			100%{
+				top: 0px;
+				right: 0px;
+			}
+		}
+
+		.d2{
+			width: 50px;
+			height: 50px;
+			background-color: red;
+			animation-name: yidong;
+			animation-duration: 10s;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+			position: absolute;
+			top:0px;
+			left: 0px;
+		}
+		@keyframes yidong{
+			0%{
+				top:0px;
+				left: 0px;
+			}
+			25%{
+				top: 0px;
+				left: 450px;
+			}
+			50%{
+				top: 450px;
+				left: 450px;
+			}
+			75%{
+				top:450px;
+				left:0px;
+			}
+			100%{
+				top:0px;
+				left:0px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="d1">
+		<div class="d2">
+	
+		<div>
+	</div>
+</body>
+</html>

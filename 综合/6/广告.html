@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			margin: 20 auto;
+		}
+		ul{
+			width: 2800px;
+			height: 300px;
+			border: 1px solid #000;
+			overflow: hidden;
+			animation-name: do;
+			animation-timing-function:linear ;
+			animation-iteration-count: infinite;
+			animation-duration: 8s;
+
+		}
+
+		li{
+			list-style: none;
+			float: left;
+		}
+		img{
+			width: 350px;
+			height: 300px;
+		}
+		@keyframes do{
+			from{
+				margin-left: 0px;
+			}
+			to{
+				margin-left: -2450px;
+			}
+		}
+		ul:hover{
+			animation-play-state: paused;
+		}
+		ul:hover li{
+			opacity: 0.5;
+		}
+		ul li:hover{
+			opacity: 1;
+		}
+		div{
+			width: 350px;
+			height: 300px;
+			border: 1px solid #000;
+			overflow: hidden;
+			animation-name: yi;
+			animation-duration: 20s;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+			position: absolute;
+			left: 0px;
+			top: 0px;
+		}
+		@keyframes yi{
+			0%{
+				top: 0px;
+				left: 0px;
+			}
+			20%{
+				top: 200px;
+				left: 400px;
+			}
+			40%{
+				top: 400px;
+				left: 800px;
+			}
+			60%{
+				top: 400px;
+				left: 400px;
+			}
+			80%{
+				top: 400px;
+				left: 0px;
+			}
+			90%{
+				top:200px;
+				left: 0px;
+			}
+			100%{
+				top: 0px;
+				left: 0px;
+			}
+		}
+	</style>
+</head>
+<body>
+<div>
+	<ul>
+		<li><img src="1.jpg"></li>
+		<li><img src="2.jpg"></li>
+		<li><img src="3.jpg"></li>
+		<li><img src="4.jpg"></li>
+		<li><img src="5.jpg"></li>
+		<li><img src="6.jpg"></li>
+		<li><img src="7.jpg"></li>
+		<li><img src="1.jpg"></li>
+	</ul>
+</div>
+</body>
+</html>

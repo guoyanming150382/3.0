@@ -1,0 +1,105 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+/*图标*/
+.navbar{
+	width: 100%;
+	/*background-color: red;*/
+	border-bottom: 1px solid white; 
+	box-shadow: 0px 3px 2px rgba(0,0,0,0.05);
+}
+.container{
+	width: 1170px;
+	min-height: 70px;
+	/*background-color: gray;*/
+	margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.container .navbar-header{
+	width: 270px;
+	float: left;
+	min-height: 70px;
+	/*background-color: yellow;*/
+}
+.container .navbar-header .navbar-brand{
+	height:50px;
+	width: 240px;
+	/*background-color: green; */
+	margin: 10px 15px 10px 15px;
+	color: #6173f4;
+	font-size: 22px;
+	line-height: 50px;
+}
+.container .navbar-header .navbar-brand img{
+	width: 50px;
+	height: 50px;
+	float: left;
+	cursor: pointer;
+}
+.container .navbar-header .navbar-brand span{
+	position: relative;
+	left: 10px;
+	cursor: pointer;
+}
+
+
+
+/*栏目*/
+.navbar-right{
+	width: 570px;
+	min-height: 70px;
+	float: right;
+	/*background-color: blue;*/
+}
+.navbar-right-ul{
+	list-style: none;
+	width: 570px;
+	min-height: 70px;
+}
+.navbar-right-ul li{
+	color: rgba(0, 0, 0, 0.5);
+	width: 114px;
+	min-height: 70px;
+	line-height: 70px;
+	float: left;
+	text-align: center;
+	cursor: pointer;
+	position: relative;
+}
+.navbar-right-ul li:hover{
+	color: #6173f4;
+}
+.navbar-right-ul li .underline{
+	width: 0px;
+	height: 0px;
+	background-color: white;
+	position: absolute;
+	left: 50%;
+	margin-left: -32px;
+	bottom: 17px;
+	transition-property: width,height,background-color;
+	transition-duration: 0.5s,0.5s,0.5s;
+}
+.navbar-right-ul li:hover .underline{
+	width: 64px;
+	height: 2px;
+	background-color: #6173f4;
+
+}
+/*js的下画线*/
+.under{
+	width: 64px;
+	height: 2px;
+	background-color: #6173f4;
+	position: absolute;
+	left: 50%;
+	margin-left: -32px;
+	bottom: 17px;
+}
+
+
+
+

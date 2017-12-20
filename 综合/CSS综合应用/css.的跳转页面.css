@@ -1,0 +1,36 @@
+.p1{
+	color: #1526BF;
+}
+.p2{
+		font:italic bolder 30px "楷体";
+}
+.p3{
+		text-indent: 2em;
+}
+.p4{
+		text-decoration: overline;
+}
+.p5{
+	text-shadow: 10px 5px 5 #D01FDE;
+}
+.p6{
+	text-align: center;
+}
+#a6{
+	color: #1526BF;
+}
+#a1{
+		font:italic bolder 30px "宋体";
+}
+#a2{
+		text-indent: 2em;
+}
+#a3{
+		text-decoration: overline;
+}
+#a4{
+	text-shadow: 10px 5px 5 #D01FDE;
+}
+#a5{
+	text-align: center;
+}

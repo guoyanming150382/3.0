@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>63-DOM-通过类名修改属性.html</title>
+	<style>
+	/*	*{
+			margin: 0;
+			padding: 0;
+		}*/
+	</style>
+	<script>
+		function getElementByClass(oParent,sClass){
+			var result = [];
+
+			// var aEle = oParent.children;
+			var aEle = oParent.getElementsByTagName("*");
+			for(var i=0;i<aEle.length;i++){
+				if(aEle[i].className == sClass ){
+					result.push(aEle[i]);
+				}
+			}
+
+			return result;
+		}
+		window.onload = function(){
+			var oUl = document.getElementById('ul1');
+			// var aLi = oUl.children;
+			/*
+			for(var i=0;i<aLi.length;i++){
+				if(aLi[i].className == 'box'){
+					aLi[i].style.background = 'red';
+				}
+			}
+			*/
+			var aLi = getElementByClass(oUl,'box');
+			for(var i=0;i<aLi.length;i++){
+				aLi[i].style.background = 'red';
+			}
+		}
+	</script>
+</head>
+<body>
+	<ul id="ul1">
+		<li class="box"></li>
+		<li></li>
+		<li class="box"></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<div class="box">11</div>
+	</ul>
+</body>
+</html>
