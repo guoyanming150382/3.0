@@ -1,0 +1,12 @@
+<!--pages/ddd/ddd.wxml-->
+<view class='container'>
+  <text>汽车</text>
+    <view wx:for="{{products}}">
+    <navigator open-type='navigate' 
+      url="{{'/pages/detail2/detail2?id='+item._id}}">
+      <image src='{{item.image}}'></image>
+      <text>型号：{{item.name}} &nbsp; 价格:{{item.price}}</text>
+    </navigator>
+    </view>
+</view>
+

@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/self/self",
+    "pages/text/text",
+    "pages/poject/poject"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "简历",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#ff3434",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#fbfbfb",
+    "selectedColor": "#000",
+    "backgroundColor": "#898989",
+    "borderStyle": "black",
+    "position": "botton",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/static/ios1.png",
+        "selectedIconPath": "/static/ios2.png"
+      },
+      {
+        "pagePath": "pages/self/self",
+        "text": "简介",
+        "iconPath": "/static/jian1.png",
+        "selectedIconPath": "/static/jian2.png"
+      },{
+        "pagePath": "pages/poject/poject",
+        "text": "项目",
+        "iconPath": "/static/i3.png",
+        "selectedIconPath": "/static/i31.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 1000,
+    "connectSocket": 1000
+  },
+  "debug": false
+}

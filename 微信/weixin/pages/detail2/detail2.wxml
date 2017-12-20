@@ -1,0 +1,13 @@
+<!--pages/detail2/detail2.wxml-->
+<view>
+  <image src='{{product.image}}'></image>
+  <swiper indicator-dots="true"
+  autoplay="{{true}}" interval="3000" duration="500" style='height:240px'>
+  <block wx:for="{{product.images}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" mode="aspectFit"></image>
+    </swiper-item>
+  </block>
+</swiper>
+<button bindtap='scanCode'>scanCode</button>
+</view>

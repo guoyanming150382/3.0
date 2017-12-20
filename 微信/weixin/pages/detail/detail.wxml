@@ -1,0 +1,5 @@
+<!--pages/detail/detail.wxml-->
+<text>{{product.name}}</text>
+<text>{{product.id}}</text>
+<image src="{{product.image}}"></image>
+<text>{{product.miaoshu}}</text>

@@ -1,0 +1,26 @@
+<!--pages/self/self.wxml-->
+<view class='all'>
+<view>
+  <canvas canvas-id='leidachart' class='leida' ></canvas>
+</view>
+
+<view class='infor'>
+  <text class='jiben'>基本信息</text>
+  <view> 姓名：郭炎明</view>
+  <text>性别：男</text>
+  <view>民族：汉族</view>
+  <text>E-mail：948639737@qq.com</text>
+  <view>联系方式：18638708793</view>
+  <text>QQ：948639737</text>
+  <view class='hor'></view>
+  <view class='progress'>
+    <text>基本能力</text>
+    <progress percent="90" show-info stroke-width="10" color="#fa0018" backgroundColor="#ff6000" active/>HTML
+    <progress percent="85" stroke-width="10"  show-info color="#fa0018" backgroundColor="#ff6000" active/>CSS
+    <progress percent="70" stroke-width="10" show-info color="#fa0018" backgroundColor="#ff6000" active/>JS
+    <progress percent="60" stroke-width="10"  show-info color="#fa0018" backgroundColor="#ff6000" active/>Node
+    <progress percent="66" stroke-width="10" show-info color="#fa0018" backgroundColor="#ff6000" active/>MongoDB
+    <progress percent="63" stroke-width="10" show-info color="#fa0018" backgroundColor="#ff6000" active/>框架
+  </view>
+</view>
+</view>

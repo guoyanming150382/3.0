@@ -1,0 +1,38 @@
+<!--index.wxml-->
+<view class="container">
+<button bindtap='music'>媒体播放</button>
+<button bindtap='chooseImage'>选择图片</button>
+<view wx:if="{{imagePath}}">
+    <image src='{{imagePath}}'></image>
+    <button bindtap='uploadImage'>上传图片</button>
+</view>
+<image src='{{imagePath}}'></image>
+<button bindtap='openLocation'>位置获取</button>
+<button bindtap='chooseLocation'>位置选取</button>
+<navigator url='/pages/loca/loca'>
+<image src='/static/icon/loca.png' style='width:50rpx;height:50rpx'></image>
+</navigator>
+  <view class='t2'>
+    <view class='t1' id='t11' bindtap='text2' capture-bind:tap="t1">
+    <view class='t3' id='t33' catchtap='text3'capture-bind:tap="t3" >
+      <view class='t2' id='t22' bindtap="text" capture-bind:tap="t2" data-name="namertyu" data-product-id="bnajdhf">到店体验</view>
+    </view>
+  </view>
+    <image src='../img/5.jpg' bindtap='xiangqing' data-product-id="001" data-product-name="one"></image>
+  </view>
+  <input placeholder='输入姓名'></input>
+  <input placeholder='输入手机号码'></input>
+  <button bindtap='showToast'>提交预约(弹出提示框)</button>
+  <button bindtap='switchLog' >日志</button>
+  <navigator url='/pages/ccc/ccc' open-type='switchTab' bindtap='loading'>phone</navigator>
+  <image bindlongpress='showAction' src='../img/3.gif'>保存图片</image><!-- bindtap点击保存或者发送，bindlongpress长按触发-->
+  <button bindtap='showModal'>showModal</button>
+  <modal hidden="{{hideModal}}" title="组件modal" confirm-text="提交" cancel-text="取消"
+  bindconfirm="modalConfirm" bindcancel="modalCancel" placeholder="输入名字"><!--确定触发事件，取消触发事件-->
+    <text>组件MODAL</text>
+    <input 
+    value='{{modalInput}}'
+    bindinput='getModalInput'></input>
+  </modal><!--控制modal的显示-->
+</view>
+

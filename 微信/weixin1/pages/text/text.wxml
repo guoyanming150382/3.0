@@ -1,0 +1,10 @@
+<!--pages/text/text.wxml-->
+<view>
+    <canvas canvas-id='zhuchart' style='height:280px;width:100%'></canvas>
+</view>
+<view>
+  <canvas canvas-id='leidachart' style='height:400px'></canvas>
+</view>
+<view>
+<image src='http://192.168.1.210:5080/public/guoyanming/%E7%A7%92.jpg'></image>
+</view>

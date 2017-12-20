@@ -1,0 +1,69 @@
+<!--pages/poject/poject.wxml-->
+<button bindtap='lianxi' class='lianxi'>text</button>
+<view class="all">
+<view> 
+  <view class='biankuang'></view>
+  <view class='t4'>
+  <text class='t1'>仿小米首页</text>
+  <view><view class='t2'>项目简介：</view>该项目是用原生代码构建的，以实现样式为主。</view>
+  <text><text class='t2'>责任描述：</text>
+  1.用原生的代码HTML、CSS将整个页面分为header、container、footer三部分
+  2.针对每个部分划分相应区域，宽高设为百分比形式
+  3.设置轮播图：封装运动框架，利用JavaScript触发事件，实现自动轮播、点击button切换图片
+  4.在商品展示区域用JavaScript书写选项卡，点击按钮可以跳到相应图片</text>
+  <text>
+  <text class='t2'>
+  开发工具：</text>sublime text3</text>
+  </view>
+
+  <view class='biankuang'></view>
+  <view class='t4'>
+  <text class='t1'>淘宝移动端</text>
+  <view><view class='t2'>项目简介：</view>该项目是为移动端开发，主要是为了适应不同大小的移动设备屏幕。</view>
+  <text><text class='t2'>责任描述：</text>
+用原生代码构建框架，使页面能够适应各种手机屏幕：
+1.主要运用CSS、HTML和JavaScript编写原生代码
+2.针对不同手机的屏幕，为使其能够适应大小不同的界面，用rem作为宽高单位
+<text class='t2'>开发工具：</text>sublime text3</text>
+</view>
+
+  <view class='biankuang'></view>
+  <view class='t4'>
+  <text class='t1'>个人博客制作</text>
+  <view><view class='t2'>项目简介：</view>该项目是个博客系统，具有登录、注册、上传图片和发表文章功能并进行评论，也具备个人中心，用户可以完善个人信息。</view>
+  <text><text class='t2'>责任描述：</text>
+  实现用户登录、信息注册、样式调节：
+1.前端样式调节：主要运用了CSS和HTML
+2.后端路径配置：index作为入口文件，设定主页面 ，在主页面引入相应的文件                                            3.数据库管理：运用mongoDB进行增删改查
+4.用户注册：设定基本信息填写框（input），写上提示信息，对所有信息进行前端验证（正则验证），在后端进行再次验证
+5.用户登录：引入验证码，当页面刷新和点击时，验证码会自动更新，提交的登录信息要与数据库中的数据比较
+<text class='t2'>开发工具：</text>sublime text 3、React、Redux 、Node、Express</text>
+</view>
+
+  <view class='biankuang'></view>
+  <view class='t4'>
+  <view class='t1'> 微信汽车4s店</view>
+  <text><text class='t2'>项目简介：</text>
+  该项目是微信小程序，能直观显示三个页面：主页、预约试驾、联系，日志页面在完成后隐藏。首页可以提交预约，预约试驾页面展示各种车型，并可以查看某车型详细信息，联系页面可以在线拨号、并拥有位置获取功能。
+  <text class='t2'>责任描述：</text>
+  在pages中的wxml实现页面的展示，js上实现逻辑处理，wxss上调节样式
+1.在app.json中搭建框架，设定需要的 tabbar界面，显示在底部。共四个，分别是主页、预约试驾、联系、日志
+2.主页：主要是店面简介和概况，以及预约功能，预约内容是姓名和电话，并在前端实现对信息的验证
+3.预约试驾：用wx.request向后端请求数据，得到不同车型的图片，再渲染到页面上，并在每个图片上绑定wx.navigateTo，当点击图片时候会跳转该车型的详细信息页面上，在详细页面上也有预约按钮，点击时可跳转到联系页面上。
+4.联系：显示本店的联系方式，以及地理位置，用bindtap绑定'openLocation（获取店面的地理位置）和chooseLocation（到达店面的路径）。
+<text class='t2'>开发工具：</text>微信web开发者工具</text>
+</view>
+
+  <view class='biankuang'></view>
+  <view class='t4'>
+  <text class='t1'>拍多多网站首页制作</text>
+  <view><view class='t2'>项目简介：</view>该项目已经上线，网址是https://www.paiduoduo.net.cn，属于商品购物类网站。具备在线网购功能，我们负责的是前端样式制作，用原生的JavaScript、CSS和HTML书写原生代码。</view>
+  <text><text class='t2'>责任描述：</text>
+  页面导航栏制作
+1.用原生的CSS设置样式
+2.当鼠标经过菜单某个栏目时候，下方会出现不同颜色的横条，用JavaScript触发事件和实现效果
+<text class='t2'>开发工具：</text>sublime text3</text>
+</view>
+</view>
+</view>
+

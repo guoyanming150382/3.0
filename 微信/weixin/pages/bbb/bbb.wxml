@@ -1,0 +1,9 @@
+<!--pages/bbb/bbb.wxml-->
+<text>pages/bbb/bbb.wxml</text>
+<view>
+  <text>productId:{{productId}}</text>
+  <text>productName:{{productName}}</text>
+</view>
+<view>
+  <image src='../img/b1.jpg'  bindtap='xiangqing' data-product-id="002" data-product-name="two"></image>
+</view>

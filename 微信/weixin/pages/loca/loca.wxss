@@ -1,0 +1,4 @@
+/* pages/loca/loca.wxss */
+page{
+  height: 100%;
+}

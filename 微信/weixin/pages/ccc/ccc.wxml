@@ -1,0 +1,9 @@
+<!--pages/ccc/ccc.wxml-->
+<view>
+  <input type='text' bindinput='getInputValue' style='border:1px solid #000;margin-top:50px;padding:10px'></input>
+  <button bindtap='saveData'>保存</button>
+  <button bindtap='getData'>获取</button>
+  <!--拨打电话-->
+   <input type='text' bindinput='getPhoneValue' style='border:1px solid #000;margin-top:50px;padding:10px'></input>
+  <button bindtap='callNumber'>拨号</button>
+</view>

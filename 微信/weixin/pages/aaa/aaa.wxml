@@ -1,0 +1,11 @@
+<!--pages/aaa/aaa.wxml-->
+<view>
+  <view class='car-header'>汽车</view>
+  <view>
+    <block wx:for="{{data}}"><!--将data中的数据进行循环-->
+      <navigator type="navigateTo" url="{{'/pages/detail/detail?id=' + item.id}}"><!--拼接id，用id获得全局变量中的数据-->
+          <image  src="{{item.image}}" data-id="{{item.id}}" data-name="{{item.name}} data-miaoshu={{item.miaoshu}}"></image>    
+      </navigator>
+    </block>
+  </view>
+  </view>

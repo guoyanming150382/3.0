@@ -1,0 +1,66 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/aaa/aaa",
+    "pages/ccc/ccc",
+    "pages/bbb/bbb",
+    "pages/detail/detail",
+    "pages/ddd/ddd",
+    "pages/detail2/detail2",
+    "pages/loca/loca",
+    "pages/music/music"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#111",
+    "navigationBarTitleText": "汽车",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#aaa",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#eee",
+    "selectedColor": "#000",
+    "backgroundColor": "gray",
+    "borderStyle": "white",
+    "position": "botton",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "联系我们",
+        "iconPath": "static/icon/ios1.png",
+        "selectedIconPath": "static/icon/ios2.png"
+      },
+      {
+        "pagePath": "pages/aaa/aaa",
+        "text": "预约试驾",
+        "iconPath": "static/icon/ios3.png",
+        "selectedIconPath": "static/icon/ios4.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "日志",
+        "iconPath": "static/icon/date.png",
+        "selectedIconPath": "static/icon/date1.png"
+      },
+      {
+        "pagePath": "pages/ccc/ccc",
+        "text": "电话",
+        "iconPath": "static/icon/c1.png",
+        "selectedIconPath": "static/icon/c2.png"
+      },
+      {
+        "pagePath": "pages/ddd/ddd",
+        "text": "后端请求",
+        "iconPath": "static/icon/d1.png",
+        "selectedIconPath": "static/icon/d2.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": "10000"
+  },
+  "debug": false
+}

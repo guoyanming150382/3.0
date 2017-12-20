@@ -1,0 +1,8 @@
+/* pages/text/text.wxss */
+view{
+  background-color: white;
+}
+image
+{
+  width: 100%;
+}

@@ -1,0 +1,29 @@
+/* pages/self/self.wxss */
+.leida{
+  height:260px;
+  width:100%;
+}
+.hor{
+  width: 86%;
+  height: 0.5px;
+  background-color: white;
+  margin: 20px auto;
+}
+.infor{
+  font-size: 16px;
+  color: white;
+  padding: 20px;
+}
+.jiben{
+  font-size: 20px;
+}
+.progress text{
+  font-size: 20px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+.all{
+   background-image: url("https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3440511153,1068119527&fm=27&gp=0.jpg");
+   background-repeat: no-repeat;
+   background-size: 100% 100%;
+}
