@@ -9,33 +9,36 @@
 			padding: 0;
 		}
 		.d1{
-			width: 790px;
-			height: 340px;
-			margin: 50px auto;
-			background: pink;
+			width:10rem;
+			height: 5rem;
+			margin: 0.1rem auto;
+			/*background: pink;*/
 			position: relative;
 
 		}
 		.d2,.d3{
-			width: 50px;
-			height: 40px;
+			width: 0.5rem;
+			height: 0.5rem;
 			background-color:rgba(213, 213, 213, 0.5); 
-			line-height: 40px;
+			line-height: 0.5rem;
 			text-align: center;
 			cursor: pointer;
 			z-index: 50;
 		}
 		.d2{
+			display: none;
 			position: absolute;
 			left: 0;
-			top: 150px;
+			top: 1.5rem;
 		}
 		.d3{
+			display: none;
 			position: absolute;
 			right: 0;
-			top: 150px;
+			top: 1.5rem;
 		}
 		.u1{
+			display: none
 			width: 312px;
 			height: 50px;
 			background-color: rgba(13,246,201,0.3);
@@ -47,6 +50,7 @@
 			z-index: 50;
 		}
 		.u1 li{
+			display: none;
 			width: 50px;
 			height: 50px;
 			border: 1px solid gray;
@@ -54,6 +58,7 @@
 			line-height: 50px;
 			text-align: center;
 			cursor: pointer;
+			font-size: 0.1rem
 		}
 		.u2 li{
 			position: relative;
@@ -62,10 +67,11 @@
 			top: 0;
 			left:0;
 			opacity: 0.3;/*所有的li都是0.3，变化的是图片的阴影度*/
+
 		}
 		.u2 img{
-			width: 790px;
-			height: 340px;
+			width: 10rem;
+			height: 5rem;
 			cursor: pointer;
 			
 			
@@ -75,63 +81,7 @@
 		}
 	</style>
 	<script src="move.js"></script>
-	<script type="text/javascript">
-		window.onload=function(){
-			var odiv2=document.getElementById('div2');
-			var odiv1=document.getElementById('div1');
-			var odiv3=document.getElementById('div3');
-			var oimg=document.getElementById('img').children;
-			var ol1=document.getElementById('ul1').children;
-			var now=0//当前元素,
-			for(var i=0;i<ol1.length;i++){
-				ol1[i].index=i;
-				ol1[i].onclick=function(){
-					now=this.index;
-					tab();
-				}
-			}
-			function tab(){
-				for(var i=0;i<ol1.length;i++){
-						ol1[i].className="";
-						oimg[i].style.zIndex=1;
-						oimg[i].style.opacity=0.3;
-					}
-					ol1[now].className="mo";
-					oimg[now].style.zIndex=30;
-					// oimg[this.index].style.opacity=1;
-					move(oimg[now],{opacity:100});
-			}
-
-			//箭头
-			odiv3.onclick=function(){
-				now++;
-				if(now==ol1.length){
-					now=0;
-				}
-				tab();
-			}
-			odiv2.onclick=function(){
-				now--;
-				if(now<0){
-					now=ol1.length-1;
-				}
-				tab();
-			}
-
-			//循环
-			var timer=setInterval(function(){
-				odiv3.onclick();
-			},2000);
-			odiv1.onmouseover=function(){
-				clearInterval(timer);
-			}
-			odiv1.onmouseout=function(){
-				timer=setInterval(function(){
-				odiv3.onclick();
-			},2000);
-			}
-		}
-	</script>
+	<script src="jjs.js"></script>
 </head>
 <body>
 	<div class="d1" id="div1">
@@ -155,4 +105,23 @@
 		</ul>
 	</div>
 </body>
+<script type="text/javascript">
+	(function (doc, win) {
+            var docEl = doc.documentElement,
+            resizeEvt = 'onorientationchange' in window ? 'onorientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                if(clientWidth>=750){
+                    docEl.style.fontSize = '100px';
+                }else{
+                    docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                }
+            };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+</script>
 </html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>186-ajax-function1.html</title>
+	<script>
+		/*
+		打电话流程：
+		1.手机
+		2.拨号
+		3.说话
+		4.听
+
+		ajax请求流程：
+		1.创建一个ajax对象
+		2.用ajax对象建立连接
+		3.用ajax对象发送请求
+		4.用ajax对象接收数据
+		
+		 */
+		window.onload = function(){
+			var oBtn = document.getElementById('btn1');
+			
+			oBtn.onclick = function(){
+				//用ajax去服务器端取数据
+				// 1.创建一个ajax对象
+				// XHR
+				var oAjax = new XMLHttpRequest();
+				console.log(oAjax); 
+					// 3 返回了部分数据
+					// 4 数据完全返回
+					if(oAjax.readyState == 4){//请求完成，表明所有的数据已经返回，但并不代表成功
+						if(oAjax.status == 200){//成功
+							alert("成功取得数据:" + oAjax.responseText);
+						}else{//失败
+							alert("获取失败："+ oAjax.status);
+						}
+					}
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="获取服务端数据" id="btn1">
+</body>
+</html>

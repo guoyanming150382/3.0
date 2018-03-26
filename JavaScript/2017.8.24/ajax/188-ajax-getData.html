@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>188-ajax-getData.html</title>
+	<script src="js/ajax.js"></script>
+	<script>
+		
+		window.onload = function(){
+			var oBtn1 = document.getElementById('btn1');
+			var oBtn2 = document.getElementById('btn2');
+			var oBtn3 = document.getElementById('btn3');
+			var oUl = document.getElementById('ul1');
+			
+			oBtn1.onclick = function(){
+				ajax(
+					"data/abc.txt",
+					function(str){
+						var oLi = document.createElement('li');
+						oLi.innerHTML = str;
+						oUl.appendChild(oLi);
+					},
+					function(str){
+						console.log("对不起，失败了:" + str );
+					}
+				);
+			}
+			oBtn2.onclick = function(){
+				ajax(
+					'data/json.txt',
+					function(str){
+						var obj = JSON.parse(str);
+						var oLi = document.createElement('li');
+						oLi.innerHTML = "姓名：" + obj.name + " 年龄：" + obj.age;
+						oUl.appendChild(oLi);	
+					},
+					function(str){
+						console.log("对不起，失败了:" + str );
+					}
+ 				);
+			}
+			oBtn3.onclick = function(){
+				ajax(
+					'data/arr.txt',
+					function(str){
+						var arr = eval(str);
+						for(var i=0;i<arr.length;i++){
+							var oLi = document.createElement('li');
+							oLi.innerHTML = "姓名：" + arr[i].name + " 年龄：" + arr[i].age;
+							oUl.appendChild(oLi);		
+						}
+
+					},
+					function(str){
+						console.log("对不起，失败了:" + str );	
+					}
+				);
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="获取文本" id="btn1">
+	<input type="button" value="获取JSON" id="btn2">
+	<input type="button" value="获取数组" id="btn3">
+	<ul id="ul1"></ul>
+</body>
+</html>

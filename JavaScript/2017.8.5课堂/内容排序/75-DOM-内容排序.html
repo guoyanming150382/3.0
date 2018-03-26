@@ -33,12 +33,14 @@
 					return iNum1 - iNum2;
 
 				});
-
+				arr.reverse();//倒叙排列
 				// console.log(arr);
 				
 				for(var i=0;i<arr.length;i++){
 					// alert("现在需要删除和追加的数据是"+arr[i].innerHTML);
+					
 					oUl.appendChild(arr[i]);
+					
 				}
 			}
 		}
@@ -47,9 +49,10 @@
 <body>
 	<input type="button" value="排序" id="btn1">
 	<ul id="ul1">
-		<li>12</li>
+		<li>1</li>
 		<li>21</li>
 		<li>7</li>
+		<li>12</li>
 		<li>18</li>
 		<li>14</li>
 	</ul>

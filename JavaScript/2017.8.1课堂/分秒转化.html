@@ -14,16 +14,21 @@
 			var oMiao=document.getElementById('miao');
 			var oRest=document.getElementById('res');
 			var obtn=document.getElementById('btn');
+			var oHou=document.getElementById('houar');
 
 			obtn.onclick=function(){
 				oMin.value=parseInt(oRest.value/60);
 				oMiao.value=parseInt(oRest.value%60);
+				oHou.value=Math.round(oMin.value/60);
+				oMin.value=parseInt(oMin.value%60);
+
 			}
 
 		}
 	</script>
 </head>
 <body>
+	<input type="text" id="houar">时
 	<input type="text" id="min">分
 	<input type="text" id="miao">秒
 	<button id="btn">zhuanhua</button>

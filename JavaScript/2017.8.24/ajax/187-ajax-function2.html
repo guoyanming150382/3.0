@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>187-ajax-function2.html</title>
+	<script src="js/ajax.js"></script>
+	<script>
+		
+		window.onload = function(){
+			var oBtn = document.getElementById('btn1');
+			
+			oBtn.onclick = function(){
+				ajax(
+					"http://127.0.0.1:3000/data/abc.txt",
+					function(str){
+						alert("成功了，好高兴啊："+str);
+					},
+					function(str){
+						alert(str);
+					}
+				);
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="获取服务端数据" id="btn1">
+</body>
+</html>

@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<script type="text/javascript">
+		/*
 		var a= 'abc';
 		var b=12;
 		var c='ok';
@@ -17,11 +18,12 @@
 		alert(json.a);  //json的值可以被改变用来计算
 		alert(json.a++);//任然为12
 		// json没有length，数组有
-
+*/
 		//可以用for  in  来构成循环
-		// for(key in json){
-		// 	alert(json[key]);
-		// }
+		var json ={a:12,b:'abcd',c:'asd',d:333};
+		for(key in json){
+			alert(json[key]);
+		}
 	</script>
 </head>
 <body>

@@ -7,11 +7,14 @@
 	
 		window.onload=function(){
 			var oUse=document.getElementById('username');
+			var oId=document.getElementById('password');
 			var oBut=document.getElementById('but1');
 			oUse.value=localStorage.getItem('username');//下次登录时候可以直接取到上次输入的值
+			oId.value=localStorage.getItem('password');
 			oBut.onclick=function(){
 				
 				localStorage.setItem('username',oUse.value);
+				localStorage.setItem('password',oId.value);
 			}
 		}
 	</script>

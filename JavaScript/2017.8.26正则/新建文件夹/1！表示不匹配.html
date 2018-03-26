@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oT1=document.getElementById("t1");
+			var oB=document.getElementById("t3")
+			var reg=/^[a-zA-Z]{1}[a-zA-Z]{1,}[a-zA-Z0-9]{5,10}$/;
+			///^[a-zA-Z]{1}(?!\D+$).{5,11}$/   !是不匹配的意思
+
+			oB.onclick=function(){
+				if(reg.test(oT1.value)){
+					alert("yes");
+				}else{
+					alert("no");
+				}
+			}
+			
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="t1">
+	<button id="t3">jianyan</button>
+</body>
+</html>

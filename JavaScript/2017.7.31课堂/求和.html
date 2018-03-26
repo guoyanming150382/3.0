@@ -9,9 +9,9 @@
 			var oT2=document.getElementById('t2');
 			var oBt=document.getElementById('b1');
 			var oPro=document.getElementById('jie');
-
+			//parseFloat该函数指定字符串中的首个字符是否是数字。如果是，则对字符串进行解析，直到到达数字的末端为止，然后以数字返回该数字，而不是作为字符串
 			oBt.onclick=function(){
-				var n1=parseFloat(oT1.value);
+				var n1=parseInt(oT1.value);
 				var n2=parseFloat(oT2.value);
 				if(isNaN(n1)){
 					alert("第一个输入有误");

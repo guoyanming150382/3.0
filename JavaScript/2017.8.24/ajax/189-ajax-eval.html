@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>189-ajax-eval.html</title>
+	<script>
+	//eval 就是把字符串转换成js代码
+		var str = "alert('a')";
+
+		// eval(str);
+
+		var arr = "['a','b']";
+		// alert(typeof arr);
+		var arr1 = eval(arr);
+		alert(arr1[1]);
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
